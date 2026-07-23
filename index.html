@@ -51,7 +51,7 @@
       <!-- DESKTOP NAVIGATION MENU -->
       <ul class="nav-menu">
         <li class="nav-item">
-          <a href="about-us.php" class="nav-link">About Us</a>
+          <a href="/about-us.html" class="nav-link">About Us</a>
         </li>
 
         <li class="nav-item">
@@ -63,63 +63,97 @@
             </svg>
           </a>
 
-          <!-- MEGA DROPDOWN MENU -->
-          <div class="mega-dropdown">
-            <div class="mega-grid">
+          <!-- MEGA DROPDOWN MENU (EXACT MATCH TO DESIGN) -->
+          <div class="mega-dropdown exact-mega-menu">
 
-              <!-- BACHELORS COLUMN -->
-              <div class="mega-column">
-                <h4 class="mega-column-title">Bachelors Degrees</h4>
+            <!-- TOP LEVEL TABS (BACHELORS / MASTERS & CLOSE BTN) -->
+            <div class="mega-top-bar">
+              <div class="mega-level-tabs">
+                <button class="mega-level-tab active" data-level="bachelors">BACHELORS</button>
+                <button class="mega-level-tab" data-level="masters">MASTERS</button>
+              </div>
+              <button class="mega-close-btn" aria-label="Close menu">&times;</button>
+            </div>
 
-                <div class="mega-program-item">
-                  <a href="#bba" class="mega-program-title">
-                    Online BBA Degree &rarr;
-                  </a>
-                  <ul class="mega-electives-list">
-                    <li>Marketing and Human Resource Management</li>
-                    <li>Marketing and Analytics</li>
-                  </ul>
-                </div>
+            <!-- RED ACCENT LINE -->
+            <div class="mega-red-divider"></div>
 
-                <div class="mega-program-item">
-                  <a href="#bca" class="mega-program-title">
-                    Online BCA Degree &rarr;
-                  </a>
-                  <ul class="mega-electives-list">
-                    <li>Data Science</li>
-                  </ul>
+            <!-- SUB PROGRAM CODE TABS (BBA / BCA / MBA / MCA) -->
+            <div class="mega-sub-bar">
+              <div class="mega-sub-tabs bachelors-subs active">
+                <button class="mega-sub-tab active" data-program="bba">BBA</button>
+                <button class="mega-sub-tab" data-program="bca">BCA</button>
+              </div>
+              <div class="mega-sub-tabs masters-subs">
+                <button class="mega-sub-tab" data-program="mba">MBA</button>
+                <button class="mega-sub-tab" data-program="mca">MCA</button>
+              </div>
+            </div>
+
+            <!-- MAIN SPLIT PANEL -->
+            <div class="mega-content-panel">
+
+              <!-- LEFT RED BANNER WITH WOMAN & HASHTAG -->
+              <div class="mega-left-banner">
+                <div class="mega-red-card">
+                  <img src="assets/images/mega_menu_woman.png" alt="Student" class="mega-woman-img">
+                  <span class="mega-hashtag">#DrivingYourFuture</span>
                 </div>
               </div>
 
-              <!-- MASTERS COLUMN -->
-              <div class="mega-column">
-                <h4 class="mega-column-title">Masters Degrees</h4>
+              <!-- RIGHT PROGRAM DETAILS -->
+              <div class="mega-right-details">
 
-                <div class="mega-program-item">
-                  <a href="#mba" class="mega-program-title">
-                    Online MBA Degree &rarr;
-                  </a>
-                  <ul class="mega-electives-list">
-                    <li>Marketing | Finance | HR Management</li>
-                    <li>Business Analytics | Information Tech</li>
-                    <li>Healthcare &amp; Hospital Management</li>
-                    <li>Logistics &amp; Supply Chain</li>
+                <!-- BBA PANEL -->
+                <div class="mega-program-panel active" id="panel-bba">
+                  <h4 class="mega-panel-title"><a href="bachelors-business-administration-online-degree.html"
+                      style="color: inherit; text-decoration: none;">Online BBA Degree &rarr;</a></h4>
+                  <div class="mega-panel-subtitle">Electives</div>
+                  <ul class="mega-electives-uppercase">
+                    <li><a href="online-bba/marketing-and-human-resource-management.html">MARKETING AND HUMAN RESOURCE MANAGEMENT</a></li>
+                    <li><a href="online-bba/marketing-and-analytics.html">MARKETING AND ANALYTICS</a></li>
                   </ul>
                 </div>
 
-                <div class="mega-program-item">
-                  <a href="#mca" class="mega-program-title">
-                    Online MCA Degree &rarr;
-                  </a>
-                  <ul class="mega-electives-list">
-                    <li>Computer Science &amp; IT</li>
-                    <li>AI &amp; Machine Learning</li>
-                    <li>Data Science</li>
+                <!-- BCA PANEL -->
+                <div class="mega-program-panel" id="panel-bca">
+                  <h4 class="mega-panel-title"><a href="bachelor-computer-application-online-degree.html" style="color: inherit; text-decoration: none;">Online BCA Degree &rarr;</a></h4>
+                  <div class="mega-panel-subtitle">Electives</div>
+                  <ul class="mega-electives-uppercase">
+                    <li><a href="online-bca/data-science.html">DATA SCIENCE &amp; ANALYTICS</a></li>
+                    <li><a href="bachelor-computer-application-online-degree.html">COMPUTER APPLICATIONS &amp; IT</a></li>
                   </ul>
                 </div>
+
+                <!-- MBA PANEL -->
+                <div class="mega-program-panel" id="panel-mba">
+                  <h4 class="mega-panel-title"><a href="masters-business-administration-online-degree.html" style="color: inherit; text-decoration: none;">Online MBA Degree &rarr;</a></h4>
+                  <div class="mega-panel-subtitle">Electives</div>
+                  <ul class="mega-electives-uppercase">
+                    <li><a href="online-mba/marketing.html">MARKETING AND HUMAN RESOURCE MANAGEMENT</a></li>
+                    <li><a href="masters-business-administration-online-degree.html">MARKETING AND ANALYTICS</a></li>
+                    <li><a href="masters-business-administration-online-degree.html">FINANCE &amp; ACCOUNTING</a></li>
+                    <li><a href="masters-business-administration-online-degree.html">BUSINESS ANALYTICS</a></li>
+                    <li><a href="masters-business-administration-online-degree.html">HEALTHCARE &amp; HOSPITAL MANAGEMENT</a></li>
+                    <li><a href="masters-business-administration-online-degree.html">LOGISTICS &amp; SUPPLY CHAIN MANAGEMENT</a></li>
+                  </ul>
+                </div>
+
+                <!-- MCA PANEL -->
+                <div class="mega-program-panel" id="panel-mca">
+                  <h4 class="mega-panel-title">Online MCA Degree</h4>
+                  <div class="mega-panel-subtitle">Electives</div>
+                  <ul class="mega-electives-uppercase">
+                    <li><a href="#mca">COMPUTER SCIENCE &amp; IT</a></li>
+                    <li><a href="#mca">AI &amp; MACHINE LEARNING</a></li>
+                    <li><a href="#mca">DATA SCIENCE</a></li>
+                  </ul>
+                </div>
+
               </div>
 
             </div>
+
           </div>
         </li>
 
@@ -294,7 +328,7 @@
             <div class="program-card">
               <div class="program-card-header">
                 <span class="program-badge">NAAC A+ &amp; UGC Entitled</span>
-                <h3>Online MBA Degree</h3>
+                <h3><a href="masters-business-administration-online-degree.html" style="color: inherit; text-decoration: none;">Online MBA Degree</a></h3>
                 <div class="program-duration">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="10" />
@@ -364,7 +398,8 @@
             <div class="program-card">
               <div class="program-card-header">
                 <span class="program-badge">UGC Entitled</span>
-                <h3>Online BBA Degree</h3>
+                <h3><a href="bachelors-business-administration-online-degree.html"
+                    style="color: inherit; text-decoration: none;">Online BBA Degree</a></h3>
                 <div class="program-duration">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="10" />
@@ -383,9 +418,15 @@
                     <span class="elective-tag">Marketing &amp; Analytics</span>
                   </div>
                 </div>
-                <div class="program-card-footer">
+                <div class="program-card-footer"
+                  style="display: flex; gap: 10px; align-items: center; justify-content: space-between;">
                   <div class="fee-text">₹ 1,05,000 Total</div>
-                  <button class="btn btn-primary-red open-enquiry-modal" data-program="bba">Get Started &rarr;</button>
+                  <div style="display: flex; gap: 8px;">
+                    <a href="bachelors-business-administration-online-degree.html" class="btn btn-outline-navy"
+                      style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Details</a>
+                    <button class="btn btn-primary-red open-enquiry-modal" data-program="bba">Get Started
+                      &rarr;</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -396,7 +437,7 @@
             <div class="program-card">
               <div class="program-card-header">
                 <span class="program-badge">UGC Entitled</span>
-                <h3>Online BCA Degree</h3>
+                <h3><a href="bachelor-computer-application-online-degree.html" style="color: inherit; text-decoration: none;">Online BCA Degree</a></h3>
                 <div class="program-duration">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="10" />
@@ -534,7 +575,7 @@
     <!-- RE-DEFINING YOUR RECOGNITIONS SECTION -->
     <section class="redefining-recognitions-section">
       <div class="container">
-        
+
         <!-- HEADER -->
         <div class="redefining-header">
           <h2 class="redefining-title">RE-DEFINING YOUR <span class="red-text">RECOGNITIONS</span></h2>
@@ -543,25 +584,26 @@
 
         <!-- MAIN CONTENT LAYOUT -->
         <div class="redefining-layout">
-          
+
           <!-- LEFT 2X2 FEATURE GRID -->
           <div class="redefining-cards-grid">
-            
+
             <!-- CARD 1 -->
             <div class="redefining-card">
               <div class="redefining-icon-box">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="4" width="20" height="15" rx="2" fill="#ffffff"/>
-                  <line x1="2" y1="8" x2="22" y2="8"/>
-                  <circle cx="5" cy="6" r="0.8" fill="#003366"/>
-                  <circle cx="8" cy="6" r="0.8" fill="#003366"/>
-                  <circle cx="11" cy="6" r="0.8" fill="#003366"/>
-                  <path d="M12 16a3 3 0 0 0-6 0"/>
-                  <circle cx="9" cy="12" r="2.2"/>
-                  <rect x="15" y="11" width="5" height="4" rx="1" fill="#003366"/>
-                  <circle cx="16.5" cy="13" r="0.4" fill="#ffffff"/>
-                  <circle cx="17.5" cy="13" r="0.4" fill="#ffffff"/>
-                  <circle cx="18.5" cy="13" r="0.4" fill="#ffffff"/>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="15" rx="2" fill="#ffffff" />
+                  <line x1="2" y1="8" x2="22" y2="8" />
+                  <circle cx="5" cy="6" r="0.8" fill="#003366" />
+                  <circle cx="8" cy="6" r="0.8" fill="#003366" />
+                  <circle cx="11" cy="6" r="0.8" fill="#003366" />
+                  <path d="M12 16a3 3 0 0 0-6 0" />
+                  <circle cx="9" cy="12" r="2.2" />
+                  <rect x="15" y="11" width="5" height="4" rx="1" fill="#003366" />
+                  <circle cx="16.5" cy="13" r="0.4" fill="#ffffff" />
+                  <circle cx="17.5" cy="13" r="0.4" fill="#ffffff" />
+                  <circle cx="18.5" cy="13" r="0.4" fill="#ffffff" />
                 </svg>
               </div>
               <div class="redefining-card-body">
@@ -573,15 +615,16 @@
             <!-- CARD 2 -->
             <div class="redefining-card">
               <div class="redefining-icon-box">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="5" y="3" width="14" height="10" rx="1.5" fill="#ffffff"/>
-                  <line x1="5" y1="6" x2="19" y2="6"/>
-                  <circle cx="12" cy="8" r="1.5"/>
-                  <path d="M8 12a4 4 0 0 1 8 0"/>
-                  <path d="M3 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
-                  <path d="M10 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
-                  <path d="M17 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
-                  <path d="M2 21h6M9 21h6M16 21h6"/>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="3" width="14" height="10" rx="1.5" fill="#ffffff" />
+                  <line x1="5" y1="6" x2="19" y2="6" />
+                  <circle cx="12" cy="8" r="1.5" />
+                  <path d="M8 12a4 4 0 0 1 8 0" />
+                  <path d="M3 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z" />
+                  <path d="M10 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z" />
+                  <path d="M17 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z" />
+                  <path d="M2 21h6M9 21h6M16 21h6" />
                 </svg>
               </div>
               <div class="redefining-card-body">
@@ -593,34 +636,38 @@
             <!-- CARD 3 -->
             <div class="redefining-card">
               <div class="redefining-icon-box">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="4" y="2" width="16" height="15" rx="2" fill="#ffffff"/>
-                  <line x1="7" y1="5" x2="17" y2="5"/>
-                  <line x1="7" y1="8" x2="17" y2="8"/>
-                  <line x1="7" y1="11" x2="14" y2="11"/>
-                  <circle cx="16" cy="17" r="4.5" fill="#ffffff"/>
-                  <path d="M16 14.5l1 1.5 1.5-2"/>
-                  <path d="M13.5 20.5l-1.5 2.5 3-1 3 1-1.5-2.5"/>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="2" width="16" height="15" rx="2" fill="#ffffff" />
+                  <line x1="7" y1="5" x2="17" y2="5" />
+                  <line x1="7" y1="8" x2="17" y2="8" />
+                  <line x1="7" y1="11" x2="14" y2="11" />
+                  <circle cx="16" cy="17" r="4.5" fill="#ffffff" />
+                  <path d="M16 14.5l1 1.5 1.5-2" />
+                  <path d="M13.5 20.5l-1.5 2.5 3-1 3 1-1.5-2.5" />
                 </svg>
               </div>
               <div class="redefining-card-body">
                 <div class="redefining-card-title"><span style="color: #d32f2f;">10+</span> In-demand electives</div>
-                <div class="redefining-card-desc"><span style="color: #d32f2f; font-weight:700;">10+</span> Advanced certifications</div>
+                <div class="redefining-card-desc"><span style="color: #d32f2f; font-weight:700;">10+</span> Advanced
+                  certifications</div>
               </div>
             </div>
 
             <!-- CARD 4 -->
             <div class="redefining-card">
               <div class="redefining-icon-box">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="12" width="18" height="9" rx="1.5" fill="#ffffff"/>
-                  <line x1="1" y1="21" x2="23" y2="21" stroke-width="2"/>
-                  <path d="M9 16a3 3 0 0 0-6 0"/>
-                  <circle cx="6" cy="13" r="2.2"/>
-                  <path d="M16 8a3.5 3.5 0 0 0-3.5 3.5c0 1.2.6 2.3 1.5 2.9v1.6l2-1c.3 0 .7.1 1 .1a3.5 3.5 0 1 0 0-7z" fill="#003366"/>
-                  <circle cx="14.5" cy="11.5" r="0.5" fill="#ffffff"/>
-                  <circle cx="16" cy="11.5" r="0.5" fill="#ffffff"/>
-                  <circle cx="17.5" cy="11.5" r="0.5" fill="#ffffff"/>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="12" width="18" height="9" rx="1.5" fill="#ffffff" />
+                  <line x1="1" y1="21" x2="23" y2="21" stroke-width="2" />
+                  <path d="M9 16a3 3 0 0 0-6 0" />
+                  <circle cx="6" cy="13" r="2.2" />
+                  <path d="M16 8a3.5 3.5 0 0 0-3.5 3.5c0 1.2.6 2.3 1.5 2.9v1.6l2-1c.3 0 .7.1 1 .1a3.5 3.5 0 1 0 0-7z"
+                    fill="#003366" />
+                  <circle cx="14.5" cy="11.5" r="0.5" fill="#ffffff" />
+                  <circle cx="16" cy="11.5" r="0.5" fill="#ffffff" />
+                  <circle cx="17.5" cy="11.5" r="0.5" fill="#ffffff" />
                 </svg>
               </div>
               <div class="redefining-card-body">
@@ -634,7 +681,8 @@
           <!-- RIGHT WOMAN VISUAL BANNER -->
           <div class="redefining-visual-wrapper">
             <div class="redefining-red-box">
-              <img src="assets/images/redefining_recognitions_woman.png" alt="Student with Laptop" class="redefining-woman-img">
+              <img src="assets/images/redefining_recognitions_woman.png" alt="Student with Laptop"
+                class="redefining-woman-img">
             </div>
           </div>
 
@@ -831,8 +879,9 @@
 
   <!-- ENQUIRE MODAL -->
   <div class="modal-overlay" id="enquiryModal">
-    <div class="apply-form-card modal-exact-card" style="position: relative; max-width: 520px; width: 100%; margin: 1rem;">
-      
+    <div class="apply-form-card modal-exact-card"
+      style="position: relative; max-width: 520px; width: 100%; margin: 1rem;">
+
       <!-- CLOSE BUTTON ON TOP RIGHT -->
       <button class="modal-close-black close-modal-trigger" aria-label="Close modal">&times;</button>
 
@@ -843,16 +892,18 @@
 
       <form action="process-enquiry.php" method="POST" class="apply-lead-form" id="leadEnquiryForm">
         <div class="apply-form-grid">
-          
+
           <!-- ROW 1: First Name & Last Name -->
           <div class="apply-form-row">
             <div class="apply-field-group">
               <label class="apply-field-label">First Name <span class="req">*</span></label>
-              <input type="text" name="first_name" class="apply-field-input" placeholder="Enter your first name" required>
+              <input type="text" name="first_name" class="apply-field-input" placeholder="Enter your first name"
+                required>
             </div>
             <div class="apply-field-group">
               <label class="apply-field-label">Last Name <span class="req">*</span></label>
-              <input type="text" name="last_name" class="apply-field-input" placeholder="Enter your first name" required>
+              <input type="text" name="last_name" class="apply-field-input" placeholder="Enter your first name"
+                required>
             </div>
           </div>
 
@@ -871,10 +922,10 @@
               <div class="apply-phone-wrapper">
                 <div class="apply-flag-code">
                   <svg class="apply-flag-icon" viewBox="0 0 640 480" width="20" height="14">
-                    <path fill="#f93" d="0 0h640v160H0z"/>
-                    <path fill="#fff" d="0 160h640v160H0z"/>
-                    <path fill="#128807" d="0 320h640v160H0z"/>
-                    <circle cx="320" cy="240" r="60" fill="none" stroke="#000080" stroke-width="12"/>
+                    <path fill="#f93" d="0 0h640v160H0z" />
+                    <path fill="#fff" d="0 160h640v160H0z" />
+                    <path fill="#128807" d="0 320h640v160H0z" />
+                    <circle cx="320" cy="240" r="60" fill="none" stroke="#000080" stroke-width="12" />
                   </svg>
                   +91
                 </div>
@@ -924,9 +975,12 @@
 
           <!-- CONSENT CHECKBOX -->
           <div class="apply-consent-box">
-            <input type="checkbox" name="consent" class="apply-consent-checkbox" id="modalConsentIndex" checked required>
+            <input type="checkbox" name="consent" class="apply-consent-checkbox" id="modalConsentIndex" checked
+              required>
             <label for="modalConsentIndex" class="apply-consent-label">
-              I consent to receive communications from the University and its representatives via Email, SMS, WhatsApp, Call, or any other electronic medium for updates and notifications. This consent overrides DND/NDNC preferences.
+              I consent to receive communications from the University and its representatives via Email, SMS, WhatsApp,
+              Call, or any other electronic medium for updates and notifications. This consent overrides DND/NDNC
+              preferences.
             </label>
           </div>
 
@@ -934,7 +988,8 @@
           <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
             <button type="submit" class="btn-apply-submit" style="flex: 1;">Enquire Now</button>
             <a href="apply-now.html" class="btn-apply-direct" style="flex: 1; text-decoration: none;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                 <polyline points="14 2 14 8 20 8"></polyline>
                 <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -995,10 +1050,10 @@
         <div class="footer-col">
           <h4>Online Programs</h4>
           <ul class="footer-links">
-            <li><a href="#mba">Online MBA Degree</a></li>
+            <li><a href="masters-business-administration-online-degree.html">Online MBA Degree</a></li>
             <li><a href="#mca">Online MCA Degree</a></li>
-            <li><a href="#bba">Online BBA Degree</a></li>
-            <li><a href="#bca">Online BCA Degree</a></li>
+            <li><a href="bachelors-business-administration-online-degree.html">Online BBA Degree</a></li>
+            <li><a href="bachelor-computer-application-online-degree.html">Online BCA Degree</a></li>
             <li><a href="#programs">All Electives</a></li>
           </ul>
         </div>

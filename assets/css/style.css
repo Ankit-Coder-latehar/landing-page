@@ -2888,3 +2888,1147 @@ textarea {
     height: 350px;
   }
 }
+
+/* ==========================================================================
+   EXACT MEGA MENU DROPDOWN DESIGN MATCH
+   ========================================================================== */
+.exact-mega-menu {
+  position: absolute;
+  top: 100%;
+  left: -180px;
+  width: 780px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e2e8f0;
+  padding: 1.25rem 1.5rem 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2000;
+}
+
+.nav-item:hover .exact-mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Top bar with level tabs & close btn */
+.mega-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.mega-level-tabs {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.mega-level-tab {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px 8px 0 0;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #1e293b;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.mega-level-tab.active {
+  border-color: #cbd5e1;
+  border-bottom: 3px solid #d32f2f;
+  color: #0f172a;
+}
+
+.mega-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  color: #94a3b8;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.mega-close-btn:hover {
+  color: #d32f2f;
+}
+
+/* Red accent line */
+.mega-red-divider {
+  height: 3px;
+  background: #d32f2f;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+/* Sub-program tabs */
+.mega-sub-bar {
+  margin-bottom: 1rem;
+}
+
+.mega-sub-tabs {
+  display: none;
+  gap: 0.5rem;
+}
+
+.mega-sub-tabs.active {
+  display: flex;
+}
+
+.mega-sub-tab {
+  background: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mega-sub-tab.active {
+  background: #f1f5f9;
+  color: #d32f2f;
+}
+
+/* Main Split Panel */
+.mega-content-panel {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Left Red Card with Woman */
+.mega-left-banner {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+}
+
+.mega-red-card {
+  background: #d32f2f;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.mega-woman-img {
+  height: 95%;
+  width: auto;
+  object-fit: contain;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.mega-hashtag {
+  position: absolute;
+  right: 15px;
+  bottom: 25px;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  z-index: 3;
+}
+
+/* Right Details Panel */
+.mega-right-details {
+  padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.mega-program-panel {
+  display: none;
+}
+
+.mega-program-panel.active {
+  display: block;
+}
+
+.mega-panel-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.mega-panel-subtitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+  text-transform: capitalize;
+}
+
+.mega-electives-uppercase {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mega-electives-uppercase li a {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  line-height: 1.35;
+  display: block;
+}
+
+.mega-electives-uppercase li a:hover {
+  color: #d32f2f;
+}
+
+/* ==========================================================================
+   PROGRAM PAGE & BBA SPECIFIC STYLES
+   ========================================================================== */
+.bba-hero-section {
+  background: #f8fafc;
+  padding: 3rem 0 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.bba-breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.bba-breadcrumb a {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.bba-breadcrumb a:hover {
+  color: var(--primary-red);
+}
+
+.bba-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.bba-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.bba-dots-graphic {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: absolute;
+  left: -40px;
+  top: 0;
+  opacity: 0.8;
+}
+
+.bba-dots-row {
+  display: flex;
+  gap: 6px;
+}
+
+.bba-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-red);
+  border-radius: 50%;
+}
+
+.bba-hero-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--navy-blue);
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.bba-hero-title span {
+  color: var(--primary-red);
+  display: block;
+}
+
+.bba-accreditation-badges {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.bba-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e2e8f0;
+}
+
+.bba-badge-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.bba-badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.bba-badge-text strong {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--primary-red);
+  line-height: 1;
+}
+
+.bba-badge-text span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.bba-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.bba-btn-red {
+  background-color: var(--primary-red);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(202, 37, 38, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.bba-btn-red:hover {
+  background-color: var(--primary-red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(202, 37, 38, 0.45);
+}
+
+.bba-hashtag-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-top: 1rem;
+}
+
+.bba-hashtag-text span {
+  color: var(--primary-red);
+}
+
+.bba-hero-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 380px;
+}
+
+.bba-red-bg-shape {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  height: 85%;
+  background: var(--primary-red);
+  border-top-left-radius: 160px;
+  border-bottom-left-radius: 40px;
+  z-index: 1;
+}
+
+.bba-hero-img {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Stats Banner below Hero */
+.bba-stats-banner {
+  background: linear-gradient(90deg, #1e293b 0%, #002b49 50%, #991b1b 100%);
+  padding: 2.5rem 0;
+  color: #ffffff;
+}
+
+.bba-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.bba-stat-card {
+  background: #ffffff;
+  color: var(--text-main);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-md);
+}
+
+.bba-stat-icon {
+  width: 52px;
+  height: 52px;
+  background: #fee2e2;
+  color: var(--primary-red);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bba-stat-info label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: capitalize;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.bba-stat-info strong {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--navy-blue);
+  text-transform: uppercase;
+  letter-spacing: -0.3px;
+}
+
+/* Page Section Common Styles */
+.bba-section {
+  padding: 4.5rem 0;
+}
+
+.bba-section-bg-light {
+  background-color: #f8fafc;
+}
+
+.bba-section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.bba-section-title span {
+  color: var(--primary-red);
+}
+
+.bba-overview-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #334155;
+  max-width: 1100px;
+}
+
+.bba-highlights-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+  list-style: none;
+}
+
+.bba-highlights-list li {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e2e8f0;
+}
+
+.bba-highlights-list li svg {
+  color: var(--primary-red);
+  flex-shrink: 0;
+}
+
+/* Learning Methodology Grid */
+.bba-methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.bba-methodology-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bba-methodology-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-red);
+}
+
+.bba-methodology-icon {
+  width: 64px;
+  height: 64px;
+  color: var(--navy-blue);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bba-methodology-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+/* How to Enroll Cards */
+.bba-enroll-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.bba-enroll-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid #e2e8f0;
+}
+
+.bba-enroll-header {
+  background: var(--primary-red);
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.bba-enroll-body {
+  padding: 1.75rem 1.5rem;
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.bba-enroll-body a {
+  color: var(--primary-red);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Career Advancement Tabs & Foundit Banner */
+.bba-career-desc {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  max-width: 1050px;
+}
+
+.bba-career-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+.bba-career-tab {
+  padding: 0.75rem 1.5rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bba-career-tab.active {
+  background: var(--primary-red);
+  color: #ffffff;
+}
+
+.bba-foundit-header {
+  text-align: center;
+  margin: 3rem 0 2rem 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bba-foundit-header strong {
+  color: #6366f1;
+  font-size: 1.4rem;
+}
+
+.bba-foundit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.bba-foundit-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: var(--shadow-sm);
+}
+
+.bba-foundit-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem auto;
+  color: var(--navy-blue);
+}
+
+.bba-foundit-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.5;
+}
+
+/* Our Technology Section (Red Background) */
+.bba-tech-section {
+  background: var(--primary-red);
+  color: #ffffff;
+  padding: 4.5rem 0;
+}
+
+.bba-tech-section .bba-section-title {
+  color: #ffffff;
+}
+
+.bba-tech-section .bba-section-title span {
+  color: #ffe4e6;
+}
+
+.bba-tech-sub {
+  font-size: 1.1rem;
+  color: #fecdd3;
+  margin-bottom: 2.5rem;
+}
+
+.bba-tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 900px;
+}
+
+.bba-tech-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bba-tech-icon {
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  color: var(--primary-red);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bba-tech-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* FAQ Accordion Customizations */
+.bba-faq-list {
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bba-faq-item {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.bba-faq-item.active {
+  border-color: var(--primary-red);
+  box-shadow: var(--shadow-md);
+}
+
+.bba-faq-question {
+  padding: 1.25rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy-blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bba-faq-icon {
+  width: 32px;
+  height: 32px;
+  background: #fee2e2;
+  color: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.bba-faq-item.active .bba-faq-icon {
+  transform: rotate(180deg);
+  background: var(--primary-red);
+  color: #ffffff;
+}
+
+.bba-faq-answer {
+  display: none;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.75;
+  border-top: 1px dashed #f1f5f9;
+}
+
+.bba-faq-item.active .bba-faq-answer {
+  display: block;
+}
+
+.bba-faq-toggle-btn {
+  display: block;
+  margin: 2.5rem auto 0 auto;
+  background: var(--primary-red);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.85rem 2.5rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.bba-faq-toggle-btn:hover {
+  background: var(--primary-red-hover);
+  transform: translateY(-2px);
+}
+
+/* Red Quick Contact Bar */
+.bba-quick-contact-bar {
+  background: var(--primary-red);
+  color: #ffffff;
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bba-quick-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.bba-quick-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bba-quick-contact-icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bba-quick-contact-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.bba-quick-contact-text a {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* Floating Quick Widgets */
+.bba-floating-widgets {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.bba-float-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.bba-float-btn:hover {
+  transform: scale(1.1);
+}
+
+.bba-float-phone {
+  background-color: var(--navy-blue);
+}
+
+.bba-float-whatsapp {
+  background-color: #25d366;
+}
+
+/* Responsive Overrides */
+@media (max-width: 992px) {
+  .bba-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .bba-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .bba-methodology-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bba-enroll-grid {
+    grid-template-columns: 1fr;
+  }
+  .bba-foundit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bba-quick-contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .bba-highlights-list {
+    grid-template-columns: 1fr;
+  }
+  .bba-methodology-grid {
+    grid-template-columns: 1fr;
+  }
+  .bba-foundit-grid {
+    grid-template-columns: 1fr;
+  }
+  .bba-quick-contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   BBA ELECTIVE PAGE & TABBED WIDGET STYLES
+   ========================================================================== */
+.bba-emi-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy-blue);
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.bba-emi-badge span {
+  color: var(--primary-red);
+}
+
+.bba-tab-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 3rem;
+}
+
+.bba-tab-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy-blue);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.bba-tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary-red);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.bba-tab-btn.active {
+  color: var(--primary-red);
+}
+
+.bba-tab-btn.active::after {
+  opacity: 1;
+}
+
+.bba-tab-content {
+  display: none;
+}
+
+.bba-tab-content.active {
+  display: block;
+}
+
+/* Semester Grid (2 Columns) */
+.bba-semester-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 4rem;
+}
+
+.bba-semester-block {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.bba-semester-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 90px;
+}
+
+.bba-semester-label strong {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--navy-blue);
+  line-height: 1;
+}
+
+.bba-semester-label span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-red);
+  text-transform: capitalize;
+}
+
+.bba-semester-subjects {
+  border-left: 3px solid var(--primary-red);
+  padding-left: 1.25rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bba-semester-subjects li {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+/* Fee Structure Cards */
+.bba-fees-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.bba-fee-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: var(--shadow-sm);
+}
+
+.bba-fee-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--navy-blue);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.bba-fee-card-title span {
+  color: var(--primary-red);
+}
+
+.bba-fee-card-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.bba-fee-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 1.25rem;
+}
+
+.bba-fee-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.bba-fee-row strong {
+  color: var(--primary-red);
+  font-size: 1.05rem;
+}
+
+.bba-fee-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.bba-fee-note strong {
+  color: var(--text-main);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* Eligibility Card */
+.bba-eligibility-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: var(--shadow-sm);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #334155;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .bba-tab-nav {
+    flex-direction: column;
+    gap: 0;
+  }
+  .bba-semester-grid {
+    grid-template-columns: 1fr;
+  }
+  .bba-fees-grid {
+    grid-template-columns: 1fr;
+  }
+}

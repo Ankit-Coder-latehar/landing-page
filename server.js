@@ -125,6 +125,34 @@ function createServer(port) {
       safePath = '/index.html';
     }
 
+    if (safePath === '/bachelors-business-administration-online-degree' || safePath === '/bachelors-business-administration-online-degree/') {
+      safePath = '/bachelors-business-administration-online-degree.html';
+    }
+
+    if (safePath === '/bachelor-computer-application-online-degree' || safePath === '/bachelor-computer-application-online-degree/') {
+      safePath = '/bachelor-computer-application-online-degree.html';
+    }
+
+    if (safePath === '/masters-business-administration-online-degree' || safePath === '/masters-business-administration-online-degree/') {
+      safePath = '/masters-business-administration-online-degree.html';
+    }
+
+    if (safePath === '/online-bba/marketing-and-human-resource-management' || safePath === '/online-bba/marketing-and-human-resource-management/') {
+      safePath = '/online-bba/marketing-and-human-resource-management.html';
+    }
+
+    if (safePath === '/online-bba/marketing-and-analytics' || safePath === '/online-bba/marketing-and-analytics/') {
+      safePath = '/online-bba/marketing-and-analytics.html';
+    }
+
+    if (safePath === '/online-bca/data-science' || safePath === '/online-bca/data-science/') {
+      safePath = '/online-bca/data-science.html';
+    }
+
+    if (safePath === '/online-mba/marketing' || safePath === '/online-mba/marketing/') {
+      safePath = '/online-mba/marketing.html';
+    }
+
     if (safePath.endsWith('.php') && safePath !== '/process-enquiry.php') {
       const htmlAlt = safePath.replace(/\.php$/, '.html');
       if (fs.existsSync(path.join(PUBLIC_DIR, htmlAlt))) {

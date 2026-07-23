@@ -373,4 +373,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 8. EXACT MEGA MENU TAB & PROGRAM SWITCHING
+  const megaLevelTabs = document.querySelectorAll('.mega-level-tab');
+  const megaSubTabGroups = document.querySelectorAll('.mega-sub-tabs');
+  const megaSubTabs = document.querySelectorAll('.mega-sub-tab');
+  const megaPanels = document.querySelectorAll('.mega-program-panel');
+
+  megaLevelTabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const level = tab.dataset.level;
+
+      megaLevelTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      megaSubTabGroups.forEach(group => {
+        if (group.classList.contains(level + '-subs')) {
+          group.classList.add('active');
+          const firstSub = group.querySelector('.mega-sub-tab');
+          if (firstSub) firstSub.click();
+        } else {
+          group.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  megaSubTabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const prog = tab.dataset.program;
+
+      const parentGroup = tab.closest('.mega-sub-tabs');
+      if (parentGroup) {
+        parentGroup.querySelectorAll('.mega-sub-tab').forEach(t => t.classList.remove('active'));
+      }
+      tab.classList.add('active');
+
+      megaPanels.forEach(panel => {
+        if (panel.id === 'panel-' + prog) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  const megaCloseBtn = document.querySelector('.mega-close-btn');
+  if (megaCloseBtn) {
+    megaCloseBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const megaMenu = megaCloseBtn.closest('.exact-mega-menu');
+      if (megaMenu) {
+        megaMenu.style.display = 'none';
+        setTimeout(() => { megaMenu.style.display = ''; }, 500);
+      }
+    });
+  }
+
 });

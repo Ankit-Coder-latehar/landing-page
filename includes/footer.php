@@ -39,10 +39,10 @@
       <div class="footer-col">
         <h4>Online Programs</h4>
         <ul class="footer-links">
-          <li><a href="programs.php#mba">Online MBA Degree</a></li>
+          <li><a href="masters-business-administration-online-degree.html">Online MBA Degree</a></li>
           <li><a href="programs.php#mca">Online MCA Degree</a></li>
-          <li><a href="programs.php#bba">Online BBA Degree</a></li>
-          <li><a href="programs.php#bca">Online BCA Degree</a></li>
+          <li><a href="bachelors-business-administration-online-degree.html">Online BBA Degree</a></li>
+          <li><a href="bachelor-computer-application-online-degree.html">Online BCA Degree</a></li>
           <li><a href="programs.php">All Electives</a></li>
         </ul>
       </div>

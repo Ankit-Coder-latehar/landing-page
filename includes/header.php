@@ -34,63 +34,96 @@
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </a>
 
-        <!-- MEGA DROPDOWN MENU -->
-        <div class="mega-dropdown">
-          <div class="mega-grid">
-            
-            <!-- BACHELORS COLUMN -->
-            <div class="mega-column">
-              <h4 class="mega-column-title">Bachelors Degrees</h4>
-              
-              <div class="mega-program-item">
-                <a href="programs.php#bba" class="mega-program-title">
-                  Online BBA Degree &rarr;
-                </a>
-                <ul class="mega-electives-list">
-                  <li>Marketing and Human Resource Management</li>
-                  <li>Marketing and Analytics</li>
-                </ul>
-              </div>
+        <!-- MEGA DROPDOWN MENU (EXACT MATCH TO DESIGN) -->
+        <div class="mega-dropdown exact-mega-menu">
+          
+          <!-- TOP LEVEL TABS (BACHELORS / MASTERS & CLOSE BTN) -->
+          <div class="mega-top-bar">
+            <div class="mega-level-tabs">
+              <button class="mega-level-tab active" data-level="bachelors">BACHELORS</button>
+              <button class="mega-level-tab" data-level="masters">MASTERS</button>
+            </div>
+            <button class="mega-close-btn" aria-label="Close menu">&times;</button>
+          </div>
 
-              <div class="mega-program-item">
-                <a href="programs.php#bca" class="mega-program-title">
-                  Online BCA Degree &rarr;
-                </a>
-                <ul class="mega-electives-list">
-                  <li>Data Science</li>
-                </ul>
+          <!-- RED ACCENT LINE -->
+          <div class="mega-red-divider"></div>
+
+          <!-- SUB PROGRAM CODE TABS (BBA / BCA / MBA / MCA) -->
+          <div class="mega-sub-bar">
+            <div class="mega-sub-tabs bachelors-subs active">
+              <button class="mega-sub-tab active" data-program="bba">BBA</button>
+              <button class="mega-sub-tab" data-program="bca">BCA</button>
+            </div>
+            <div class="mega-sub-tabs masters-subs">
+              <button class="mega-sub-tab" data-program="mba">MBA</button>
+              <button class="mega-sub-tab" data-program="mca">MCA</button>
+            </div>
+          </div>
+
+          <!-- MAIN SPLIT PANEL -->
+          <div class="mega-content-panel">
+            
+            <!-- LEFT RED BANNER WITH WOMAN & HASHTAG -->
+            <div class="mega-left-banner">
+              <div class="mega-red-card">
+                <img src="assets/images/mega_menu_woman.png" alt="Student" class="mega-woman-img">
+                <span class="mega-hashtag">#DrivingYourFuture</span>
               </div>
             </div>
 
-            <!-- MASTERS COLUMN -->
-            <div class="mega-column">
-              <h4 class="mega-column-title">Masters Degrees</h4>
+            <!-- RIGHT PROGRAM DETAILS -->
+            <div class="mega-right-details">
               
-              <div class="mega-program-item">
-                <a href="programs.php#mba" class="mega-program-title">
-                  Online MBA Degree &rarr;
-                </a>
-                <ul class="mega-electives-list">
-                  <li>Marketing | Finance | HR Management</li>
-                  <li>Business Analytics | Information Tech</li>
-                  <li>Healthcare &amp; Hospital Management</li>
-                  <li>Logistics &amp; Supply Chain</li>
+              <!-- BBA PANEL -->
+              <div class="mega-program-panel active" id="panel-bba">
+                <h4 class="mega-panel-title"><a href="bachelors-business-administration-online-degree.html" style="color: inherit; text-decoration: none;">Online BBA Degree &rarr;</a></h4>
+                <div class="mega-panel-subtitle">Electives</div>
+                <ul class="mega-electives-uppercase">
+                  <li><a href="online-bba/marketing-and-human-resource-management.html">MARKETING AND HUMAN RESOURCE MANAGEMENT</a></li>
+                  <li><a href="online-bba/marketing-and-analytics.html">MARKETING AND ANALYTICS</a></li>
                 </ul>
               </div>
 
-              <div class="mega-program-item">
-                <a href="programs.php#mca" class="mega-program-title">
-                  Online MCA Degree &rarr;
-                </a>
-                <ul class="mega-electives-list">
-                  <li>Computer Science &amp; IT</li>
-                  <li>AI &amp; Machine Learning</li>
-                  <li>Data Science</li>
+              <!-- BCA PANEL -->
+              <div class="mega-program-panel" id="panel-bca">
+                <h4 class="mega-panel-title"><a href="bachelor-computer-application-online-degree.html" style="color: inherit; text-decoration: none;">Online BCA Degree &rarr;</a></h4>
+                <div class="mega-panel-subtitle">Electives</div>
+                <ul class="mega-electives-uppercase">
+                  <li><a href="online-bca/data-science.html">DATA SCIENCE &amp; ANALYTICS</a></li>
+                  <li><a href="bachelor-computer-application-online-degree.html">COMPUTER APPLICATIONS &amp; IT</a></li>
                 </ul>
               </div>
+
+              <!-- MBA PANEL -->
+              <div class="mega-program-panel" id="panel-mba">
+                <h4 class="mega-panel-title"><a href="masters-business-administration-online-degree.html" style="color: inherit; text-decoration: none;">Online MBA Degree &rarr;</a></h4>
+                <div class="mega-panel-subtitle">Electives</div>
+                <ul class="mega-electives-uppercase">
+                  <li><a href="online-mba/marketing.html">MARKETING AND HUMAN RESOURCE MANAGEMENT</a></li>
+                  <li><a href="masters-business-administration-online-degree.html">MARKETING AND ANALYTICS</a></li>
+                  <li><a href="masters-business-administration-online-degree.html">FINANCE &amp; ACCOUNTING</a></li>
+                  <li><a href="masters-business-administration-online-degree.html">BUSINESS ANALYTICS</a></li>
+                  <li><a href="masters-business-administration-online-degree.html">HEALTHCARE &amp; HOSPITAL MANAGEMENT</a></li>
+                  <li><a href="masters-business-administration-online-degree.html">LOGISTICS &amp; SUPPLY CHAIN MANAGEMENT</a></li>
+                </ul>
+              </div>
+
+              <!-- MCA PANEL -->
+              <div class="mega-program-panel" id="panel-mca">
+                <h4 class="mega-panel-title">Online MCA Degree</h4>
+                <div class="mega-panel-subtitle">Electives</div>
+                <ul class="mega-electives-uppercase">
+                  <li><a href="programs.php#mca">COMPUTER SCIENCE &amp; IT</a></li>
+                  <li><a href="programs.php#mca">AI &amp; MACHINE LEARNING</a></li>
+                  <li><a href="programs.php#mca">DATA SCIENCE</a></li>
+                </ul>
+              </div>
+
             </div>
 
           </div>
+
         </div>
       </li>
 
