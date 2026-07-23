@@ -2734,3 +2734,157 @@ textarea {
     padding: 2.5rem 0 3.5rem;
   }
 }
+
+/* ==========================================================================
+   RE-DEFINING YOUR RECOGNITIONS SECTION (EXACT MATCH TO DESIGN)
+   ========================================================================== */
+.redefining-recognitions-section {
+  padding: 4.5rem 0;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  overflow: hidden;
+}
+
+.redefining-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.redefining-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.redefining-title span.red-text {
+  color: #d32f2f;
+}
+
+.redefining-subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-top: 0.6rem;
+}
+
+.redefining-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* 2x2 Feature Grid */
+.redefining-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.redefining-card {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.redefining-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.redefining-icon-box {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.redefining-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.redefining-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #d32f2f;
+  line-height: 1.35;
+}
+
+.redefining-card-desc {
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Right Woman Visual Banner */
+.redefining-visual-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-top: 30px;
+}
+
+.redefining-red-box {
+  background: #d32f2f;
+  border-radius: 20px;
+  width: 90%;
+  height: 380px;
+  position: relative;
+}
+
+.redefining-woman-img {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  height: 440px;
+  width: auto;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.25));
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .redefining-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .redefining-visual-wrapper {
+    justify-content: center;
+  }
+  .redefining-red-box {
+    width: 100%;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .redefining-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .redefining-title {
+    font-size: 1.75rem;
+  }
+  .redefining-red-box {
+    height: 300px;
+  }
+  .redefining-woman-img {
+    height: 350px;
+  }
+}
