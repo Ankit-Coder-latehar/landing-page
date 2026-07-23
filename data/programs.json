@@ -1,0 +1,76 @@
+{
+  "bachelors": [
+    {
+      "id": "bba",
+      "title": "Online BBA Degree",
+      "slug": "bachelors-business-administration-online-degree",
+      "category": "bachelors",
+      "duration": "3 Years (6 Semesters)",
+      "electives_count": "2 Electives",
+      "description": "Gain foundational business management skills, strategic thinking, and analytical capabilities tailored for modern corporate careers.",
+      "electives": [
+        "Marketing and Human Resource Management",
+        "Marketing and Analytics"
+      ],
+      "eligibility": "10+2 from a recognized board or equivalent with minimum 45% marks.",
+      "badge": "UGC Entitled",
+      "fee": "₹ 1,05,000 Total"
+    },
+    {
+      "id": "bca",
+      "title": "Online BCA Degree",
+      "slug": "bachelor-computer-application-online-degree",
+      "category": "bachelors",
+      "duration": "3 Years (6 Semesters)",
+      "electives_count": "1 Elective",
+      "description": "Master software development, computer applications, database management, and cutting-edge data science technologies.",
+      "electives": [
+        "Data Science"
+      ],
+      "eligibility": "10+2 in any discipline with Mathematics or Computer Science background preferred.",
+      "badge": "UGC Entitled",
+      "fee": "₹ 1,15,000 Total"
+    }
+  ],
+  "masters": [
+    {
+      "id": "mba",
+      "title": "Online MBA Degree",
+      "slug": "masters-business-administration-online-degree",
+      "category": "masters",
+      "duration": "2 Years (4 Semesters)",
+      "electives_count": "8 Electives",
+      "description": "Accelerate your career with executive leadership skills, global business strategy, financial modeling, and specialized industry electives.",
+      "electives": [
+        "Marketing",
+        "Finance",
+        "Human Resource Management",
+        "Business Analytics",
+        "Finance and Human Resource Management",
+        "Information Technology",
+        "Healthcare and Hospital Management",
+        "Logistics and Supply Chain Management"
+      ],
+      "eligibility": "Bachelor's degree in any discipline with minimum 50% aggregate marks from a recognized university.",
+      "badge": "NAAC A+ & UGC Entitled",
+      "fee": "₹ 1,40,000 Total"
+    },
+    {
+      "id": "mca",
+      "title": "Online MCA Degree",
+      "slug": "masters-computer-applications-online-degree",
+      "category": "masters",
+      "duration": "2 Years (4 Semesters)",
+      "electives_count": "3 Electives",
+      "description": "Advanced computer science education covering cloud computing, AI, machine learning, data engineering, and full-stack software architecture.",
+      "electives": [
+        "Computer Science and Information Technology",
+        "Artificial Intelligence and Machine Learning",
+        "Data Science"
+      ],
+      "eligibility": "BCA / B.Sc (Computer Science / IT) or Bachelor's with Mathematics at 10+2 level or graduation.",
+      "badge": "NAAC A+ & UGC Entitled",
+      "fee": "₹ 1,30,000 Total"
+    }
+  ]
+}

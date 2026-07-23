@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vignan Online | UGC Entitled Online MBA, MCA, BBA & BCA Degrees</title>
+  <meta name="description"
+    content="Pursue UGC-Entitled and NAAC A+ accredited Online MBA, MCA, BBA, and BCA degree programs from Vignan Foundation for Science, Technology & Research. Apply now for Admissions 2026.">
+  <meta name="keywords"
+    content="Vignan Online, Online MBA, Online MCA, Online BBA, Online BCA, UGC Entitled Degrees, Distance Learning, Higher Education">
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- MAIN STYLESHEET -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- TOP TICKER ANNOUNCEMENT BAR -->
+  <div class="top-ticker">
+    <div class="container">
+      <span>Precautions to be taken by the students before enrolling: <a href="https://vignanonline.com/"
+          target="_blank">Read Guidelines &amp; Entitlements &rarr;</a></span>
+    </div>
+  </div>
+
+  <!-- SITE HEADER & NAVBAR -->
+  <header class="site-header">
+    <div class="container header-container">
+
+      <!-- BRAND LOGO -->
+      <a href="index.html" class="brand-logo" title="Vignan Online - Centre for Distance and Online Education">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div
+            style="background: var(--navy-blue); color: #fff; padding: 6px 12px; border-radius: 8px; font-weight: 900; font-size: 1.1rem; letter-spacing: -0.5px;">
+            VIGNAN'S
+          </div>
+          <div class="logo-text-block">
+            <span class="logo-title">ONLINE</span>
+            <span class="logo-subtitle">Centre for Distance &amp; Online Education</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAVIGATION MENU -->
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="about-us.php" class="nav-link">About Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="programs.php" class="nav-link">
+            Programs
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </a>
+
+          <!-- MEGA DROPDOWN MENU -->
+          <div class="mega-dropdown">
+            <div class="mega-grid">
+
+              <!-- BACHELORS COLUMN -->
+              <div class="mega-column">
+                <h4 class="mega-column-title">Bachelors Degrees</h4>
+
+                <div class="mega-program-item">
+                  <a href="#bba" class="mega-program-title">
+                    Online BBA Degree &rarr;
+                  </a>
+                  <ul class="mega-electives-list">
+                    <li>Marketing and Human Resource Management</li>
+                    <li>Marketing and Analytics</li>
+                  </ul>
+                </div>
+
+                <div class="mega-program-item">
+                  <a href="#bca" class="mega-program-title">
+                    Online BCA Degree &rarr;
+                  </a>
+                  <ul class="mega-electives-list">
+                    <li>Data Science</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- MASTERS COLUMN -->
+              <div class="mega-column">
+                <h4 class="mega-column-title">Masters Degrees</h4>
+
+                <div class="mega-program-item">
+                  <a href="#mba" class="mega-program-title">
+                    Online MBA Degree &rarr;
+                  </a>
+                  <ul class="mega-electives-list">
+                    <li>Marketing | Finance | HR Management</li>
+                    <li>Business Analytics | Information Tech</li>
+                    <li>Healthcare &amp; Hospital Management</li>
+                    <li>Logistics &amp; Supply Chain</li>
+                  </ul>
+                </div>
+
+                <div class="mega-program-item">
+                  <a href="#mca" class="mega-program-title">
+                    Online MCA Degree &rarr;
+                  </a>
+                  <ul class="mega-electives-list">
+                    <li>Computer Science &amp; IT</li>
+                    <li>AI &amp; Machine Learning</li>
+                    <li>Data Science</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a href="contact-us.php" class="nav-link">Contact Us</a>
+        </li>
+      </ul>
+
+      <!-- HEADER CTA ACTIONS -->
+      <div class="header-actions">
+        <button class="btn btn-primary-red open-enquiry-modal">Enquire Now</button>
+        <a href="apply-now.html" class="btn btn-outline-navy">Apply Now</a>
+
+        <!-- HAMBURGER BUTTON FOR MOBILE -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation drawer">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER OVERLAY -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- MOBILE DRAWER SIDEBAR -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="logo-title" style="font-size: 1.1rem; color: var(--navy-blue);">VIGNAN ONLINE</div>
+      <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
+    </div>
+
+    <ul class="drawer-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+      <li><a href="programs.php">Programs Offered</a></li>
+      <li><a href="contact-us.php">Contact Us</a></li>
+      <li><a href="https://support.vignanonline.com" target="_blank">Student Support</a></li>
+      <li><a href="apply-now.html" style="color: var(--primary-red); font-weight: 700;">Apply Now</a></li>
+    </ul>
+
+    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+      <button class="btn btn-primary-red open-enquiry-modal" style="width: 100%;">Enquire Now</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- FULL-WIDTH HERO BANNER SLIDESHOW SECTION -->
+    <section class="hero-section-full" id="heroSlideshow">
+      <div class="hero-slideshow-wrapper">
+
+        <!-- SLIDE 1: University Excellence -->
+        <div class="hero-full-slide active">
+          <a href="#" class="hero-banner-link open-enquiry-modal">
+            <img src="assets/images/Gemini_Generated_Image_lmwqillmwqillmwq.png" alt="" class="hero-bg-blur">
+            <img src="assets/images/Gemini_Generated_Image_lmwqillmwqillmwq.png" alt="University Academic Excellence"
+              class="hero-full-img">
+          </a>
+        </div>
+
+        <!-- SLIDE 2: Online MBA -->
+        <div class="hero-full-slide">
+          <a href="#" class="hero-banner-link open-enquiry-modal">
+            <img src="assets/images/Gemini_Generated_Image_m8g2oxm8g2oxm8g2.png" alt="" class="hero-bg-blur">
+            <img src="assets/images/Gemini_Generated_Image_m8g2oxm8g2oxm8g2.png" alt="Online MBA Degree Program"
+              class="hero-full-img">
+          </a>
+        </div>
+
+        <!-- SLIDE 3: Online MCA & BCA -->
+        <div class="hero-full-slide">
+          <a href="#" class="hero-banner-link open-enquiry-modal">
+            <img src="assets/images/Gemini_Generated_Image_skkcodskkcodskkc.png" alt="" class="hero-bg-blur">
+            <img src="assets/images/Gemini_Generated_Image_skkcodskkcodskkc.png" alt="Online MCA & BCA Degrees"
+              class="hero-full-img">
+          </a>
+        </div>
+
+        <!-- SLIDE 4: Graduation -->
+        <div class="hero-full-slide">
+          <a href="#" class="hero-banner-link open-enquiry-modal">
+            <img src="assets/images/hero_slide_4.png" alt="" class="hero-bg-blur">
+            <img src="assets/images/hero_slide_4.png" alt="Vignan Online Graduation" class="hero-full-img">
+          </a>
+        </div>
+
+        <!-- SLIDESHOW NAV ARROWS -->
+        <button class="hero-nav-arrow hero-nav-prev" id="heroPrevBtn" aria-label="Previous Slide">&lsaquo;</button>
+        <button class="hero-nav-arrow hero-nav-next" id="heroNextBtn" aria-label="Next Slide">&rsaquo;</button>
+
+        <!-- SLIDESHOW PAGINATION DOT INDICATORS -->
+        <div class="hero-dots-container" id="heroDots">
+          <span class="hero-slide-dot active" data-slide="0"></span>
+          <span class="hero-slide-dot" data-slide="1"></span>
+          <span class="hero-slide-dot" data-slide="2"></span>
+          <span class="hero-slide-dot" data-slide="3"></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACCREDITATION SECTION -->
+    <section class="accreditation-section">
+      <div class="container">
+
+        <div class="accreditation-title-block">
+          <h2>Accreditations, Approvals &amp; Rankings</h2>
+          <p>Vignan Foundation for Science, Technology &amp; Research is recognized by India's top regulatory bodies</p>
+        </div>
+
+        <div class="accreditation-grid">
+          <div class="accreditation-card">
+            <span class="accreditation-badge-tag">NAAC</span>
+            <h3>Grade A+</h3>
+            <p>Accredited with prestigious A+ grade by National Assessment and Accreditation Council.</p>
+          </div>
+
+          <div class="accreditation-card">
+            <span class="accreditation-badge-tag">UGC-DEB</span>
+            <h3>Entitled</h3>
+            <p>Degrees entitled by University Grants Commission - Distance Education Bureau.</p>
+          </div>
+
+          <div class="accreditation-card">
+            <span class="accreditation-badge-tag">NIRF</span>
+            <h3>Top 70</h3>
+            <p>Ranked among top 70 universities in India by National Institutional Ranking Framework.</p>
+          </div>
+
+          <div class="accreditation-card">
+            <span class="accreditation-badge-tag">ISO 9001:2015</span>
+            <h3>Certified</h3>
+            <p>Globally certified for quality management systems &amp; educational delivery standards.</p>
+          </div>
+
+          <div class="accreditation-card">
+            <span class="accreditation-badge-tag">INDIA TODAY</span>
+            <h3>Rank 25</h3>
+            <p>Ranked 25th among top technical &amp; management universities across India.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROGRAMS OFFERED SECTION -->
+    <section class="programs-section" id="programs">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">Academic Excellence</span>
+          <h2>Choose Your UGC-Entitled Online Degree</h2>
+          <p>Flexible online programs designed to equip you with contemporary skills and global career opportunities.
+          </p>
+        </div>
+
+        <div class="program-tabs">
+          <button class="tab-btn active" data-tab="all">All Programs</button>
+          <button class="tab-btn" data-tab="masters">Masters Degrees</button>
+          <button class="tab-btn" data-tab="bachelors">Bachelors Degrees</button>
+        </div>
+
+        <div class="programs-grid">
+
+          <!-- MBA -->
+          <div class="program-card-col" data-category="masters" id="mba">
+            <div class="program-card">
+              <div class="program-card-header">
+                <span class="program-badge">NAAC A+ &amp; UGC Entitled</span>
+                <h3>Online MBA Degree</h3>
+                <div class="program-duration">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  2 Years (4 Semesters) &bull; 8 Electives
+                </div>
+              </div>
+              <div class="program-card-body">
+                <div>
+                  <p class="program-desc">Accelerate your career with executive leadership skills, global business
+                    strategy, financial modeling, and specialized industry electives.</p>
+                  <div class="electives-heading">Available Electives</div>
+                  <div class="electives-tags">
+                    <span class="elective-tag">Marketing</span>
+                    <span class="elective-tag">Finance</span>
+                    <span class="elective-tag">Human Resource Management</span>
+                    <span class="elective-tag">Business Analytics</span>
+                    <span class="elective-tag">Information Technology</span>
+                    <span class="elective-tag">Healthcare &amp; Hospital</span>
+                    <span class="elective-tag">Logistics &amp; Supply Chain</span>
+                  </div>
+                </div>
+                <div class="program-card-footer">
+                  <div class="fee-text">₹ 1,40,000 Total</div>
+                  <button class="btn btn-primary-red open-enquiry-modal" data-program="mba">Get Started &rarr;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MCA -->
+          <div class="program-card-col" data-category="masters" id="mca">
+            <div class="program-card">
+              <div class="program-card-header">
+                <span class="program-badge">NAAC A+ &amp; UGC Entitled</span>
+                <h3>Online MCA Degree</h3>
+                <div class="program-duration">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  2 Years (4 Semesters) &bull; 3 Electives
+                </div>
+              </div>
+              <div class="program-card-body">
+                <div>
+                  <p class="program-desc">Advanced computer science education covering cloud computing, AI, machine
+                    learning, data engineering, and full-stack software architecture.</p>
+                  <div class="electives-heading">Available Electives</div>
+                  <div class="electives-tags">
+                    <span class="elective-tag">Computer Science &amp; IT</span>
+                    <span class="elective-tag">AI &amp; Machine Learning</span>
+                    <span class="elective-tag">Data Science</span>
+                  </div>
+                </div>
+                <div class="program-card-footer">
+                  <div class="fee-text">₹ 1,30,000 Total</div>
+                  <button class="btn btn-primary-red open-enquiry-modal" data-program="mca">Get Started &rarr;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BBA -->
+          <div class="program-card-col" data-category="bachelors" id="bba">
+            <div class="program-card">
+              <div class="program-card-header">
+                <span class="program-badge">UGC Entitled</span>
+                <h3>Online BBA Degree</h3>
+                <div class="program-duration">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  3 Years (6 Semesters) &bull; 2 Electives
+                </div>
+              </div>
+              <div class="program-card-body">
+                <div>
+                  <p class="program-desc">Gain foundational business management skills, strategic thinking, and
+                    analytical capabilities tailored for modern corporate careers.</p>
+                  <div class="electives-heading">Available Electives</div>
+                  <div class="electives-tags">
+                    <span class="elective-tag">Marketing &amp; HR Management</span>
+                    <span class="elective-tag">Marketing &amp; Analytics</span>
+                  </div>
+                </div>
+                <div class="program-card-footer">
+                  <div class="fee-text">₹ 1,05,000 Total</div>
+                  <button class="btn btn-primary-red open-enquiry-modal" data-program="bba">Get Started &rarr;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BCA -->
+          <div class="program-card-col" data-category="bachelors" id="bca">
+            <div class="program-card">
+              <div class="program-card-header">
+                <span class="program-badge">UGC Entitled</span>
+                <h3>Online BCA Degree</h3>
+                <div class="program-duration">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  3 Years (6 Semesters) &bull; 1 Elective
+                </div>
+              </div>
+              <div class="program-card-body">
+                <div>
+                  <p class="program-desc">Master software development, computer applications, database management, and
+                    cutting-edge data science technologies.</p>
+                  <div class="electives-heading">Available Electives</div>
+                  <div class="electives-tags">
+                    <span class="elective-tag">Data Science</span>
+                  </div>
+                </div>
+                <div class="program-card-footer">
+                  <div class="fee-text">₹ 1,15,000 Total</div>
+                  <button class="btn btn-primary-red open-enquiry-modal" data-program="bca">Get Started &rarr;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="skills-section">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">Holistic Development</span>
+          <h2>Skills That Enhance Your Career Growth</h2>
+          <p>Our curriculum goes beyond theoretical concepts to foster real-world problem solving and leadership
+            capabilities.</p>
+        </div>
+
+        <div class="accordion-group skills-accordion-grid">
+          <div class="accordion-item active">
+            <button class="accordion-header">
+              Problem-Solving &amp; Critical Thinking
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Learn how to break down complex business problems into actionable insights, make data-backed decisions,
+              and formulate strategic solutions under uncertain market conditions.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Creativity &amp; Innovation Skills
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Foster out-of-the-box thinking, learn design thinking frameworks, and lead innovative product and process
+              breakthroughs in technology and corporate environments.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Leadership &amp; Team Management
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Develop executive presence, team management, conflict resolution, strategic communication, and
+              cross-functional leadership skills needed to manage global teams.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Technical &amp; Computer Skills
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Master modern software applications, data analytics tools, programming languages, cloud platforms, and
+              enterprise software systems driving digital transformation.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Emotional Intelligence &amp; Personal Skills
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Build self-awareness, empathy, adaptability, resilience, and interpersonal communication to thrive in
+              high-stakes professional environments.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Industry-Specific Functional Skills
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Gain specialized expertise across Finance, Human Resources, Supply Chain, Business Analytics, Artificial
+              Intelligence, and Software Engineering.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Communication &amp; Interpersonal Skills
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Articulate ideas persuasively in corporate presentations, client negotiations, written business reports,
+              and executive briefings.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Time &amp; Project Management
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Adopt Agile and Scrum frameworks, manage project timelines efficiently, balance priorities, and meet
+              critical deliverables consistently.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LEARNING EXPERIENCE & RECOGNITIONS -->
+    <section class="recognitions-section">
+      <div class="container">
+
+        <div class="section-header" style="color: #ffffff;">
+          <span class="section-tag" style="color: #ff8080;">Student Support &amp; Ecosystem</span>
+          <h2 style="color: #ffffff;">Re-defining Your Learning &amp; Recognitions</h2>
+          <p style="color: #cbd5e1;">A tech-enabled learning environment built to support working professionals and
+            ambitious students every step of the way.</p>
+        </div>
+
+        <div class="recognitions-grid">
+          <div class="recognition-card">
+            <div class="recognition-icon-box">💻</div>
+            <h3>Advanced LMS</h3>
+            <p>Access live interactive lectures, high-definition recorded sessions, e-books, and discussion forums 24/7
+              on web and mobile app.</p>
+          </div>
+
+          <div class="recognition-card">
+            <div class="recognition-icon-box">🎯</div>
+            <h3>360° Career Services</h3>
+            <p>Resume building, mock interviews, LinkedIn profile optimization, and job placement assistance with 500+
+              corporate hiring partners.</p>
+          </div>
+
+          <div class="recognition-card">
+            <div class="recognition-icon-box">👨‍🏫</div>
+            <h3>Dedicated Mentorship</h3>
+            <p>One-on-one guidance from experienced academic mentors and industry leaders to help navigate your learning
+              journey.</p>
+          </div>
+
+          <div class="recognition-card">
+            <div class="recognition-icon-box">📜</div>
+            <h3>10+ Certifications</h3>
+            <p>Earn industry-aligned certifications alongside your degree to strengthen your resume and validate
+              hands-on competencies.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">Student Voices</span>
+          <h2>What Our Learners Say</h2>
+          <p>Hear how Vignan Online degrees helped working professionals transform their careers and achieve leadership
+            roles.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              "Enrolling in the Online MBA at Vignan was the best career decision I've made. The flexible LMS allowed me
+              to manage my job while mastering financial modeling and analytics electives."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">V</div>
+              <div class="author-info">
+                <h4>Vijay Kumar</h4>
+                <p>Online MBA Alumni &bull; Senior Financial Analyst</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              "The faculty support and live weekend interactive classes were top notch. The career service team assisted
+              me in landing a software engineer position right after completing my MCA."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">K</div>
+              <div class="author-info">
+                <h4>K M Naidu</h4>
+                <p>Online MCA Graduate &bull; Full Stack Developer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              "The electives in Data Science and Analytics were practical and relevant. Vignan's online degree parity
+              with on-campus degrees gave me immense confidence during job interviews."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">S</div>
+              <div class="author-info">
+                <h4>Swati Sharma</h4>
+                <p>Online BCA Alumni &bull; Data Associate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NEWS & MEDIA -->
+    <section class="news-section">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">In The Headlines</span>
+          <h2>News &amp; Media Coverage</h2>
+          <p>Vignan Online's academic achievements and educational innovations featured in leading national
+            publications.</p>
+        </div>
+
+        <div class="news-grid">
+          <div class="news-card">
+            <div>
+              <div class="news-source">Hindustan Times</div>
+              <h3 class="news-title">Vignan Online Announces New Industry-Oriented Electives in AI &amp; Business
+                Analytics</h3>
+            </div>
+            <a href="https://vignanonline.com/" target="_blank" class="news-link">Read Full Coverage &rarr;</a>
+          </div>
+
+          <div class="news-card">
+            <div>
+              <div class="news-source">India Today</div>
+              <h3 class="news-title">Vignan Deemed University Ranked Among Top Higher Education Providers in Online
+                Degrees</h3>
+            </div>
+            <a href="https://vignanonline.com/" target="_blank" class="news-link">Read Full Coverage &rarr;</a>
+          </div>
+
+          <div class="news-card">
+            <div>
+              <div class="news-source">APN News</div>
+              <h3 class="news-title">Empowering Working Professionals Through UGC-Entitled Online Master's Programs</h3>
+            </div>
+            <a href="https://vignanonline.com/" target="_blank" class="news-link">Read Full Coverage &rarr;</a>
+          </div>
+
+          <div class="news-card">
+            <div>
+              <div class="news-source">The Print</div>
+              <h3 class="news-title">360-Degree Career Assistance &amp; Placement Support Introduced for Distance
+                Learners</h3>
+            </div>
+            <a href="https://vignanonline.com/" target="_blank" class="news-link">Read Full Coverage &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQS -->
+    <section class="faqs-section">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">Got Questions?</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>Find quick answers to common queries regarding accreditation, degree validity, examinations, and support.
+          </p>
+        </div>
+
+        <div class="faqs-wrapper accordion-group">
+          <div class="accordion-item active">
+            <button class="accordion-header">
+              Is Vignan Online accredited by UGC and NAAC?
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Yes! Vignan's Foundation for Science, Technology &amp; Research is NAAC A+ accredited and its online
+              degree programs are entitled by the UGC-DEB (University Grants Commission - Distance Education Bureau)
+              under Category I university status.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Is an Online Degree equivalent to a regular on-campus degree?
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Yes. As per UGC notification F.No. 1-4/2018 (DEB-I), degrees awarded through online mode from UGC-entitled
+              higher educational institutions are treated as equivalent to regular on-campus degrees for higher
+              education, government jobs, and corporate employment.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              How are examinations conducted for online programs?
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Examinations are conducted 100% online through an AI-proctored examination platform. Students can take
+              semester exams securely from the comfort of their home using a computer with a webcam and stable internet
+              connection.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              What learning support and LMS access will I receive?
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Enrolled students receive 24/7 access to Vignan's advanced Learning Management System (LMS) containing
+              recorded video lectures, live interactive weekend sessions, e-library resources, self-assessment quizzes,
+              and dedicated student mentor support.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Can I change my elective specialization during the course?
+              <span class="accordion-icon">&darr;</span>
+            </button>
+            <div class="accordion-content">
+              Elective specialization selection can be finalized during the initial semesters as per the academic
+              calendar guidelines. Dedicated academic counselors guide students in choosing electives best aligned with
+              their career ambitions.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ENQUIRE MODAL -->
+  <div class="modal-overlay" id="enquiryModal">
+    <div class="apply-form-card modal-exact-card" style="position: relative; max-width: 520px; width: 100%; margin: 1rem;">
+      
+      <!-- CLOSE BUTTON ON TOP RIGHT -->
+      <button class="modal-close-black close-modal-trigger" aria-label="Close modal">&times;</button>
+
+      <h3 class="section-header-title">Section-1</h3>
+
+      <!-- AJAX FEEDBACK ALERT -->
+      <div class="form-alert" id="formAlert" style="display:none;"></div>
+
+      <form action="process-enquiry.php" method="POST" class="apply-lead-form" id="leadEnquiryForm">
+        <div class="apply-form-grid">
+          
+          <!-- ROW 1: First Name & Last Name -->
+          <div class="apply-form-row">
+            <div class="apply-field-group">
+              <label class="apply-field-label">First Name <span class="req">*</span></label>
+              <input type="text" name="first_name" class="apply-field-input" placeholder="Enter your first name" required>
+            </div>
+            <div class="apply-field-group">
+              <label class="apply-field-label">Last Name <span class="req">*</span></label>
+              <input type="text" name="last_name" class="apply-field-input" placeholder="Enter your first name" required>
+            </div>
+          </div>
+
+          <!-- ROW 2: Email Address -->
+          <div class="apply-form-row single">
+            <div class="apply-field-group">
+              <label class="apply-field-label">Email Address <span class="req">*</span></label>
+              <input type="email" name="email" class="apply-field-input" placeholder="" required>
+            </div>
+          </div>
+
+          <!-- ROW 3: Mobile Number & Nationality -->
+          <div class="apply-form-row">
+            <div class="apply-field-group">
+              <label class="apply-field-label">Mobile Number <span class="req">*</span></label>
+              <div class="apply-phone-wrapper">
+                <div class="apply-flag-code">
+                  <svg class="apply-flag-icon" viewBox="0 0 640 480" width="20" height="14">
+                    <path fill="#f93" d="0 0h640v160H0z"/>
+                    <path fill="#fff" d="0 160h640v160H0z"/>
+                    <path fill="#128807" d="0 320h640v160H0z"/>
+                    <circle cx="320" cy="240" r="60" fill="none" stroke="#000080" stroke-width="12"/>
+                  </svg>
+                  +91
+                </div>
+                <input type="hidden" name="country_code" value="+91">
+                <input type="tel" name="mobile" class="apply-phone-input" placeholder="" required pattern="[0-9]{10}">
+              </div>
+            </div>
+
+            <div class="apply-field-group">
+              <label class="apply-field-label">Nationality <span class="req">*</span></label>
+              <select name="nationality" class="apply-field-select" required>
+                <option value="">Select a option</option>
+                <option value="Indian" selected>Indian</option>
+                <option value="NRI">NRI</option>
+                <option value="Foreign National">Foreign National</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ROW 4: Program & Elective -->
+          <div class="apply-form-row">
+            <div class="apply-field-group">
+              <label class="apply-field-label">Program <span class="req">*</span></label>
+              <select name="program" class="apply-field-select" required id="modalProgramSelect">
+                <option value="">Select a option</option>
+                <option value="Online MBA">Online MBA</option>
+                <option value="Online MCA">Online MCA</option>
+                <option value="Online BBA">Online BBA</option>
+                <option value="Online BCA">Online BCA</option>
+              </select>
+            </div>
+
+            <div class="apply-field-group">
+              <label class="apply-field-label">Elective <span class="req">*</span></label>
+              <select name="elective" class="apply-field-select" required id="modalElectiveSelect">
+                <option value="">Select a option</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Finance">Finance</option>
+                <option value="Human Resource Management">Human Resource Management</option>
+                <option value="Business Analytics">Business Analytics</option>
+                <option value="Computer Science & IT">Computer Science &amp; IT</option>
+                <option value="AI & Machine Learning">AI &amp; Machine Learning</option>
+                <option value="Data Science">Data Science</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- CONSENT CHECKBOX -->
+          <div class="apply-consent-box">
+            <input type="checkbox" name="consent" class="apply-consent-checkbox" id="modalConsentIndex" checked required>
+            <label for="modalConsentIndex" class="apply-consent-label">
+              I consent to receive communications from the University and its representatives via Email, SMS, WhatsApp, Call, or any other electronic medium for updates and notifications. This consent overrides DND/NDNC preferences.
+            </label>
+          </div>
+
+          <!-- BUTTONS ROW -->
+          <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
+            <button type="submit" class="btn-apply-submit" style="flex: 1;">Enquire Now</button>
+            <a href="apply-now.html" class="btn-apply-direct" style="flex: 1; text-decoration: none;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              Apply Now
+            </a>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.25rem;">
+            <div
+              style="background: var(--primary-red); color: #fff; padding: 6px 12px; border-radius: 8px; font-weight: 900; font-size: 1.1rem;">
+              VIGNAN'S
+            </div>
+            <div style="font-weight: 800; font-size: 1.1rem; color: #fff;">ONLINE</div>
+          </div>
+          <p style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1.5rem; line-height: 1.6;">
+            Centre for Distance and Online Education (CDOE)<br>
+            Vignan Foundation for Science, Technology &amp; Research<br>
+            (Deemed to be University) - Estd. u/s 3 of UGC Act 1956.
+          </p>
+          <ul class="contact-info-list">
+            <li class="contact-info-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>Campus Address: Vadlamudi, Guntur District, Andhra Pradesh, India - 522213.</span>
+            </li>
+            <li class="contact-info-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span>Admissions Toll-Free: +91 80 10 882288 / +91 80 47 482288</span>
+            </li>
+            <li class="contact-info-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <span>Email: admissions@vignanonline.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Online Programs</h4>
+          <ul class="footer-links">
+            <li><a href="#mba">Online MBA Degree</a></li>
+            <li><a href="#mca">Online MCA Degree</a></li>
+            <li><a href="#bba">Online BBA Degree</a></li>
+            <li><a href="#bca">Online BCA Degree</a></li>
+            <li><a href="#programs">All Electives</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about-us.php">About Vignan</a></li>
+            <li><a href="#accreditation">Accreditations &amp; Approvals</a></li>
+            <li><a href="#faqs">FAQ &amp; Entitlements</a></li>
+            <li><a href="contact-us.php">Contact Us</a></li>
+            <li><a href="https://support.vignanonline.com" target="_blank">Student Support Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Approvals</h4>
+          <p style="font-size: 0.825rem; color: #94a3b8; margin-bottom: 1rem;">
+            Entitled by UGC-DEB, NAAC A+ Accredited, AICTE Entitled, ISO 9001:2015 Quality Certified.
+          </p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span
+              style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">UGC-DEB</span>
+            <span
+              style="background: var(--primary-red); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">NAAC
+              A+</span>
+            <span
+              style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">NIRF
+              #70</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Vignan Online - Centre for Distance and Online Education. All rights reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="https://vignanonline.com/" target="_blank" style="color: #64748b;">Privacy Policy</a>
+          <a href="https://vignanonline.com/" target="_blank" style="color: #64748b;">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CONTACT WIDGETS -->
+  <div class="floating-widgets">
+    <a href="https://api.whatsapp.com/send?phone=918047482288&text=Hi%20Vignan%20Online%20Counselor" target="_blank"
+      class="floating-btn btn-whatsapp" title="Chat on WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path
+          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+      </svg>
+    </a>
+
+    <a href="tel:+918010882288" class="floating-btn btn-call" title="Call Counselor">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+      </svg>
+    </a>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
