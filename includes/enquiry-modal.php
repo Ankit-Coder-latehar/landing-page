@@ -43,7 +43,7 @@
                   <path fill="#f93" d="0 0h640v160H0z"/>
                   <path fill="#fff" d="0 160h640v160H0z"/>
                   <path fill="#128807" d="0 320h640v160H0z"/>
-                  <circle cx="320" cy="240" r="60" fill="none" stroke="#000080" stroke-width="12"/>
+                  <circle cx="320" cy="240" r="60" fill="none" stroke="#414141" stroke-width="12"/>
                 </svg>
                 +91
               </div>

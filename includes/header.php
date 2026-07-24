@@ -10,16 +10,8 @@
   <div class="container header-container">
     
     <!-- BRAND LOGO -->
-    <a href="index.php" class="brand-logo" title="Vignan Online - Centre for Distance and Online Education">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <div style="background: var(--navy-blue); color: #fff; padding: 6px 12px; border-radius: 8px; font-weight: 900; font-size: 1.1rem; letter-spacing: -0.5px;">
-          VIGNAN'S
-        </div>
-        <div class="logo-text-block">
-          <span class="logo-title">ONLINE</span>
-          <span class="logo-subtitle">Centre for Distance &amp; Online Education</span>
-        </div>
-      </div>
+    <a href="index.php" class="brand-logo" title="Universal Group of Institutions">
+      <img src="assets/images/universal_logo.png" alt="Universal Group of Institutions Logo" class="header-logo-img">
     </a>
 
     <!-- DESKTOP NAVIGATION MENU -->

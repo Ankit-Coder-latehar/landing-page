@@ -23,7 +23,7 @@
   <main>
     
     <!-- PAGE HERO HEADER -->
-    <section style="background: linear-gradient(135deg, var(--navy-blue) 0%, #001f33 100%); color: #ffffff; padding: 4rem 0; text-align: center;">
+    <section style="background: linear-gradient(135deg, var(--navy-blue) 0%, #262626 100%); color: #ffffff; padding: 4rem 0; text-align: center;">
       <div class="container">
         <h1 style="font-size: 2.75rem; font-weight: 900; margin-bottom: 0.75rem;">Contact Us</h1>
         <p style="color: #cbd5e1; font-size: 1.1rem; max-width: 680px; margin: 0 auto;">
@@ -62,14 +62,13 @@
               </div>
 
               <div style="display: flex; gap: 1rem; align-items: flex-start;">
-                <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(0, 66, 113, 0.1); color: var(--navy-blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem;">
+                <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(65, 65, 65, 0.1); color: var(--navy-blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem;">
                   📞
                 </div>
                 <div>
                   <h4 style="font-weight: 800; color: var(--navy-blue); font-size: 1.05rem;">Toll-Free Phone</h4>
                   <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-                    +91 80 10 882288<br>
-                    +91 80 47 482288
+                    <a href="tel:+918437079999" style="color: inherit; text-decoration: none;">+91 84370 79999</a>
                   </p>
                 </div>
               </div>
@@ -81,7 +80,7 @@
                 <div>
                   <h4 style="font-weight: 800; color: var(--navy-blue); font-size: 1.05rem;">WhatsApp Counseling</h4>
                   <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-                    <a href="https://api.whatsapp.com/send?phone=918047482288" target="_blank" style="color: var(--primary-red); font-weight: 700;">+91 80 47 482288 (Chat Now)</a>
+                    <a href="https://api.whatsapp.com/send?phone=918437079999" target="_blank" style="color: var(--primary-red); font-weight: 700;">+91 84370 79999 (Chat Now)</a>
                   </p>
                 </div>
               </div>

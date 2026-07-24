@@ -1,14 +1,14 @@
 /* ==========================================================================
    VIGNAN ONLINE - CSS DESIGN SYSTEM & STYLESHEET
-   Brand Colors: Primary Red (#CA2526), Navy Blue (#004271), Dark Accent (#1e293b)
+   Brand Colors: Primary Red (#CA2526), Navy Blue (#414141), Dark Accent (#1e293b)
    ========================================================================== */
 
 :root {
   --primary-red: #CA2526;
   --primary-red-hover: #b01f20;
-  --navy-blue: #004271;
-  --navy-blue-hover: #003359;
-  --accent-blue: #0a58ca;
+  --navy-blue: #414141;
+  --navy-blue-hover: #2b2b2b;
+  --accent-blue: #414141;
   --text-main: #1f2937;
   --text-muted: #6b7280;
   --bg-light: #f8fafc;
@@ -79,7 +79,7 @@ textarea {
 }
 
 .top-ticker a {
-  color: #60a5fa;
+  color: #737373;
   font-weight: 600;
 }
 
@@ -308,7 +308,7 @@ textarea {
 }
 
 .btn-blue:hover {
-  background-color: #0b4ab3;
+  background-color: #333333;
 }
 
 .hamburger-btn {
@@ -637,7 +637,7 @@ textarea {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(0, 66, 113, 0.08);
+  background: rgba(65, 65, 65, 0.08);
   color: var(--navy-blue);
   display: flex;
   align-items: center;
@@ -818,7 +818,7 @@ textarea {
 }
 
 .program-card-header {
-  background: linear-gradient(135deg, var(--navy-blue) 0%, #002947 100%);
+  background: linear-gradient(135deg, var(--navy-blue) 0%, #333333 100%);
   color: #ffffff;
   padding: 1.75rem 1.5rem;
   position: relative;
@@ -954,7 +954,7 @@ textarea {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(0, 66, 113, 0.06);
+  background: rgba(65, 65, 65, 0.06);
   color: var(--navy-blue);
   display: flex;
   align-items: center;
@@ -988,7 +988,7 @@ textarea {
    ========================================================================== */
 .recognitions-section {
   padding: 5rem 0;
-  background: linear-gradient(135deg, #002b49 0%, var(--navy-blue) 100%);
+  background: linear-gradient(135deg, #333333 0%, var(--navy-blue) 100%);
   color: #ffffff;
 }
 
@@ -1224,7 +1224,7 @@ textarea {
 }
 
 .modal-header {
-  background: linear-gradient(135deg, var(--navy-blue) 0%, #002b49 100%);
+  background: linear-gradient(135deg, var(--navy-blue) 0%, #333333 100%);
   color: #ffffff;
   padding: 1.5rem 2rem;
   display: flex;
@@ -1337,7 +1337,7 @@ textarea {
 .form-select:focus {
   border-color: var(--navy-blue);
   background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(0, 66, 113, 0.1);
+  box-shadow: 0 0 0 3px rgba(65, 65, 65, 0.1);
 }
 
 .phone-input-group {
@@ -1431,7 +1431,7 @@ textarea {
    FOOTER
    ========================================================================== */
 .site-footer {
-  background: #001f33;
+  background: #262626;
   color: #ffffff;
   padding: 4rem 0 2rem 0;
   border-top: 3px solid var(--primary-red);
@@ -1565,7 +1565,7 @@ textarea {
    ========================================================================== */
 .about-hero-section {
   position: relative;
-  background: radial-gradient(circle at 10% 20%, #001f38 0%, #000d1a 90%);
+  background: radial-gradient(circle at 10% 20%, #262626 0%, #1a1a1a 90%);
   color: #ffffff;
   padding: 6rem 0 7rem 0;
   overflow: hidden;
@@ -1653,7 +1653,7 @@ textarea {
 }
 
 .gradient-text-blue {
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #737373 0%, #525252 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -2377,7 +2377,7 @@ textarea {
 
 .apply-field-input:focus,
 .apply-field-select:focus {
-  border-color: #2563eb;
+  border-color: #414141;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
@@ -2393,7 +2393,7 @@ textarea {
 }
 
 .apply-phone-wrapper:focus-within {
-  border-color: #2563eb;
+  border-color: #414141;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
@@ -2440,7 +2440,7 @@ textarea {
   margin-top: 0.2rem;
   width: 16px;
   height: 16px;
-  accent-color: #2563eb;
+  accent-color: #414141;
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -2463,7 +2463,7 @@ textarea {
 .btn-apply-submit {
   width: 100%;
   padding: 0.75rem;
-  background: #1d68d8;
+  background: #414141;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -2476,15 +2476,15 @@ textarea {
 }
 
 .btn-apply-submit:hover {
-  background: #1557b8;
+  background: #333333;
 }
 
 .btn-apply-direct {
   width: 100%;
   padding: 0.75rem;
-  background: #1d68d8;
+  background: #414141;
   color: #ffffff;
-  border: 1px solid #1d68d8;
+  border: 1px solid #414141;
   border-radius: 8px;
   font-weight: 700;
   font-size: 0.95rem;
@@ -2499,7 +2499,7 @@ textarea {
 }
 
 .btn-apply-direct:hover {
-  background: #1557b8;
+  background: #333333;
 }
 
 /* Responsive Breakpoints */
@@ -3290,7 +3290,7 @@ textarea {
 
 /* Stats Banner below Hero */
 .bba-stats-banner {
-  background: linear-gradient(90deg, #1e293b 0%, #002b49 50%, #991b1b 100%);
+  background: linear-gradient(90deg, #1e293b 0%, #333333 50%, #991b1b 100%);
   padding: 2.5rem 0;
   color: #ffffff;
 }
@@ -3523,7 +3523,7 @@ textarea {
 }
 
 .bba-foundit-header strong {
-  color: #6366f1;
+  color: #414141;
   font-size: 1.4rem;
 }
 
