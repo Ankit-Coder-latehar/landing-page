@@ -1,4 +1,4 @@
-<!-- VIGNAN ONLINE HERO BANNER SLIDESHOW -->
+<!-- UGI HERO BANNER SLIDESHOW -->
 <section class="hero-section-full" id="heroSlideshow">
   <div class="hero-slideshow-wrapper">
     
@@ -30,13 +30,9 @@
     <div class="hero-full-slide">
       <a href="#" class="hero-banner-link open-enquiry-modal">
         <img src="assets/images/hero_slide_4.png" alt="" class="hero-bg-blur">
-        <img src="assets/images/hero_slide_4.png" alt="Vignan Online Graduation" class="hero-full-img">
+        <img src="assets/images/hero_slide_4.png" alt="UGI Graduation" class="hero-full-img">
       </a>
     </div>
-
-    <!-- SLIDESHOW NAV ARROWS -->
-    <button class="hero-nav-arrow hero-nav-prev" id="heroPrevBtn" aria-label="Previous Slide">&lsaquo;</button>
-    <button class="hero-nav-arrow hero-nav-next" id="heroNextBtn" aria-label="Next Slide">&rsaquo;</button>
 
     <!-- SLIDESHOW PAGINATION DOT INDICATORS -->
     <div class="hero-dots-container" id="heroDots">

@@ -1,5 +1,5 @@
 /**
- * VIGNAN ONLINE - MAIN JAVASCRIPT
+ * UGI - MAIN JAVASCRIPT
  * Handles interactive components, tab filters, modal triggers, dynamic electives, accordions, and AJAX form submissions.
  */
 

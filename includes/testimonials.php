@@ -5,14 +5,14 @@
     <div class="section-header">
       <span class="section-tag">Student Voices</span>
       <h2>What Our Learners Say</h2>
-      <p>Hear how Vignan Online degrees helped working professionals transform their careers and achieve leadership roles.</p>
+      <p>Hear how UGI degrees helped working professionals transform their careers and achieve leadership roles.</p>
     </div>
 
     <div class="testimonials-grid">
       
       <div class="testimonial-card">
         <div class="testimonial-quote">
-          "Enrolling in the Online MBA at Vignan was the best career decision I've made. The flexible LMS allowed me to manage my job while mastering financial modeling and analytics electives."
+          "Enrolling in the Online MBA at UGI was the best career decision I've made. The flexible LMS allowed me to manage my job while mastering financial modeling and analytics electives."
         </div>
         <div class="testimonial-author">
           <div class="author-avatar">V</div>
@@ -38,7 +38,7 @@
 
       <div class="testimonial-card">
         <div class="testimonial-quote">
-          "The electives in Data Science and Analytics were practical and relevant. Vignan's online degree parity with on-campus degrees gave me immense confidence during job interviews."
+          "The electives in Data Science and Analytics were practical and relevant. UGI's online degree parity with on-campus degrees gave me immense confidence during job interviews."
         </div>
         <div class="testimonial-author">
           <div class="author-avatar">S</div>

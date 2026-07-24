@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Vignan Online - Centre for Distance &amp; Online Education</title>
-  <meta name="description" content="With Vignan Online we have raised the bar higher for ourselves. Innovation, global curriculum, world-class education, and top-notch faculty.">
+  <title>About Us | UGI - Centre for Distance &amp; Online Education</title>
+  <meta name="description" content="With UGI we have raised the bar higher for ourselves. Innovation, global curriculum, world-class education, and top-notch faculty.">
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,33 +22,33 @@
   <!-- MAIN CONTENT -->
   <main>
     
-    <!-- OFFICIAL VIGNAN ONLINE ABOUT HERO SECTION -->
+    <!-- OFFICIAL UGI ABOUT HERO SECTION -->
     <section class="about-hero-official">
       <div class="about-hero-banner-container">
-        <img src="assets/images/vignan_campus_hero_bg.png" alt="Vignan University Campus Building" class="about-hero-bg-img">
+        <img src="assets/images/vignan_campus_hero_bg.png" alt="UGI Campus Building" class="about-hero-bg-img">
         <div class="about-hero-exact-overlay">
           <div class="about-hero-exact-card">
             <h1 class="about-hero-exact-title">
-              VIGNAN ONLINE - <span class="red-text">CENTRE FOR DISTANCE AND ONLINE EDUCATION</span>
+              UGI - <span class="red-text">CENTRE FOR DISTANCE AND ONLINE EDUCATION</span>
             </h1>
             <p class="about-hero-exact-desc">
-              With Vignan Online we have raised the bar higher, for ourselves. Innovation, global curriculum, world-class education, top-notch faculty along with a special focus on strengthening ethical values &amp; developing social consciousness amongst students, has led to a paradigm shift in the way higher education is delivered &amp; received. And we are on top of it. Our learnings of 49 years, we are now taking beyond the hallways of the University and offering to students anywhere &amp; everywhere.
+              With UGI we have raised the bar higher, for ourselves. Innovation, global curriculum, world-class education, top-notch faculty along with a special focus on strengthening ethical values &amp; developing social consciousness amongst students, has led to a paradigm shift in the way higher education is delivered &amp; received. And we are on top of it. Our learnings of 49 years, we are now taking beyond the hallways of the University and offering to students anywhere &amp; everywhere.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- VIGNAN VFSTR DEEMED TO BE UNIVERSITY SECTION -->
+    <!-- UGI GROUP OF INSTITUTIONS SECTION -->
     <section class="vfstr-about-section">
       <div class="container">
         <h2 class="vfstr-about-title">
-          VIGNAN'S FOUNDATION FOR SCIENCE, TECHNOLOGY, AND RESEARCH (VFSTR) <span class="red-text">DEEMED-TO-BE UNIVERSITY</span>
+          UGI GROUP OF INSTITUTIONS <span class="red-text">CENTRE FOR DISTANCE &amp; ONLINE EDUCATION</span>
         </h2>
         <div class="vfstr-about-grid">
           <div class="vfstr-about-content">
             <p>
-              49 years is a long time for any institute worth its salt to carve a space for itself while also shaping the future of the community, at large. And we have been focussed on that since our inception. Led by a continuous urge to innovate, with a deep-seeded moral code, today we, at Vignan, are shaping students into successful professionals ready to take on leadership roles across industries.
+              49 years is a long time for any institute worth its salt to carve a space for itself while also shaping the future of the community, at large. And we have been focussed on that since our inception. Led by a continuous urge to innovate, with a deep-seeded moral code, today we, at UGI, are shaping students into successful professionals ready to take on leadership roles across industries.
             </p>
             <p>
               We aim to provide high quality academic programs, facilitate training &amp; research activities, increase industry - institute interactions &amp; promote employability, entrepreneurship &amp; leadership amongst students. And in turn, contribute towards the economic &amp; technological development of the society, at large.
@@ -58,7 +58,7 @@
             </p>
           </div>
           <div class="vfstr-about-media">
-            <img src="assets/images/vignan_vfstr_building.png" alt="Vignan's Foundation for Science, Technology and Research (VFSTR) Deemed-to-be University Campus" class="vfstr-building-img">
+            <img src="assets/images/vignan_vfstr_building.png" alt="UGI Group of Institutions Campus" class="vfstr-building-img">
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@
         </div>
       </div>
       <div class="vision-mission-banner-wrap">
-        <img src="assets/images/vignan_vision_mission_building.png" alt="Vignan University Building" class="vision-mission-banner-img">
+        <img src="assets/images/vignan_vision_mission_building.png" alt="UGI Campus Building" class="vision-mission-banner-img">
       </div>
     </section>
 
@@ -263,20 +263,20 @@
           <div>
             <span class="section-tag">Academic Heritage</span>
             <h2 style="font-size: 2.25rem; font-weight: 800; color: var(--navy-blue); margin-bottom: 1.25rem; line-height: 1.25;">
-              Vignan Foundation for Science, Technology &amp; Research
+              UGI Group of Institutions
             </h2>
             <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem;">
-              Vignan Foundation for Science, Technology &amp; Research (Deemed to be University) was established with a vision to deliver accessible, affordable, and high-impact higher education to learners across India and overseas.
+              UGI Group of Institutions was established with a vision to deliver accessible, affordable, and high-impact higher education to learners across India and overseas.
             </p>
             <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.8; margin-bottom: 1.75rem;">
-              Through Vignan Online, we empower working professionals, entrepreneurs, and ambitious students with flexible Online MBA, MCA, BBA, and BCA degrees supported by live weekend interactive lectures, AI-proctored online exams, and dedicated mentorship.
+              Through UGI, we empower working professionals, entrepreneurs, and ambitious students with flexible Online MBA, MCA, BBA, and BCA degrees supported by live weekend interactive lectures, AI-proctored online exams, and dedicated mentorship.
             </p>
 
             <button class="btn btn-primary-red open-enquiry-modal">Connect with Counselor &rarr;</button>
           </div>
 
           <div style="background: linear-gradient(135deg, var(--bg-light) 0%, #eef2f7 100%); border-radius: 24px; padding: 3rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-xl);">
-            <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--navy-blue); margin-bottom: 1.5rem;">Why Choose Vignan Online?</h3>
+            <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--navy-blue); margin-bottom: 1.5rem;">Why Choose UGI?</h3>
             
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem;">
               <li style="display: flex; gap: 14px; font-weight: 700; color: var(--navy-blue);">

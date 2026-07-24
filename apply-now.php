@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apply Now | Vignan Online - Online Degree Admissions 2026</title>
-  <meta name="description" content="Apply Online for UGC-Entitled and NAAC A+ accredited Online MBA, MCA, BBA, and BCA degree programs at Vignan University. Start your application today.">
+  <title>Apply Now | UGI - Online Degree Admissions 2026</title>
+  <meta name="description" content="Apply Online for UGC-Entitled and NAAC A+ accredited Online MBA, MCA, BBA, and BCA degree programs at UGI. Start your application today.">
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
         <!-- LEFT SIDE: Pointing Girl Image & Admissions Badge -->
         <div class="apply-hero-left">
           <div class="apply-hero-left-wrapper">
-            <img src="assets/images/admissions_pointing_girl.png" alt="Vignan Online Student Admissions" class="apply-hero-img">
+            <img src="assets/images/admissions_pointing_girl.png" alt="UGI Student Admissions" class="apply-hero-img">
             <div class="admissions-open-badge">
               ADMISSIONS<br>OPEN NOW
             </div>
@@ -243,7 +243,7 @@
           <div class="instructions-content">
             <ul class="instructions-list">
               <li>
-                The online application is for admission to programs offered by Vignan Online.
+                The online application is for admission to programs offered by UGI.
               </li>
 
               <li>
@@ -251,10 +251,10 @@
               </li>
 
               <li>
-                <strong>Vignan Online Query Management System:</strong>
+                <strong>UGI Query Management System:</strong>
 
                 <div class="instructions-subtext">
-                  <p>Applicants are strongly advised to use the Vignan Online Query Management System (Vignan Online QMS), rather than an email, to get a quick response.</p>
+                  <p>Applicants are strongly advised to use the UGI Query Management System (UGI QMS), rather than an email, to get a quick response.</p>
                   
                   <p>(Where to find the Query Management System - As and when learners get their login credentials, they can go to their user dashboard and find the Query Management System window)</p>
 

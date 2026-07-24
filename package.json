@@ -1,12 +1,12 @@
 {
-  "name": "vignan-online-landing-page",
+  "name": "ugi-landing-page",
   "version": "1.0.0",
-  "description": "Vignan Online exact website clone in PHP and Node runner",
+  "description": "UGI exact website clone in PHP and Node runner",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": ["vignan", "landing-page", "php"],
+  "keywords": ["ugi", "landing-page", "php"],
   "author": "",
   "license": "ISC"
 }

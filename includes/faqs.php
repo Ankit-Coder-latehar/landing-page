@@ -12,11 +12,11 @@
       
       <div class="accordion-item active">
         <button class="accordion-header">
-          Is Vignan Online accredited by UGC and NAAC?
+          Is UGI accredited by UGC and NAAC?
           <span class="accordion-icon">&darr;</span>
         </button>
         <div class="accordion-content">
-          Yes! Vignan's Foundation for Science, Technology &amp; Research is NAAC A+ accredited and its online degree programs are entitled by the UGC-DEB (University Grants Commission - Distance Education Bureau) under Category I university status.
+          Yes! UGI Group of Institutions is NAAC A+ accredited and its online degree programs are entitled by the UGC-DEB (University Grants Commission - Distance Education Bureau) under Category I university status.
         </div>
       </div>
 
@@ -46,7 +46,7 @@
           <span class="accordion-icon">&darr;</span>
         </button>
         <div class="accordion-content">
-          Enrolled students receive 24/7 access to Vignan's advanced Learning Management System (LMS) containing recorded video lectures, live interactive weekend sessions, e-library resources, self-assessment quizzes, and dedicated student mentor support.
+          Enrolled students receive 24/7 access to UGI's advanced Learning Management System (LMS) containing recorded video lectures, live interactive weekend sessions, e-library resources, self-assessment quizzes, and dedicated student mentor support.
         </div>
       </div>
 

@@ -4,7 +4,7 @@
     
     <div class="accreditation-title-block">
       <h2>Accreditations, Approvals &amp; Rankings</h2>
-      <p>Vignan Foundation for Science, Technology &amp; Research is recognized by India's top regulatory bodies</p>
+      <p>UGI Group of Institutions is recognized by India's top regulatory bodies</p>
     </div>
 
     <div class="accreditation-grid">

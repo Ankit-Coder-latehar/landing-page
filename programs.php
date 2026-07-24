@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Degree Programs &amp; Electives | Vignan Online</title>
-  <meta name="description" content="Explore UGC-entitled Online MBA, MCA, BBA, and BCA degree programs and electives offered by Vignan Online. View fees, duration, and admission requirements.">
+  <title>Online Degree Programs &amp; Electives | UGI</title>
+  <meta name="description" content="Explore UGC-entitled Online MBA, MCA, BBA, and BCA degree programs and electives offered by UGI. View fees, duration, and admission requirements.">
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

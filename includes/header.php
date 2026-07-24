@@ -1,7 +1,7 @@
 <!-- TOP TICKER ANNOUNCEMENT BAR -->
 <div class="top-ticker">
   <div class="container">
-    <span>Precautions to be taken by the students before enrolling: <a href="https://vignanonline.com/" target="_blank">Read Guidelines &amp; Entitlements &rarr;</a></span>
+    <span>Precautions to be taken by the students before enrolling: <a href="https://ugichd.edu.in" target="_blank">Read Guidelines &amp; Entitlements &rarr;</a></span>
   </div>
 </div>
 
@@ -144,7 +144,7 @@
 <!-- MOBILE DRAWER SIDEBAR -->
 <div class="mobile-drawer" id="mobileDrawer">
   <div class="drawer-header">
-    <div class="logo-title" style="font-size: 1.1rem; color: var(--navy-blue);">VIGNAN ONLINE</div>
+    <div class="logo-title" style="font-size: 1.1rem; color: var(--navy-blue);">UGI</div>
     <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
   </div>
 
@@ -153,7 +153,7 @@
     <li><a href="about-us.php">About Us</a></li>
     <li><a href="programs.php">Programs Offered</a></li>
     <li><a href="contact-us.php">Contact Us</a></li>
-    <li><a href="https://support.vignanonline.com" target="_blank">Student Support</a></li>
+    <li><a href="https://ugichd.edu.in" target="_blank">Student Support</a></li>
     <li><a href="apply-now.php" style="color: var(--primary-red); font-weight: 700;">Apply Now</a></li>
   </ul>
 

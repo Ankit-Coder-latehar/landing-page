@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vignan Online | UGC Entitled Online MBA, MCA, BBA & BCA Degrees</title>
-  <meta name="description" content="Pursue UGC-Entitled and NAAC A+ accredited Online MBA, MCA, BBA, and BCA degree programs from Vignan Foundation for Science, Technology & Research. Apply now for Admissions 2026.">
-  <meta name="keywords" content="Vignan Online, Online MBA, Online MCA, Online BBA, Online BCA, UGC Entitled Degrees, Distance Learning, Higher Education">
+  <title>UGI | UGC Entitled Online MBA, MCA, BBA &amp; BCA Degrees</title>
+  <meta name="description" content="Pursue UGC-Entitled and NAAC A+ accredited Online MBA, MCA, BBA, and BCA degree programs from UGI. Apply now for Admissions 2026.">
+  <meta name="keywords" content="UGI, Online MBA, Online MCA, Online BBA, Online BCA, UGC Entitled Degrees, Distance Learning, Higher Education">
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

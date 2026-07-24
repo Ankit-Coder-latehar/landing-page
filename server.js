@@ -193,7 +193,7 @@ function createServer(port) {
 
   server.listen(port, () => {
     console.log(`\n==================================================`);
-    console.log(` Vignan Online Server Active!`);
+    console.log(` UGI Server Active!`);
     console.log(` Access URL: http://localhost:${port}`);
     console.log(`==================================================\n`);
   });
