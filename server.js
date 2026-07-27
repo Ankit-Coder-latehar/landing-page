@@ -2,6 +2,24 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
+const ENV_FILE = path.join(__dirname, '.env');
+if (fs.existsSync(ENV_FILE)) {
+  const envContent = fs.readFileSync(ENV_FILE, 'utf8');
+  envContent.split(/\r?\n/).forEach(line => {
+    const trimmed = line.trim();
+    if (trimmed && !trimmed.startsWith('#')) {
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx !== -1) {
+        const key = trimmed.substring(0, eqIdx).trim();
+        const value = trimmed.substring(eqIdx + 1).trim();
+        if (!process.env[key]) {
+          process.env[key] = value;
+        }
+      }
+    }
+  });
+}
+
 let PORT = process.env.PORT ? parseInt(process.env.PORT) : 8000;
 const PUBLIC_DIR = __dirname;
 const DATA_DIR = path.join(__dirname, 'data');
@@ -27,6 +45,15 @@ const MIME_TYPES = {
 
 function createServer(port) {
   const server = http.createServer((req, res) => {
+    // Handle GET public environment config
+    if (req.method === 'GET' && (req.url === '/api/config' || req.url === '/api/config.json')) {
+      res.setHeader('Content-Type', 'application/json');
+      res.statusCode = 200;
+      return res.end(JSON.stringify({
+        razorpay_key_id: process.env.RAZORPAY_KEY_ID || ''
+      }));
+    }
+
     // Handle POST lead form submission
     if (req.method === 'POST' && (req.url === '/process-enquiry.php' || req.url === '/process-enquiry')) {
       let body = '';
@@ -119,10 +146,44 @@ function createServer(port) {
       return;
     }
 
+    // Handle POST seat booking submission
+    if (req.method === 'POST' && (req.url === '/process-seat-booking' || req.url === '/process-seat-booking.php')) {
+      let body = '';
+      req.on('data', chunk => { body += chunk.toString(); });
+      req.on('end', () => {
+        res.setHeader('Content-Type', 'application/json');
+        try {
+          const SEAT_FILE = path.join(DATA_DIR, 'seat-bookings.json');
+          const booking = {
+            id: 'seat_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+            submitted_at: new Date().toISOString(),
+            raw_body_preview: body.length > 500 ? body.substring(0, 500) + '...' : body
+          };
+          let existingBookings = [];
+          if (fs.existsSync(SEAT_FILE)) {
+            try { existingBookings = JSON.parse(fs.readFileSync(SEAT_FILE, 'utf8') || '[]'); } catch (e) {}
+          }
+          existingBookings.push(booking);
+          fs.writeFileSync(SEAT_FILE, JSON.stringify(existingBookings, null, 2), 'utf8');
+
+          res.statusCode = 200;
+          return res.end(JSON.stringify({ status: 'success', message: 'Seat booking stored successfully.', id: booking.id }));
+        } catch (err) {
+          res.statusCode = 500;
+          return res.end(JSON.stringify({ status: 'error', message: err.message }));
+        }
+      });
+      return;
+    }
+
     // Handle GET static files
     let safePath = req.url.split('?')[0];
     if (safePath === '/' || safePath === '\\') {
       safePath = '/index.html';
+    }
+
+    if (safePath === '/book-seat' || safePath === '/book-seat/') {
+      safePath = '/book-seat.html';
     }
 
     if (safePath === '/bachelors-business-administration-online-degree' || safePath === '/bachelors-business-administration-online-degree/') {

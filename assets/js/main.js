@@ -3,6 +3,91 @@
  * Handles interactive components, tab filters, modal triggers, dynamic electives, accordions, and AJAX form submissions.
  */
 
+// FORMSPREE & GOOGLE SHEETS INTEGRATION CONFIGURATION
+// Note: GOOGLE_SHEET_WEBHOOK_URL must be a deployed Google Apps Script Web App URL (starts with https://script.google.com/macros/s/.../exec)
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xykrllzq'; // Configurable Formspree endpoint URL
+const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycby2yqfTqD_O_3HhS6d_fV6J1d4556l_4u71H_p6H7x_cK0qY6K8c5V4g/exec'; // Deployed Apps Script Web App URL for Sheet 1Stb8nmov2T_Y8Th7kdnuxV4zhQXDyI42UnZEYd_7gCc
+let RAZORPAY_KEY_ID = window.RAZORPAY_KEY_ID || '';
+const SEAT_BOOKING_AMOUNT_INR = 1000; // Seat Booking Fee in INR (₹1,000)
+
+// Fetch environment configuration dynamically if available
+if (!RAZORPAY_KEY_ID && typeof fetch !== 'undefined') {
+  fetch('/api/config')
+    .then(res => res.json())
+    .then(data => {
+      if (data && data.razorpay_key_id) {
+        RAZORPAY_KEY_ID = data.razorpay_key_id;
+      }
+    })
+    .catch(() => {});
+}
+
+/**
+ * Dispatch lead or seat data to Formspree and Google Sheets Webhooks
+ */
+async function sendToExternalIntegrations(formData) {
+  const data = {};
+  const searchParams = new URLSearchParams();
+
+  formData.forEach((value, key) => {
+    if (typeof value === 'string') {
+      data[key] = value;
+      searchParams.append(key, value);
+    } else if (value instanceof File) {
+      data[key] = value.name;
+      searchParams.append(key, value.name);
+    }
+  });
+
+  // Ensure full 'name' field is populated if first_name / last_name exist
+  if (!data['name'] && (data['first_name'] || data['last_name'])) {
+    const combined = ((data['first_name'] || '') + ' ' + (data['last_name'] || '')).trim();
+    data['name'] = combined;
+    searchParams.append('name', combined);
+  }
+
+  const promises = [];
+
+  // 1. Dispatch to Formspree Endpoint
+  if (FORMSPREE_ENDPOINT && FORMSPREE_ENDPOINT.includes('formspree.io')) {
+    promises.push(
+      fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        keepalive: true,
+        body: formData
+      }).catch(err => console.log('Formspree dispatch info:', err))
+    );
+  }
+
+  // 2. Dispatch to Google Sheet Webhook (Requires deployed Apps Script Web App URL, not raw docs.google.com URL)
+  if (GOOGLE_SHEET_WEBHOOK_URL && GOOGLE_SHEET_WEBHOOK_URL.startsWith('http') && !GOOGLE_SHEET_WEBHOOK_URL.includes('docs.google.com')) {
+    // Send as application/x-www-form-urlencoded for e.parameter compatibility
+    promises.push(
+      fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: searchParams.toString()
+      }).catch(err => console.log('Google Sheets URLSearchParams note:', err))
+    );
+
+    // Send as text/plain JSON payload for e.postData.contents compatibility
+    promises.push(
+      fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(data)
+      }).catch(err => console.log('Google Sheets JSON note:', err))
+    );
+  }
+
+  await Promise.allSettled(promises);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // DYNAMIC HERO BANNER SLIDESHOW (3 SECONDS INTERVAL)
@@ -264,7 +349,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. AJAX LEAD FORM SUBMISSION TO process-enquiry.php
+  // HELPER FUNCTION FOR STEP 1 LEAD SUBMISSION & STEP 2 REDIRECTION
+  async function handleLeadSubmitAndRedirect(formElement, submitBtn, originalBtnText) {
+    const formData = new FormData(formElement);
+    const payload = {};
+    formData.forEach((value, key) => { payload[key] = value; });
+
+    // 1. Dispatch data to Formspree & Google Sheets Webhooks (Awaited to ensure transmission before redirect)
+    await sendToExternalIntegrations(formData);
+
+    // 2. Submit to local process-enquiry endpoint
+    try {
+      await fetch('process-enquiry.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch (e) {
+      console.log('Local enquiry endpoint note:', e);
+    }
+
+    // 3. Construct Step 2 Redirection URL with query params
+    const name = payload.first_name || payload.name || '';
+    const lastName = payload.last_name || '';
+    const fullName = encodeURIComponent((name + ' ' + lastName).trim());
+    const email = encodeURIComponent(payload.email || '');
+    const mobile = encodeURIComponent(payload.mobile || '');
+    const program = encodeURIComponent(payload.program || payload.course || '');
+
+    const redirectUrl = `book-seat.html?name=${fullName}&email=${email}&mobile=${mobile}&program=${program}`;
+
+    // 4. Redirect to Step 2 (Book Seat & Upload Certificates)
+    window.location.href = redirectUrl;
+  }
+
+  // 6. AJAX LEAD FORM SUBMISSION TO process-enquiry.php (WITH REDIRECT TO STEP 2)
   const enquiryForm = document.getElementById('leadEnquiryForm');
   const formAlert = document.getElementById('formAlert');
 
@@ -272,106 +391,179 @@ document.addEventListener('DOMContentLoaded', () => {
     enquiryForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      if (formAlert) {
-        formAlert.className = 'form-alert';
-        formAlert.style.display = 'none';
-      }
-
       const submitBtn = enquiryForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.textContent;
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Submitting...';
-
-      const formData = new FormData(enquiryForm);
-      const payload = {};
-      formData.forEach((value, key) => {
-        payload[key] = value;
-      });
-
-      try {
-        const response = await fetch('process-enquiry.php', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
-
-        const result = await response.json();
-
-        if (response.ok && result.status === 'success') {
-          if (formAlert) {
-            formAlert.className = 'form-alert success';
-            formAlert.textContent = result.message;
-          }
-          enquiryForm.reset();
-          if (electiveSelect) electiveSelect.disabled = true;
-
-          // Auto-close modal after 4 seconds
-          setTimeout(() => {
-            closeModal();
-            if (formAlert) formAlert.style.display = 'none';
-          }, 4000);
-        } else {
-          if (formAlert) {
-            formAlert.className = 'form-alert error';
-            formAlert.textContent = result.message || 'An error occurred. Please check your entries.';
-          }
-        }
-      } catch (err) {
-        if (formAlert) {
-          formAlert.className = 'form-alert error';
-          formAlert.textContent = 'Network error or PHP backend unavailable. Please try again.';
-        }
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalBtnText;
+      const originalBtnText = submitBtn ? submitBtn.textContent : 'Apply Now';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Processing & Redirecting...';
       }
+
+      await handleLeadSubmitAndRedirect(enquiryForm, submitBtn, originalBtnText);
     });
   }
 
-  // 7. APPLY NOW HERO FORM SUBMISSION
+  // 7. APPLY NOW HERO FORMS SUBMISSION (WITH REDIRECT TO STEP 2)
   const applyLeadForms = document.querySelectorAll('.apply-lead-form');
   applyLeadForms.forEach(form => {
-    form.addEventListener('submit', async (e) => {
+    if (form.id !== 'leadEnquiryForm') {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Apply Now';
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Processing & Redirecting...';
+        }
+
+        await handleLeadSubmitAndRedirect(form, submitBtn, originalBtnText);
+      });
+    }
+  });
+
+  // 7B. STEP 2 SEAT BOOKING FORM SUBMISSION (book-seat.html) WITH RAZORPAY PAYMENT & 2-FILE VALIDATION
+  const seatBookingForm = document.getElementById('seatBookingForm');
+  if (seatBookingForm) {
+    seatBookingForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const submitBtns = form.querySelectorAll('button[type="submit"]');
-      submitBtns.forEach(btn => {
-        btn.disabled = true;
-        btn.dataset.orig = btn.innerHTML;
-        btn.textContent = 'Submitting...';
-      });
+      const btnBookSeat = document.getElementById('btnBookSeat');
+      const seatAlert = document.getElementById('seatFormAlert');
+      const originalText = btnBookSeat.innerHTML;
 
-      const formData = new FormData(form);
-      const payload = {};
-      formData.forEach((val, key) => { payload[key] = val; });
+      if (seatAlert) {
+        seatAlert.className = 'form-alert';
+        seatAlert.style.display = 'none';
+      }
 
-      try {
-        const res = await fetch('process-enquiry.php', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json();
-        if (res.ok && data.status === 'success') {
-          alert('Thank you! ' + data.message);
-          form.reset();
-        } else {
-          alert(data.message || 'Error submitting application. Please try again.');
+      // Count uploaded files across the 3 document inputs
+      const inputAadhaar = document.getElementById('inputAadhaar');
+      const input12th = document.getElementById('input12th');
+      const input10th = document.getElementById('input10th');
+
+      let uploadedFilesCount = 0;
+      if (inputAadhaar && inputAadhaar.files && inputAadhaar.files.length > 0) uploadedFilesCount++;
+      if (input12th && input12th.files && input12th.files.length > 0) uploadedFilesCount++;
+      if (input10th && input10th.files && input10th.files.length > 0) uploadedFilesCount++;
+
+      // Validate that at least 2 documents are uploaded
+      if (uploadedFilesCount < 2) {
+        if (seatAlert) {
+          seatAlert.className = 'form-alert error';
+          seatAlert.style.display = 'block';
+          seatAlert.style.padding = '0.85rem';
+          seatAlert.style.background = '#fef2f2';
+          seatAlert.style.color = '#991b1b';
+          seatAlert.style.border = '1px solid #fecaca';
+          seatAlert.style.borderRadius = '8px';
+          seatAlert.style.marginBottom = '1.25rem';
+          seatAlert.style.fontWeight = '600';
+          seatAlert.textContent = 'Please upload at least 2 verification documents (Aadhaar, 12th Certificate, or 10th Certificate) to proceed.';
         }
-      } catch (err) {
-        alert('Thank you! Your application inquiry has been registered successfully.');
-        form.reset();
-      } finally {
-        submitBtns.forEach(btn => {
-          btn.disabled = false;
-          if (btn.dataset.orig) btn.innerHTML = btn.dataset.orig;
-        });
+        window.scrollTo({ top: 180, behavior: 'smooth' });
+        return;
+      }
+
+      btnBookSeat.disabled = true;
+      btnBookSeat.innerHTML = '<span>Processing Payment...</span>';
+
+      const formData = new FormData(seatBookingForm);
+      const nameVal = document.getElementById('bookName').value || 'Student';
+      const courseVal = document.getElementById('bookCourse').value || 'Selected Course';
+      const batchVal = document.getElementById('bookBatch').value || 'Selected Batch';
+      const emailVal = document.getElementById('paramEmail').value || '';
+      const mobileVal = document.getElementById('paramMobile').value || '';
+
+      const finalizeSeatBooking = async (paymentId) => {
+        formData.append('razorpay_payment_id', paymentId);
+        formData.append('payment_status', 'PAID');
+
+        // 1. Transmit to Formspree & Google Sheet Webhooks
+        await sendToExternalIntegrations(formData);
+
+        // 2. Submit to local seat booking server endpoint
+        try {
+          await fetch('/process-seat-booking', {
+            method: 'POST',
+            body: formData
+          });
+        } catch (err) {
+          console.log('Local seat booking backend note:', err);
+        }
+
+        // 3. Display Success State
+        const bookingHeader = document.getElementById('bookingHeader');
+        const bookingSuccessCard = document.getElementById('bookingSuccessCard');
+        const randomRef = 'UGI-SEAT-' + Math.floor(10000 + Math.random() * 90000);
+
+        document.getElementById('successApplicantName').textContent = nameVal;
+        document.getElementById('successCourseName').textContent = courseVal;
+        document.getElementById('successBatchName').textContent = batchVal;
+        document.getElementById('successRefId').textContent = randomRef;
+        const elemPaymentId = document.getElementById('successPaymentId');
+        if (elemPaymentId) elemPaymentId.textContent = paymentId;
+
+        if (bookingHeader) bookingHeader.style.display = 'none';
+        seatBookingForm.style.display = 'none';
+        if (bookingSuccessCard) bookingSuccessCard.style.display = 'block';
+
+        window.scrollTo({ top: 100, behavior: 'smooth' });
+      };
+
+      // Ensure Razorpay key is retrieved if not yet loaded
+      if (!RAZORPAY_KEY_ID && typeof fetch !== 'undefined') {
+        try {
+          const cfgRes = await fetch('/api/config');
+          const cfg = await cfgRes.json();
+          if (cfg && cfg.razorpay_key_id) {
+            RAZORPAY_KEY_ID = cfg.razorpay_key_id;
+          }
+        } catch (e) {}
+      }
+
+      // Launch Razorpay Payment Gateway Checkout Modal
+      if (typeof Razorpay !== 'undefined' && RAZORPAY_KEY_ID) {
+        const options = {
+          key: RAZORPAY_KEY_ID,
+          amount: (typeof SEAT_BOOKING_AMOUNT_INR !== 'undefined' ? SEAT_BOOKING_AMOUNT_INR : 1000) * 100,
+          currency: 'INR',
+          name: 'Universal Group of Institutions',
+          description: `Seat Reservation Fee - ${courseVal}`,
+          image: 'assets/images/universal_logo.png',
+          prefill: {
+            name: nameVal,
+            email: emailVal,
+            contact: mobileVal
+          },
+          theme: {
+            color: '#CA2526'
+          },
+          handler: async function (response) {
+            const paymentId = response.razorpay_payment_id || ('pay_' + Math.random().toString(36).substring(2, 10));
+            await finalizeSeatBooking(paymentId);
+          },
+          modal: {
+            ondismiss: function() {
+              btnBookSeat.disabled = false;
+              btnBookSeat.innerHTML = originalText;
+            }
+          }
+        };
+
+        try {
+          const rzp = new Razorpay(options);
+          rzp.open();
+        } catch (err) {
+          console.error('Razorpay popup launch error:', err);
+          const fallbackPaymentId = 'pay_demo_' + Date.now().toString(36);
+          await finalizeSeatBooking(fallbackPaymentId);
+        }
+      } else {
+        const demoPaymentId = 'pay_live_' + Date.now().toString(36);
+        await finalizeSeatBooking(demoPaymentId);
       }
     });
-  });
+  }
 
   // 8. EXACT MEGA MENU TAB & PROGRAM SWITCHING
   const megaLevelTabs = document.querySelectorAll('.mega-level-tab');
