@@ -94,30 +94,22 @@
                   </div>
                 </div>
 
-                <!-- ROW 4: Program & Elective -->
+                <!-- ROW 4: Stream & Course Selection -->
                 <div class="apply-form-row">
                   <div class="apply-field-group">
-                    <label class="apply-field-label">Program <span class="req">*</span></label>
-                    <select name="program" class="apply-field-select" required id="applyProgramSelect">
-                      <option value="">Select a option</option>
-                      <option value="Online MBA">Online MBA</option>
-                      <option value="Online MCA">Online MCA</option>
-                      <option value="Online BBA">Online BBA</option>
-                      <option value="Online BCA">Online BCA</option>
+                    <label class="apply-field-label">Stream <span class="req">*</span></label>
+                    <select name="stream" class="apply-field-select stream-select" required id="applyStreamSelect">
+                      <option value="">Select Stream</option>
+                      <option value="diploma">Diploma Programs</option>
+                      <option value="undergraduate">Undergraduate Programs</option>
+                      <option value="postgraduate">Post Graduate Programs</option>
                     </select>
                   </div>
 
                   <div class="apply-field-group">
-                    <label class="apply-field-label">Elective <span class="req">*</span></label>
-                    <select name="elective" class="apply-field-select" required id="applyElectiveSelect">
-                      <option value="">Select a option</option>
-                      <option value="Marketing">Marketing</option>
-                      <option value="Finance">Finance</option>
-                      <option value="Human Resource Management">Human Resource Management</option>
-                      <option value="Business Analytics">Business Analytics</option>
-                      <option value="Computer Science & IT">Computer Science &amp; IT</option>
-                      <option value="AI & Machine Learning">AI &amp; Machine Learning</option>
-                      <option value="Data Science">Data Science</option>
+                    <label class="apply-field-label">Course / Program <span class="req">*</span></label>
+                    <select name="program" class="apply-field-select course-select" required id="applyCourseSelect">
+                      <option value="">Select Stream First</option>
                     </select>
                   </div>
                 </div>

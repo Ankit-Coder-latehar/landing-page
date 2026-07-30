@@ -2,35 +2,35 @@
 <section class="hero-section-full" id="heroSlideshow">
   <div class="hero-slideshow-wrapper">
     
-    <!-- SLIDE 1: University Excellence -->
+    <!-- SLIDE 1: Gateway to Endless Opportunities -->
     <div class="hero-full-slide active">
       <a href="#" class="hero-banner-link open-enquiry-modal">
-        <img src="assets/images/hero_slide_1.png" alt="" class="hero-bg-blur">
-        <img src="assets/images/hero_slide_1.png" alt="University Academic Excellence" class="hero-full-img">
+        <img src="assets/images/hero_banner_opportunities.png" alt="" class="hero-bg-blur">
+        <img src="assets/images/hero_banner_opportunities.png" alt="The Gateway to Endless Opportunities - Admissions Open 2026-27" class="hero-full-img">
       </a>
     </div>
 
-    <!-- SLIDE 2: Online MBA -->
+    <!-- SLIDE 2: Up to 100% Scholarship -->
     <div class="hero-full-slide">
       <a href="#" class="hero-banner-link open-enquiry-modal">
-        <img src="assets/images/hero_slide_2.png" alt="" class="hero-bg-blur">
-        <img src="assets/images/hero_slide_2.png" alt="Online MBA Degree Program" class="hero-full-img">
+        <img src="assets/images/hero_banner_scholarship.png" alt="" class="hero-bg-blur">
+        <img src="assets/images/hero_banner_scholarship.png" alt="Up to 100% Scholarship - Admissions 2026-27" class="hero-full-img">
       </a>
     </div>
 
-    <!-- SLIDE 3: Online MCA & BCA -->
+    <!-- SLIDE 3: Online Degree Scholarship -->
     <div class="hero-full-slide">
       <a href="#" class="hero-banner-link open-enquiry-modal">
-        <img src="assets/images/hero_slide_3.png" alt="" class="hero-bg-blur">
-        <img src="assets/images/hero_slide_3.png" alt="Online MCA & BCA Degrees" class="hero-full-img">
+        <img src="assets/images/Gemini_Generated_Image_lmwqillmwqillmwq.png" alt="" class="hero-bg-blur">
+        <img src="assets/images/Gemini_Generated_Image_lmwqillmwqillmwq.png" alt="Scholarship &amp; Entitled Degrees" class="hero-full-img">
       </a>
     </div>
 
-    <!-- SLIDE 4: Graduation -->
+    <!-- SLIDE 4: Online MBA -->
     <div class="hero-full-slide">
       <a href="#" class="hero-banner-link open-enquiry-modal">
-        <img src="assets/images/hero_slide_4.png" alt="" class="hero-bg-blur">
-        <img src="assets/images/hero_slide_4.png" alt="UGI Graduation" class="hero-full-img">
+        <img src="assets/images/Gemini_Generated_Image_m8g2oxm8g2oxm8g2.png" alt="" class="hero-bg-blur">
+        <img src="assets/images/Gemini_Generated_Image_m8g2oxm8g2oxm8g2.png" alt="Online MBA Degree Program" class="hero-full-img">
       </a>
     </div>
 

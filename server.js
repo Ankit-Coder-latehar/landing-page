@@ -81,6 +81,7 @@ function createServer(port) {
           const countryCode = (data.country_code || '+91').trim();
           const mobile      = (data.mobile || '').trim();
           const nationality = (data.nationality || '').trim();
+          const stream      = (data.stream || '').trim();
           const program     = (data.program || '').trim();
           const elective    = (data.elective || '').trim();
           const consent     = Boolean(data.consent);
@@ -110,6 +111,7 @@ function createServer(port) {
             country_code: countryCode,
             mobile: mobile,
             nationality: nationality,
+            stream: stream,
             program: program,
             elective: elective,
             submitted_at: new Date().toISOString(),
@@ -220,6 +222,13 @@ function createServer(port) {
         safePath = htmlAlt;
       } else {
         safePath = '/index.html';
+      }
+    }
+
+    if (!path.extname(safePath) && safePath !== '/') {
+      const htmlVersion = safePath + '.html';
+      if (fs.existsSync(path.join(PUBLIC_DIR, htmlVersion))) {
+        safePath = htmlVersion;
       }
     }
 

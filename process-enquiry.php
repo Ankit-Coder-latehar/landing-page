@@ -25,6 +25,7 @@ $email       = trim($data['email'] ?? '');
 $countryCode = trim($data['country_code'] ?? '+91');
 $mobile      = trim($data['mobile'] ?? '');
 $nationality = trim($data['nationality'] ?? '');
+$stream      = trim($data['stream'] ?? '');
 $program     = trim($data['program'] ?? '');
 $elective    = trim($data['elective'] ?? '');
 $consent     = isset($data['consent']) && ($data['consent'] == '1' || $data['consent'] == 'on' || $data['consent'] === true);
@@ -69,6 +70,7 @@ $lead = [
     'country_code' => $countryCode,
     'mobile'       => $mobile,
     'nationality'  => $nationality,
+    'stream'       => $stream,
     'program'      => $program,
     'elective'     => $elective,
     'submitted_at' => date('Y-m-d H:i:s'),

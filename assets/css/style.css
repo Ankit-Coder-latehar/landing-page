@@ -3102,6 +3102,48 @@ textarea {
   color: #d32f2f;
 }
 
+.mega-courses-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 1.25rem;
+  max-height: 340px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.mega-courses-grid::-webkit-scrollbar {
+  width: 5px;
+}
+
+.mega-courses-grid::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.mega-courses-grid::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.mega-courses-grid li a {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  line-height: 1.35;
+  display: block;
+}
+
+.mega-courses-grid li a:hover {
+  color: #d32f2f;
+}
+
 /* ==========================================================================
    PROGRAM PAGE & BBA SPECIFIC STYLES
    ========================================================================== */

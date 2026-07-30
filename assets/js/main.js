@@ -205,6 +205,108 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
   };
 
+  const coursesByStream = {
+    'diploma': [
+      'Diploma in Computer Science Engineering (CSE)',
+      'Diploma in Mechanical Engineering (ME)',
+      'Diploma in Electrical Engineering (EE)',
+      'Diploma in Civil Engineering (CE)',
+      'Diploma in Electronics & Communication Engineering',
+      'Diploma in Pharmacy',
+      'ANM',
+      'GNM',
+      'ETT- Elementary Teacher Training (D.El.Ed)',
+      'Diploma - Working Professionals in CSE',
+      'Diploma - Working Professionals in ME',
+      'Diploma - Working Professionals in EE',
+      'Diploma - Working Professionals in ECE'
+    ],
+    'undergraduate': [
+      'B.Tech - Computer Science Engineering',
+      'B.Tech CSE - Artificial Intelligence & Machine Learning (AI & ML)',
+      'B.Tech - Mechanical Engineering',
+      'B.Tech - Electrical Engineering',
+      'B.Tech - Civil Engineering',
+      'B.Tech - Electronics and Communication Engineering',
+      'LLB',
+      'BALLB',
+      'Bachelor Of Pharmacy',
+      'B.Sc. Nursing',
+      'B.Sc. MLS - Medical Laboratory Science',
+      'B.Sc. OTT - Operation Theatre Technology',
+      'B.Sc. AOTT - Anaesthesia & Operation Theatre Technology',
+      'B.Sc. RIT - Radiology & Imaging Technology',
+      'B.Sc Cardiac Care Technology',
+      'BA - Bachelor of Arts',
+      'B.Ed.',
+      'BA B.Ed',
+      'B.Com (Hons.)',
+      'B.Com Professionals',
+      'BBA',
+      'BCA',
+      'B.Sc. Agriculture college in Chandigarh Punjab',
+      'B.Sc Non-Medical',
+      'Bachelor of Tourism & Travel Management (BTTM)',
+      'B.A. Journalism & Mass Communication (BAJMC)'
+    ],
+    'postgraduate': [
+      'M.Tech - Computer Science Engineering',
+      'M.Tech Mechanical Engineering',
+      'M.Tech Electronics & Communication',
+      'M.Tech Civil Engineering',
+      'MBA Finance',
+      'MBA Human Resources Management',
+      'MBA Marketing',
+      'M.Sc Pharmaceutical Chemistry',
+      'Master of Police Administration & Public Administration',
+      'Master of Hospital Administration'
+    ]
+  };
+
+  // DYNAMIC STREAM & COURSE SELECTOR LOGIC
+  function initStreamCourseSelectors() {
+    const streamSelects = document.querySelectorAll('select[name="stream"], .stream-select');
+    
+    streamSelects.forEach(streamSelect => {
+      const form = streamSelect.closest('form');
+      if (!form) return;
+      const courseSelect = form.querySelector('select[name="program"], .course-select');
+      if (!courseSelect) return;
+
+      streamSelect.addEventListener('change', () => {
+        const streamVal = streamSelect.value.toLowerCase();
+        const currentCourseVal = courseSelect.value;
+        courseSelect.innerHTML = '';
+
+        if (!streamVal || !coursesByStream[streamVal]) {
+          courseSelect.innerHTML = '<option value="">Select Stream First</option>';
+          return;
+        }
+
+        const defaultOpt = document.createElement('option');
+        defaultOpt.value = '';
+        defaultOpt.textContent = 'Select Course';
+        courseSelect.appendChild(defaultOpt);
+
+        coursesByStream[streamVal].forEach(courseName => {
+          const opt = document.createElement('option');
+          opt.value = courseName;
+          opt.textContent = courseName;
+          if (courseName === currentCourseVal) {
+            opt.selected = true;
+          }
+          courseSelect.appendChild(opt);
+        });
+      });
+
+      if (streamSelect.value) {
+        streamSelect.dispatchEvent(new Event('change'));
+      }
+    });
+  }
+
+  initStreamCourseSelectors();
+
   // 1. DYNAMIC ELECTIVES DROPDOWN IN ENQUIRE FORM
   const programSelect = document.getElementById('formProgramSelect');
   const electiveSelect = document.getElementById('formElectiveSelect');
@@ -237,9 +339,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalOverlay) {
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
-      if (preselectProgram && programSelect) {
-        programSelect.value = preselectProgram;
-        programSelect.dispatchEvent(new Event('change'));
+      
+      const modalForm = modalOverlay.querySelector('form');
+      if (modalForm) {
+        const streamSelect = modalForm.querySelector('select[name="stream"]');
+        const courseSelect = modalForm.querySelector('select[name="program"]');
+        
+        if (preselectProgram && streamSelect && courseSelect) {
+          let foundStream = '';
+          let foundCourseName = '';
+          
+          for (const [st, cList] of Object.entries(coursesByStream)) {
+            for (const cName of cList) {
+              if (cName.toLowerCase().includes(preselectProgram.toLowerCase()) || preselectProgram.toLowerCase().includes(st)) {
+                foundStream = st;
+                foundCourseName = cName;
+                break;
+              }
+            }
+            if (foundStream) break;
+          }
+
+          if (foundStream) {
+            streamSelect.value = foundStream;
+            streamSelect.dispatchEvent(new Event('change'));
+            if (foundCourseName) {
+              courseSelect.value = foundCourseName;
+            }
+          }
+        }
       }
     }
   }
@@ -580,15 +708,27 @@ document.addEventListener('DOMContentLoaded', () => {
       megaLevelTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
+      let foundSubGroup = false;
       megaSubTabGroups.forEach(group => {
         if (group.classList.contains(level + '-subs')) {
           group.classList.add('active');
+          foundSubGroup = true;
           const firstSub = group.querySelector('.mega-sub-tab');
           if (firstSub) firstSub.click();
         } else {
           group.classList.remove('active');
         }
       });
+
+      if (!foundSubGroup) {
+        megaPanels.forEach(panel => {
+          if (panel.id === 'panel-' + level) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+      }
     });
   });
 
