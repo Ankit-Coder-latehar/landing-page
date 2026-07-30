@@ -45,7 +45,7 @@ if (file_exists($programsDataFile)) {
             </div>
 
             <div class="program-card-body">
-              <div>
+              <div class="program-card-main-content">
                 <p class="program-desc"><?php echo htmlspecialchars($prog['description']); ?></p>
 
                 <div class="electives-heading">Key Electives / Focus Areas</div>
@@ -56,12 +56,23 @@ if (file_exists($programsDataFile)) {
                 </div>
               </div>
 
-              <div class="program-card-footer" style="display: flex; gap: 10px; align-items: center; justify-content: space-between;">
-                <div class="fee-text"><?php echo htmlspecialchars($prog['fee']); ?></div>
-                <div style="display: flex; gap: 8px;">
-                  <a href="<?php echo htmlspecialchars($prog['slug']); ?>" class="btn btn-outline-navy" style="padding: 0.5rem 0.9rem; font-size: 0.85rem;">View Details</a>
+              <div class="program-card-footer">
+                <div class="program-fee-badge">
+                  <span class="fee-label">ANNUAL FEE</span>
+                  <span class="fee-amount"><?php 
+                    $feeVal = htmlspecialchars($prog['fee']);
+                    if (strpos($feeVal, '/') !== false) {
+                      $parts = explode('/', $feeVal);
+                      echo trim($parts[0]) . ' <small class="fee-period">/' . trim($parts[1]) . '</small>';
+                    } else {
+                      echo $feeVal;
+                    }
+                  ?></span>
+                </div>
+                <div class="program-card-actions">
+                  <a href="<?php echo htmlspecialchars($prog['slug']); ?>" class="btn btn-outline-navy">View Details</a>
                   <button class="btn btn-primary-red open-enquiry-modal" data-program="<?php echo htmlspecialchars($prog['id']); ?>">
-                    Get Started &rarr;
+                    Apply Now &rarr;
                   </button>
                 </div>
               </div>
