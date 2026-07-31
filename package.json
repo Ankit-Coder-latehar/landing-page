@@ -4,7 +4,8 @@
   "description": "UGI exact website clone in PHP and Node runner",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "echo No build step needed for static site"
   },
   "keywords": ["ugi", "landing-page", "php"],
   "author": "",

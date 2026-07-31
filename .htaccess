@@ -1,0 +1,21 @@
+# Apache Configuration for BigRock cPanel Hosting
+RewriteEngine On
+
+# Force HTTPS (Optional - recommended once SSL is active on BigRock)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Serve directory index as index.html or index.php
+DirectoryIndex index.html index.php
+
+# URL rewrite rules for clean URLs without .html extensions
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L,QSA]
+
+# Fallback for extensionless PHP files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L,QSA]

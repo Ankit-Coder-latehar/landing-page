@@ -226,6 +226,8 @@
       }
     }
   </style>
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
 
