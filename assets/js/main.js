@@ -5,7 +5,7 @@
 
 // FORMSPREE & GOOGLE SHEETS INTEGRATION CONFIGURATION
 // Note: GOOGLE_SHEET_WEBHOOK_URL must be a deployed Google Apps Script Web App URL (starts with https://script.google.com/macros/s/.../exec)
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xykrllzq'; // Configurable Formspree endpoint URL
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meeywnla'; // Configurable Formspree endpoint URL
 const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycby2yqfTqD_O_3HhS6d_fV6J1d4556l_4u71H_p6H7x_cK0qY6K8c5V4g/exec'; // Deployed Apps Script Web App URL for Sheet 1Stb8nmov2T_Y8Th7kdnuxV4zhQXDyI42UnZEYd_7gCc
 let RAZORPAY_KEY_ID = window.RAZORPAY_KEY_ID || '';
 const SEAT_BOOKING_AMOUNT_INR = 1000; // Seat Booking Fee in INR (₹1,000)
@@ -19,7 +19,7 @@ if (!RAZORPAY_KEY_ID && typeof fetch !== 'undefined') {
         RAZORPAY_KEY_ID = data.razorpay_key_id;
       }
     })
-    .catch(() => {});
+    .catch(() => { });
 }
 
 /**
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // DYNAMIC STREAM & COURSE SELECTOR LOGIC
   function initStreamCourseSelectors() {
     const streamSelects = document.querySelectorAll('select[name="stream"], .stream-select');
-    
+
     streamSelects.forEach(streamSelect => {
       const form = streamSelect.closest('form');
       if (!form) return;
@@ -339,16 +339,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalOverlay) {
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
-      
+
       const modalForm = modalOverlay.querySelector('form');
       if (modalForm) {
         const streamSelect = modalForm.querySelector('select[name="stream"]');
         const courseSelect = modalForm.querySelector('select[name="program"]');
-        
+
         if (preselectProgram && streamSelect && courseSelect) {
           let foundStream = '';
           let foundCourseName = '';
-          
+
           for (const [st, cList] of Object.entries(coursesByStream)) {
             for (const cName of cList) {
               if (cName.toLowerCase().includes(preselectProgram.toLowerCase()) || preselectProgram.toLowerCase().includes(st)) {
@@ -646,7 +646,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (cfg && cfg.razorpay_key_id) {
             RAZORPAY_KEY_ID = cfg.razorpay_key_id;
           }
-        } catch (e) {}
+        } catch (e) { }
       }
 
       // Launch Razorpay Payment Gateway Checkout Modal
@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', () => {
             await finalizeSeatBooking(paymentId);
           },
           modal: {
-            ondismiss: function() {
+            ondismiss: function () {
               btnBookSeat.disabled = false;
               btnBookSeat.innerHTML = originalText;
             }

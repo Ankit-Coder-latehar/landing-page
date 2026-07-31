@@ -94,12 +94,12 @@
         <div class="vision-mission-grid">
           <div class="vision-mission-col">
             <p>
-              To emerge as a centre of excellence in Distance and Online education by fostering innovative and technology-driven learning, ensuring access to high-quality, flexible, and inclusive education that empowers learners to become competent professionals with strong ethical values, research orientation, and social responsibility in alignment with global industry standards.
+              To provide education that transforms ideas into action, opportunities into the global advantage, capabilities into a successful career and dreams into realities.
             </p>
           </div>
           <div class="vision-mission-col">
             <p>
-              To deliver Industry-aligned distance and online programs that enhance career prospects, entrepreneurial skills, and lifelong learning. To leverage advanced digital tools, AI-driven platforms, and interactive pedagogy to create an engaging and flexible learning environment. To build strategic partnerships with industries, research organizations, and global institutions to enhance employability, leadership, and social responsibility.
+              UGI focuses to commit itself, for delivering the best possible educational experience and learning opportunities to assert the standard and to fulfil their future goal.
             </p>
           </div>
         </div>
