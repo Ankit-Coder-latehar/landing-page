@@ -492,7 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Submit to local process-enquiry endpoint
     try {
-      await fetch('process-enquiry.php', {
+      await fetch('/process-enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)

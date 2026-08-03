@@ -24,7 +24,7 @@
               </div>
             </div>
             <div class="news-card-body">
-              <img src="assets/images/news_card_1.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
+              <img src="/assets/images/news_card_1.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
             </div>
           </div>
 
@@ -40,7 +40,7 @@
               </div>
             </div>
             <div class="news-card-body">
-              <img src="assets/images/news_card_2.png" alt="Desh Sewak News Coverage" class="news-clipping-img">
+              <img src="/assets/images/news_card_2.png" alt="Desh Sewak News Coverage" class="news-clipping-img">
             </div>
           </div>
 
@@ -56,7 +56,7 @@
               </div>
             </div>
             <div class="news-card-body">
-              <img src="assets/images/news_card_3.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
+              <img src="/assets/images/news_card_3.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
             </div>
           </div>
 
@@ -72,7 +72,7 @@
               </div>
             </div>
             <div class="news-card-body">
-              <img src="assets/images/news_card_4.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
+              <img src="/assets/images/news_card_4.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
             </div>
           </div>
 
@@ -88,7 +88,7 @@
               </div>
             </div>
             <div class="news-card-body">
-              <img src="assets/images/news_card_1.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
+              <img src="/assets/images/news_card_1.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
             </div>
           </div>
 
@@ -104,7 +104,7 @@
               </div>
             </div>
             <div class="news-card-body">
-              <img src="assets/images/news_card_2.png" alt="Desh Sewak News Coverage" class="news-clipping-img">
+              <img src="/assets/images/news_card_2.png" alt="Desh Sewak News Coverage" class="news-clipping-img">
             </div>
           </div>
 
@@ -120,7 +120,7 @@
               </div>
             </div>
             <div class="news-card-body">
-              <img src="assets/images/news_card_3.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
+              <img src="/assets/images/news_card_3.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
             </div>
           </div>
 
@@ -136,7 +136,7 @@
               </div>
             </div>
             <div class="news-card-body">
-              <img src="assets/images/news_card_4.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
+              <img src="/assets/images/news_card_4.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
             </div>
           </div>
 

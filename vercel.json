@@ -7,8 +7,8 @@
     { "source": "/process-seat-booking.php", "destination": "/api/process-seat-booking" },
     { "source": "/process-seat-booking", "destination": "/api/process-seat-booking" },
     { "source": "/api/config.json", "destination": "/api/config" },
-    { "source": "/programs.php", "destination": "/index.html" },
-    { "source": "/programs", "destination": "/index.html" },
+    { "source": "/programs.php", "destination": "/programs.html" },
+    { "source": "/programs", "destination": "/programs.html" },
     { "source": "/:path*.php", "destination": "/:path*.html" }
   ]
 }

@@ -101,7 +101,7 @@
       <!-- RIGHT WOMAN VISUAL BANNER -->
       <div class="redefining-visual-wrapper">
         <div class="redefining-red-box">
-          <img src="assets/images/redefining_recognitions_woman.png" alt="Student with Laptop" class="redefining-woman-img">
+          <img src="/assets/images/redefining_recognitions_woman.png" alt="Student with Laptop" class="redefining-woman-img">
         </div>
       </div>
 

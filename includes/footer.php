@@ -6,8 +6,8 @@
       
       <!-- BRAND & ADDRESS COLUMN -->
       <div class="footer-col">
-        <a href="index.php" class="brand-logo" title="Universal Group of Institutions" style="margin-bottom: 1.25rem; display: inline-block;">
-          <img src="assets/images/universal_logo.png" alt="Universal Group of Institutions Logo" class="header-logo-img">
+        <a href="/index.html" class="brand-logo" title="Universal Group of Institutions" style="margin-bottom: 1.25rem; display: inline-block;">
+          <img src="/assets/images/universal_logo.png" alt="Universal Group of Institutions Logo" class="header-logo-img">
         </a>
 
         <p style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1.5rem; line-height: 1.6;">
@@ -36,11 +36,11 @@
       <div class="footer-col">
         <h4>Online Programs</h4>
         <ul class="footer-links">
-          <li><a href="masters-business-administration-online-degree.html">Online MBA Degree</a></li>
-          <li><a href="programs.php#mca">Online MCA Degree</a></li>
-          <li><a href="bachelors-business-administration-online-degree.html">Online BBA Degree</a></li>
-          <li><a href="bachelor-computer-application-online-degree.html">Online BCA Degree</a></li>
-          <li><a href="programs.php">All Electives</a></li>
+          <li><a href="/masters-business-administration-online-degree.html">Online MBA Degree</a></li>
+          <li><a href="/programs.html#mca">Online MCA Degree</a></li>
+          <li><a href="/bachelors-business-administration-online-degree.html">Online BBA Degree</a></li>
+          <li><a href="/bachelor-computer-application-online-degree.html">Online BCA Degree</a></li>
+          <li><a href="/programs.html">All Electives</a></li>
         </ul>
       </div>
 
@@ -48,10 +48,10 @@
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="about-us.php">About UGI</a></li>
-          <li><a href="index.php#accreditation">Accreditations &amp; Approvals</a></li>
-          <li><a href="index.php#faqs">FAQ &amp; Entitlements</a></li>
-          <li><a href="contact-us.php">Contact Us</a></li>
+          <li><a href="/about-us.html">About UGI</a></li>
+          <li><a href="/index.html#accreditation">Accreditations &amp; Approvals</a></li>
+          <li><a href="/index.html#faqs">FAQ &amp; Entitlements</a></li>
+          <li><a href="/contact-us.html">Contact Us</a></li>
           <li><a href="https://ugichd.edu.in" target="_blank">Student Support Portal</a></li>
         </ul>
       </div>
@@ -86,7 +86,7 @@
 <!-- FLOATING CONTACT WIDGETS -->
 <div class="floating-widgets">
   <a href="https://api.whatsapp.com/send?phone=918437079999&text=Hi%20UGI%20Counselor" target="_blank" class="floating-btn btn-whatsapp" title="Chat on WhatsApp">
-    <img src="assets/images/whatsapp_logo.svg" alt="WhatsApp Logo" width="30" height="30" style="display: block;">
+    <img src="/assets/images/whatsapp_logo.svg" alt="WhatsApp Logo" width="30" height="30" style="display: block;">
   </a>
 
   <a href="tel:+918437079999" class="floating-btn btn-call" title="Call Counselor">
@@ -95,4 +95,4 @@
 </div>
 
 <!-- MAIN JAVASCRIPT INCLUSION -->
-<script src="assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>

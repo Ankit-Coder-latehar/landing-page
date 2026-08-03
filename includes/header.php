@@ -10,18 +10,18 @@
   <div class="container header-container">
     
     <!-- BRAND LOGO -->
-    <a href="index.php" class="brand-logo" title="Universal Group of Institutions">
-      <img src="assets/images/universal_logo.png" alt="Universal Group of Institutions Logo" class="header-logo-img">
+    <a href="/index.html" class="brand-logo" title="Universal Group of Institutions">
+      <img src="/assets/images/universal_logo.png" alt="Universal Group of Institutions Logo" class="header-logo-img">
     </a>
 
     <!-- DESKTOP NAVIGATION MENU -->
     <ul class="nav-menu">
       <li class="nav-item">
-        <a href="about-us.php" class="nav-link">About Us</a>
+        <a href="/about-us.html" class="nav-link">About Us</a>
       </li>
 
       <li class="nav-item">
-        <a href="programs.php" class="nav-link">
+        <a href="/programs.html" class="nav-link">
           Programs
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </a>
@@ -48,7 +48,7 @@
             <!-- LEFT RED BANNER WITH WOMAN & HASHTAG -->
             <div class="mega-left-banner">
               <div class="mega-red-card">
-                <img src="assets/images/mega_menu_woman.png" alt="Student" class="mega-woman-img">
+                <img src="/assets/images/mega_menu_woman.png" alt="Student" class="mega-woman-img">
                 <span class="mega-hashtag">#DrivingYourFuture</span>
               </div>
             </div>
@@ -134,14 +134,14 @@
       </li>
 
       <li class="nav-item">
-        <a href="contact-us.php" class="nav-link">Contact Us</a>
+        <a href="/contact-us.html" class="nav-link">Contact Us</a>
       </li>
     </ul>
 
     <!-- HEADER CTA ACTIONS -->
     <div class="header-actions">
       <button class="btn btn-primary-red open-enquiry-modal">Enquire Now</button>
-      <a href="apply-now.php" class="btn btn-outline-navy">Apply Now</a>
+      <a href="/apply-now.html" class="btn btn-outline-navy">Apply Now</a>
 
       <!-- HAMBURGER BUTTON FOR MOBILE -->
       <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation drawer">
@@ -163,12 +163,12 @@
   </div>
 
   <ul class="drawer-menu">
-    <li><a href="index.php">Home</a></li>
-    <li><a href="about-us.php">About Us</a></li>
-    <li><a href="programs.php">Programs Offered</a></li>
-    <li><a href="contact-us.php">Contact Us</a></li>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/about-us.html">About Us</a></li>
+    <li><a href="/programs.html">Programs Offered</a></li>
+    <li><a href="/contact-us.html">Contact Us</a></li>
     <li><a href="https://ugichd.edu.in" target="_blank">Student Support</a></li>
-    <li><a href="apply-now.php" style="color: var(--primary-red); font-weight: 700;">Apply Now</a></li>
+    <li><a href="/apply-now.html" style="color: var(--primary-red); font-weight: 700;">Apply Now</a></li>
   </ul>
 
   <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
