@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "UGI Website",
   "scripts": {
-    "start": "node server.js"
+    "start": "node dev-server.js"
   },
   "keywords": [
     "ugi",
