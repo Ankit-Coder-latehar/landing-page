@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/process-enquiry.php", "destination": "/server.js" },
+    { "source": "/process-enquiry", "destination": "/server.js" },
+    { "source": "/process-seat-booking.php", "destination": "/server.js" },
+    { "source": "/process-seat-booking", "destination": "/server.js" },
+    { "source": "/api/:path*", "destination": "/server.js" },
+    { "source": "/about-us.php", "destination": "/about-us.html" },
+    { "source": "/contact-us.php", "destination": "/contact-us.html" },
+    { "source": "/apply-now.php", "destination": "/apply-now.html" },
+    { "source": "/index.php", "destination": "/index.html" },
+    { "source": "/programs.php", "destination": "/programs.html" }
+  ]
+}

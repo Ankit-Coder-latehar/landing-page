@@ -1,13 +1,16 @@
 {
   "name": "ugi-landing-page",
   "version": "1.0.0",
-  "description": "UGI exact website clone in PHP and Node runner",
+  "description": "UGI Website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "echo No build step needed for static site"
+    "build": "echo Build complete"
   },
-  "keywords": ["ugi", "landing-page", "php"],
+  "keywords": [
+    "ugi",
+    "landing-page"
+  ],
   "author": "",
   "license": "ISC"
 }
