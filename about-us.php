@@ -35,7 +35,7 @@
         <div class="about-hero-exact-overlay">
           <div class="about-hero-exact-card">
             <h1 class="about-hero-exact-title">
-              UGI - <span class="red-text">CENTRE FOR DISTANCE AND ONLINE EDUCATION</span>
+              UGI - <span class="red-text">CENTRE FOR EDUCATION</span>
             </h1>
             <p class="about-hero-exact-desc">
               With UGI we have raised the bar higher, for ourselves. Innovation, global curriculum, world-class
@@ -53,7 +53,7 @@
     <section class="vfstr-about-section">
       <div class="container">
         <h2 class="vfstr-about-title">
-          UGI GROUP OF INSTITUTIONS <span class="red-text">CENTRE FOR DISTANCE &amp; ONLINE EDUCATION</span>
+          UGI GROUP OF INSTITUTIONS <span class="red-text">CENTRE FOR DISTANCE &amp; EDUCATION</span>
         </h2>
         <div class="vfstr-about-grid">
           <div class="vfstr-about-content">
