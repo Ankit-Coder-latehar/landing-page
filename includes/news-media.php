@@ -1,48 +1,153 @@
-<!-- NEWS & MEDIA SECTION -->
-<section class="news-section">
+<!-- NEWS AND EVENTS SLIDER SECTION -->
+<section class="news-section" id="news-events">
   <div class="container">
-    
-    <div class="section-header">
-      <span class="section-tag">In The Headlines</span>
-      <h2>News &amp; Media Coverage</h2>
-      <p>UGI's academic achievements and educational innovations featured in leading national publications.</p>
+
+    <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+      <h2 style="font-size: 2.25rem; font-weight: 700; color: #1e293b; font-family: 'Montserrat', sans-serif;">News and Events</h2>
     </div>
 
-    <div class="news-grid">
-      
-      <div class="news-card">
-        <div>
-          <div class="news-source">Hindustan Times</div>
-          <h3 class="news-title">UGI Announces New Industry-Oriented Electives in AI &amp; Business Analytics</h3>
+    <div class="news-slider-wrapper">
+      <button class="news-slider-arrow news-prev" aria-label="Previous slide">&#10094;</button>
+
+      <div class="news-slider-container">
+        <div class="news-slider-track" id="newsSliderTrack">
+
+          <!-- CARD 1 -->
+          <div class="news-paper-card">
+            <div class="news-card-header">
+              <div class="news-card-source-info">
+                <span class="news-card-pub">Chandigarh Bani</span>
+                <span class="news-card-date">May 03, 2026</span>
+              </div>
+              <div class="news-card-logo">
+                <span class="punjabi-logo-jagbani">ਜਗ ਬਾਣੀ</span>
+              </div>
+            </div>
+            <div class="news-card-body">
+              <img src="assets/images/news_card_1.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="news-paper-card">
+            <div class="news-card-header">
+              <div class="news-card-source-info">
+                <span class="news-card-pub">Desh Sewak</span>
+                <span class="news-card-date">03 Nov, 2026</span>
+              </div>
+              <div class="news-card-logo">
+                <span class="punjabi-logo-deshsewak">ਦੇਸ਼ ਸੇਵਕ</span>
+              </div>
+            </div>
+            <div class="news-card-body">
+              <img src="assets/images/news_card_2.png" alt="Desh Sewak News Coverage" class="news-clipping-img">
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="news-paper-card">
+            <div class="news-card-header">
+              <div class="news-card-source-info">
+                <span class="news-card-pub">Chandigarh Bani</span>
+                <span class="news-card-date">Mar 01, 2026</span>
+              </div>
+              <div class="news-card-logo">
+                <span class="punjabi-logo-jagbani">ਜਗ ਬਾਣੀ</span>
+              </div>
+            </div>
+            <div class="news-card-body">
+              <img src="assets/images/news_card_3.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="news-paper-card">
+            <div class="news-card-header">
+              <div class="news-card-source-info">
+                <span class="news-card-pub">Chandigarh Bani</span>
+                <span class="news-card-date">Mar 08, 2026</span>
+              </div>
+              <div class="news-card-logo">
+                <span class="punjabi-logo-jagbani">ਜਗ ਬਾਣੀ</span>
+              </div>
+            </div>
+            <div class="news-card-body">
+              <img src="assets/images/news_card_4.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
+            </div>
+          </div>
+
+          <!-- CARD 5 (Duplicated sequence for seamless continuous slider loop) -->
+          <div class="news-paper-card">
+            <div class="news-card-header">
+              <div class="news-card-source-info">
+                <span class="news-card-pub">Chandigarh Bani</span>
+                <span class="news-card-date">May 03, 2026</span>
+              </div>
+              <div class="news-card-logo">
+                <span class="punjabi-logo-jagbani">ਜਗ ਬਾਣੀ</span>
+              </div>
+            </div>
+            <div class="news-card-body">
+              <img src="assets/images/news_card_1.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
+            </div>
+          </div>
+
+          <!-- CARD 6 -->
+          <div class="news-paper-card">
+            <div class="news-card-header">
+              <div class="news-card-source-info">
+                <span class="news-card-pub">Desh Sewak</span>
+                <span class="news-card-date">03 Nov, 2026</span>
+              </div>
+              <div class="news-card-logo">
+                <span class="punjabi-logo-deshsewak">ਦੇਸ਼ ਸੇਵਕ</span>
+              </div>
+            </div>
+            <div class="news-card-body">
+              <img src="assets/images/news_card_2.png" alt="Desh Sewak News Coverage" class="news-clipping-img">
+            </div>
+          </div>
+
+          <!-- CARD 7 -->
+          <div class="news-paper-card">
+            <div class="news-card-header">
+              <div class="news-card-source-info">
+                <span class="news-card-pub">Chandigarh Bani</span>
+                <span class="news-card-date">Mar 01, 2026</span>
+              </div>
+              <div class="news-card-logo">
+                <span class="punjabi-logo-jagbani">ਜਗ ਬਾਣੀ</span>
+              </div>
+            </div>
+            <div class="news-card-body">
+              <img src="assets/images/news_card_3.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
+            </div>
+          </div>
+
+          <!-- CARD 8 -->
+          <div class="news-paper-card">
+            <div class="news-card-header">
+              <div class="news-card-source-info">
+                <span class="news-card-pub">Chandigarh Bani</span>
+                <span class="news-card-date">Mar 08, 2026</span>
+              </div>
+              <div class="news-card-logo">
+                <span class="punjabi-logo-jagbani">ਜਗ ਬਾਣੀ</span>
+              </div>
+            </div>
+            <div class="news-card-body">
+              <img src="assets/images/news_card_4.png" alt="Chandigarh Bani News Coverage" class="news-clipping-img">
+            </div>
+          </div>
+
         </div>
-        <a href="https://ugichd.edu.in" target="_blank" class="news-link">Read Full Coverage &rarr;</a>
       </div>
 
-      <div class="news-card">
-        <div>
-          <div class="news-source">India Today</div>
-          <h3 class="news-title">UGI Ranked Among Top Higher Education Providers in Online Degrees</h3>
-        </div>
-        <a href="https://ugichd.edu.in" target="_blank" class="news-link">Read Full Coverage &rarr;</a>
-      </div>
-
-      <div class="news-card">
-        <div>
-          <div class="news-source">APN News</div>
-          <h3 class="news-title">Empowering Working Professionals Through UGC-Entitled Online Master's Programs</h3>
-        </div>
-        <a href="https://ugichd.edu.in" target="_blank" class="news-link">Read Full Coverage &rarr;</a>
-      </div>
-
-      <div class="news-card">
-        <div>
-          <div class="news-source">The Print</div>
-          <h3 class="news-title">360-Degree Career Assistance &amp; Placement Support Introduced for Distance Learners</h3>
-        </div>
-        <a href="https://ugichd.edu.in" target="_blank" class="news-link">Read Full Coverage &rarr;</a>
-      </div>
-
+      <button class="news-slider-arrow news-next" aria-label="Next slide">&#10095;</button>
     </div>
+
+    <div class="news-slider-dots" id="newsSliderDots"></div>
 
   </div>
 </section>
+

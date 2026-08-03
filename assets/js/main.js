@@ -331,11 +331,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 2. ENQUIRE MODAL TOGGLE LOGIC
-  const modalOverlay = document.getElementById('enquiryModal');
-  const modalTriggers = document.querySelectorAll('.open-enquiry-modal');
-  const modalCloseBtns = document.querySelectorAll('.close-modal-trigger');
+  function getModalOverlay() {
+    return document.getElementById('enquiryModal');
+  }
 
   function openModal(preselectProgram = '') {
+    const modalOverlay = getModalOverlay();
     if (modalOverlay) {
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -373,31 +374,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function closeModal() {
+    const modalOverlay = getModalOverlay();
     if (modalOverlay) {
       modalOverlay.classList.remove('active');
       document.body.style.overflow = '';
     }
   }
 
-  modalTriggers.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  // Global Event Delegation for modal open/close
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.open-enquiry-modal');
+    if (trigger) {
       e.preventDefault();
-      const prog = btn.getAttribute('data-program') || '';
+      const prog = trigger.getAttribute('data-program') || '';
       openModal(prog);
-    });
-  });
+      return;
+    }
 
-  modalCloseBtns.forEach(btn => {
-    btn.addEventListener('click', closeModal);
-  });
+    const closeBtn = e.target.closest('.close-modal-trigger');
+    if (closeBtn) {
+      closeModal();
+      return;
+    }
 
-  if (modalOverlay) {
-    modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) {
-        closeModal();
-      }
-    });
-  }
+    const modalOverlay = getModalOverlay();
+    if (modalOverlay && e.target === modalOverlay) {
+      closeModal();
+    }
+  });
 
   // Close modal on Escape key press
   document.addEventListener('keydown', (e) => {
@@ -764,6 +768,138 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { megaMenu.style.display = ''; }, 500);
       }
     });
+  }
+
+  // NEWS AND EVENTS CARD SLIDER
+  const newsTrack = document.getElementById('newsSliderTrack');
+  if (newsTrack) {
+    const newsContainer = newsTrack.parentElement;
+    const newsCards = Array.from(newsTrack.children);
+    const newsPrevBtn = document.querySelector('.news-slider-arrow.news-prev');
+    const newsNextBtn = document.querySelector('.news-slider-arrow.news-next');
+    const newsDotsContainer = document.getElementById('newsSliderDots');
+
+    if (newsCards.length > 0) {
+      let newsCurrentIndex = 0;
+      let newsAutoplayTimer = null;
+
+      function getCardsPerView() {
+        const width = window.innerWidth;
+        if (width < 576) return 1;
+        if (width < 850) return 2;
+        if (width < 1200) return 3;
+        return 4;
+      }
+
+      function getMaxIndex() {
+        const cardsPerView = getCardsPerView();
+        return Math.max(0, newsCards.length - cardsPerView);
+      }
+
+      function updateNewsSlider() {
+        const cardWidth = newsCards[0].offsetWidth;
+        const gap = 20; // 20px gap
+        const maxIdx = getMaxIndex();
+
+        if (newsCurrentIndex > maxIdx) {
+          newsCurrentIndex = 0;
+        } else if (newsCurrentIndex < 0) {
+          newsCurrentIndex = maxIdx;
+        }
+
+        const moveAmount = newsCurrentIndex * (cardWidth + gap);
+        newsTrack.style.transform = `translateX(-${moveAmount}px)`;
+        updateNewsDots();
+      }
+
+      function renderNewsDots() {
+        if (!newsDotsContainer) return;
+        newsDotsContainer.innerHTML = '';
+        const maxIdx = getMaxIndex();
+        for (let i = 0; i <= maxIdx; i++) {
+          const dot = document.createElement('button');
+          dot.classList.add('news-dot');
+          dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          if (i === newsCurrentIndex) dot.classList.add('active');
+          dot.addEventListener('click', () => {
+            newsCurrentIndex = i;
+            updateNewsSlider();
+            resetNewsAutoplay();
+          });
+          newsDotsContainer.appendChild(dot);
+        }
+      }
+
+      function updateNewsDots() {
+        if (!newsDotsContainer) return;
+        const dots = newsDotsContainer.querySelectorAll('.news-dot');
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === newsCurrentIndex);
+        });
+      }
+
+      function nextNewsSlide() {
+        const maxIdx = getMaxIndex();
+        if (newsCurrentIndex >= maxIdx) {
+          newsCurrentIndex = 0;
+        } else {
+          newsCurrentIndex++;
+        }
+        updateNewsSlider();
+      }
+
+      function prevNewsSlide() {
+        const maxIdx = getMaxIndex();
+        if (newsCurrentIndex <= 0) {
+          newsCurrentIndex = maxIdx;
+        } else {
+          newsCurrentIndex--;
+        }
+        updateNewsSlider();
+      }
+
+      if (newsNextBtn) {
+        newsNextBtn.addEventListener('click', () => {
+          nextNewsSlide();
+          resetNewsAutoplay();
+        });
+      }
+
+      if (newsPrevBtn) {
+        newsPrevBtn.addEventListener('click', () => {
+          prevNewsSlide();
+          resetNewsAutoplay();
+        });
+      }
+
+      function startNewsAutoplay() {
+        stopNewsAutoplay();
+        newsAutoplayTimer = setInterval(nextNewsSlide, 2800);
+      }
+
+      function stopNewsAutoplay() {
+        if (newsAutoplayTimer) clearInterval(newsAutoplayTimer);
+      }
+
+      function resetNewsAutoplay() {
+        stopNewsAutoplay();
+        startNewsAutoplay();
+      }
+
+      if (newsContainer) {
+        newsContainer.addEventListener('mouseenter', stopNewsAutoplay);
+        newsContainer.addEventListener('mouseleave', startNewsAutoplay);
+      }
+
+      window.addEventListener('resize', () => {
+        renderNewsDots();
+        updateNewsSlider();
+      });
+
+      renderNewsDots();
+      updateNewsSlider();
+      startNewsAutoplay();
+    }
   }
 
 });
