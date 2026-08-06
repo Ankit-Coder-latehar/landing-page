@@ -16,27 +16,27 @@
           <span class="accordion-icon">&darr;</span>
         </button>
         <div class="accordion-content">
-          Yes! UGI Group of Institutions is NAAC A+ accredited and its online degree programs are entitled by the UGC-DEB (University Grants Commission - Distance Education Bureau) under Category I university status.
+          Yes! UGI Group of Institutions is NAAC A+ accredited and its offline degree programs are entitled by the UGC-DEB (University Grants Commission - Distance Education Bureau) under Category I university status.
         </div>
       </div>
 
       <div class="accordion-item">
         <button class="accordion-header">
-          Is an Online Degree equivalent to a regular on-campus degree?
+          Is an Offline Degree equivalent to a regular on-campus degree?
           <span class="accordion-icon">&darr;</span>
         </button>
         <div class="accordion-content">
-          Yes. As per UGC notification F.No. 1-4/2018 (DEB-I), degrees awarded through online mode from UGC-entitled higher educational institutions are treated as equivalent to regular on-campus degrees for higher education, government jobs, and corporate employment.
+          Yes. As per UGC notification F.No. 1-4/2018 (DEB-I), degrees awarded through offline mode from UGC-entitled higher educational institutions are treated as equivalent to regular on-campus degrees for higher education, government jobs, and corporate employment.
         </div>
       </div>
 
       <div class="accordion-item">
         <button class="accordion-header">
-          How are examinations conducted for online programs?
+          How are examinations conducted for offline programs?
           <span class="accordion-icon">&darr;</span>
         </button>
         <div class="accordion-content">
-          Examinations are conducted 100% online through an AI-proctored examination platform. Students can take semester exams securely from the comfort of their home using a computer with a webcam and stable internet connection.
+          Examinations are conducted 100% offline at designated university examination centers and campus halls. Students take term-end written and practical assessments as per the scheduled academic calendar under university invigilation.
         </div>
       </div>
 

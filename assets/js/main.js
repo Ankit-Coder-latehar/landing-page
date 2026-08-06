@@ -411,13 +411,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 3. MOBILE SIDEBAR DRAWER TOGGLE
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const mobileDrawer = document.getElementById('mobileDrawer');
-  const drawerOverlay = document.getElementById('drawerOverlay');
-  const drawerCloseBtn = document.getElementById('drawerCloseBtn');
-
+  // 3. MOBILE SIDEBAR DRAWER TOGGLE (Robust Event Delegation)
   function openMobileDrawer() {
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
     if (mobileDrawer && drawerOverlay) {
       mobileDrawer.classList.add('active');
       drawerOverlay.classList.add('active');
@@ -426,6 +423,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function closeMobileDrawer() {
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
     if (mobileDrawer && drawerOverlay) {
       mobileDrawer.classList.remove('active');
       drawerOverlay.classList.remove('active');
@@ -433,9 +432,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileDrawer);
-  if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeMobileDrawer);
-  if (drawerOverlay) drawerOverlay.addEventListener('click', closeMobileDrawer);
+  document.addEventListener('click', (e) => {
+    const hamburgerTrigger = e.target.closest('#hamburgerBtn, .hamburger-btn');
+    if (hamburgerTrigger) {
+      e.preventDefault();
+      openMobileDrawer();
+      return;
+    }
+
+    const drawerCloseTrigger = e.target.closest('#drawerCloseBtn, .drawer-close-btn');
+    if (drawerCloseTrigger) {
+      e.preventDefault();
+      closeMobileDrawer();
+      return;
+    }
+
+    const overlayTrigger = e.target.closest('#drawerOverlay, .mobile-drawer-overlay');
+    if (overlayTrigger && e.target === overlayTrigger) {
+      closeMobileDrawer();
+      return;
+    }
+
+    const drawerLink = e.target.closest('.drawer-menu a, .mobile-drawer a');
+    if (drawerLink && !drawerLink.classList.contains('open-enquiry-modal')) {
+      closeMobileDrawer();
+    }
+  });
 
   // 4. PROGRAM TABS FILTER
   const tabBtns = document.querySelectorAll('.tab-btn');
