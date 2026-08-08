@@ -1,12 +1,13 @@
 <!-- UGI HERO BANNER SLIDESHOW -->
 <section class="hero-section-full" id="heroSlideshow">
   <div class="hero-slideshow-wrapper">
-    
+
     <!-- SLIDE 1: Gateway to Endless Opportunities -->
     <div class="hero-full-slide active">
       <a href="#" class="hero-banner-link open-enquiry-modal">
         <img src="/assets/images/hero_banner_opportunities.png" alt="" class="hero-bg-blur">
-        <img src="/assets/images/hero_banner_opportunities.png" alt="The Gateway to Endless Opportunities - Admissions Open 2026-27" class="hero-full-img">
+        <img src="/assets/images/hero_banner_opportunities.png"
+          alt="The Gateway to Endless Opportunities - Admissions Open 2026-27" class="hero-full-img">
       </a>
     </div>
 
@@ -14,7 +15,8 @@
     <div class="hero-full-slide">
       <a href="#" class="hero-banner-link open-enquiry-modal">
         <img src="/assets/images/hero_banner_scholarship.png" alt="" class="hero-bg-blur">
-        <img src="/assets/images/hero_banner_scholarship.png" alt="Up to 100% Scholarship - Admissions 2026-27" class="hero-full-img">
+        <img src="/assets/images/hero_banner_scholarship.png" alt="Up to 100% Scholarship - Admissions 2026-27"
+          class="hero-full-img">
       </a>
     </div>
 
@@ -22,7 +24,8 @@
     <div class="hero-full-slide">
       <a href="#" class="hero-banner-link open-enquiry-modal">
         <img src="/assets/images/Gemini_Generated_Image_lmwqillmwqillmwq.png" alt="" class="hero-bg-blur">
-        <img src="/assets/images/Gemini_Generated_Image_lmwqillmwqillmwq.png" alt="Scholarship &amp; Entitled Degrees" class="hero-full-img">
+        <img src="/assets/images/Gemini_Generated_Image_lmwqillmwqillmwq.png" alt="Scholarship &amp; Entitled Degrees"
+          class="hero-full-img">
       </a>
     </div>
 
@@ -30,7 +33,8 @@
     <div class="hero-full-slide">
       <a href="#" class="hero-banner-link open-enquiry-modal">
         <img src="/assets/images/Gemini_Generated_Image_m8g2oxm8g2oxm8g2.png" alt="" class="hero-bg-blur">
-        <img src="/assets/images/Gemini_Generated_Image_m8g2oxm8g2oxm8g2.png" alt="Online MBA Degree Program" class="hero-full-img">
+        <img src="/assets/images/Gemini_Generated_Image_m8g2oxm8g2oxm8g2.png" alt="Online MBA Degree Program"
+          class="hero-full-img">
       </a>
     </div>
 

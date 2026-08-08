@@ -200,6 +200,9 @@ function handleRequest(req, res) {
 
   // Handle GET static files
   let safePath = req.url.split('?')[0];
+  try {
+    safePath = decodeURIComponent(safePath);
+  } catch (e) {}
   if (safePath === '/' || safePath === '\\') {
     safePath = '/index.html';
   }

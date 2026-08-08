@@ -42,9 +42,6 @@
     <!-- TESTIMONIALS -->
     <?php include_once 'includes/testimonials.php'; ?>
 
-    <!-- NEWS & MEDIA -->
-    <?php include_once 'includes/news-media.php'; ?>
-
     <!-- FAQS -->
     <?php include_once 'includes/faqs.php'; ?>
   </main>

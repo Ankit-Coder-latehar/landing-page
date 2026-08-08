@@ -493,8 +493,14 @@ textarea {
     height: 36px;
     font-size: 1.5rem;
   }
-  .hero-nav-prev { left: 0.75rem; }
-  .hero-nav-next { right: 0.75rem; }
+
+  .hero-nav-prev {
+    left: 0.75rem;
+  }
+
+  .hero-nav-next {
+    right: 0.75rem;
+  }
 }
 
 /* Indicators */
@@ -1272,6 +1278,7 @@ textarea {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(calc(-50% - 12px));
   }
@@ -1465,6 +1472,7 @@ textarea {
   .news-paper-card {
     flex: 0 0 calc((100% - 20px) / 2);
   }
+
   .news-slider-wrapper {
     padding: 0 35px;
   }
@@ -1474,9 +1482,11 @@ textarea {
   .news-paper-card {
     flex: 0 0 100%;
   }
+
   .news-slider-wrapper {
     padding: 0 25px;
   }
+
   .news-slider-arrow {
     width: 34px;
     height: 34px;
@@ -1840,6 +1850,7 @@ textarea {
    RESPONSIVE MEDIA QUERIES & MOBILE NAVBAR SYSTEM
    ========================================================================== */
 @media screen and (max-width: 991px) {
+
   /* Top Ticker Bar on Mobile */
   .top-ticker {
     text-align: center;
@@ -1847,6 +1858,7 @@ textarea {
     font-size: 0.75rem;
     line-height: 1.35;
   }
+
   .top-ticker span {
     display: inline-block;
     word-break: break-word;
@@ -2341,18 +2353,41 @@ textarea {
 
 /* KEYFRAME ANIMATIONS */
 @keyframes pulseGlow {
-  0% { transform: scale(1) translateY(0); opacity: 0.6; }
-  100% { transform: scale(1.15) translateY(-30px); opacity: 0.9; }
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.15) translateY(-30px);
+    opacity: 0.9;
+  }
 }
 
 @keyframes floatCard {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 @keyframes blinkDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.3); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(1.3);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -3060,20 +3095,24 @@ textarea {
     min-height: 80vh;
     padding: 2.5rem 0;
   }
+
   .apply-hero-container {
     flex-direction: column;
     justify-content: center;
   }
+
   .apply-hero-left {
     width: 100%;
     height: 380px;
     align-items: center;
   }
+
   .admissions-open-badge {
     left: 50%;
     top: 60%;
     transform: translate(-50%, -50%);
   }
+
   .apply-hero-right {
     width: 100%;
     max-width: 520px;
@@ -3084,10 +3123,12 @@ textarea {
   .apply-hero-left {
     height: 300px;
   }
+
   .admissions-open-badge {
     font-size: 1.25rem;
     padding: 0.85rem 1.25rem;
   }
+
   .apply-form-row {
     grid-template-columns: 1fr;
   }
@@ -3191,6 +3232,7 @@ textarea {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
+
   .steps-title {
     font-size: 1.75rem;
   }
@@ -3234,12 +3276,12 @@ textarea {
   gap: 1.25rem;
 }
 
-.instructions-list > li {
+.instructions-list>li {
   color: #1e293b;
   font-weight: 500;
 }
 
-.instructions-list > li::marker {
+.instructions-list>li::marker {
   color: #0f172a;
 }
 
@@ -3281,6 +3323,7 @@ textarea {
     font-size: 1.75rem;
     margin-bottom: 1.75rem;
   }
+
   .instructions-section {
     padding: 2.5rem 0 3.5rem;
   }
@@ -3416,9 +3459,11 @@ textarea {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+
   .redefining-visual-wrapper {
     justify-content: center;
   }
+
   .redefining-red-box {
     width: 100%;
     max-width: 480px;
@@ -3429,12 +3474,15 @@ textarea {
   .redefining-cards-grid {
     grid-template-columns: 1fr;
   }
+
   .redefining-title {
     font-size: 1.75rem;
   }
+
   .redefining-red-box {
     height: 300px;
   }
+
   .redefining-woman-img {
     height: 350px;
   }
@@ -4376,18 +4424,23 @@ textarea {
   .bba-hero-grid {
     grid-template-columns: 1fr;
   }
+
   .bba-stats-grid {
     grid-template-columns: 1fr;
   }
+
   .bba-methodology-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .bba-enroll-grid {
     grid-template-columns: 1fr;
   }
+
   .bba-foundit-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .bba-quick-contact-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -4397,12 +4450,15 @@ textarea {
   .bba-highlights-list {
     grid-template-columns: 1fr;
   }
+
   .bba-methodology-grid {
     grid-template-columns: 1fr;
   }
+
   .bba-foundit-grid {
     grid-template-columns: 1fr;
   }
+
   .bba-quick-contact-grid {
     grid-template-columns: 1fr;
   }
@@ -4618,9 +4674,11 @@ textarea {
     flex-direction: column;
     gap: 0;
   }
+
   .bba-semester-grid {
     grid-template-columns: 1fr;
   }
+
   .bba-fees-grid {
     grid-template-columns: 1fr;
   }
