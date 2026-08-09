@@ -9,65 +9,65 @@
     </div>
 
     <div class="accreditation-grid">
-      
-      <div class="accreditation-card">
-        <span class="accreditation-badge-tag">NAAC</span>
-        <h3>Grade A+</h3>
-        <p>Accredited with prestigious A+ grade by National Assessment and Accreditation Council.</p>
-      </div>
-
-      <div class="accreditation-card">
-        <span class="accreditation-badge-tag">UGC-DEB</span>
-        <h3>Entitled</h3>
-        <p>Degrees entitled &amp; recognized by University Grants Commission - Distance Education Bureau.</p>
-      </div>
-
-      <div class="accreditation-card">
-        <span class="accreditation-badge-tag">IKGPTU</span>
-        <h3>Affiliated University</h3>
-        <p>Affiliated with I.K. Gujral Punjab Technical University, Jalandhar for Degree, Engineering &amp; Management courses.</p>
-      </div>
 
       <div class="accreditation-card">
         <span class="accreditation-badge-tag">AICTE</span>
-        <h3>Approved Council</h3>
-        <p>Approved by All India Council for Technical Education, New Delhi for Technical, Management &amp; Polytechnic programs.</p>
-      </div>
-
-      <div class="accreditation-card">
-        <span class="accreditation-badge-tag">PSBTE &amp; IT</span>
-        <h3>Technical Board</h3>
-        <p>Affiliated with Punjab State Board of Technical Education &amp; Industrial Training for Diploma Engineering programs.</p>
-      </div>
-
-      <div class="accreditation-card">
-        <span class="accreditation-badge-tag">PCI</span>
-        <h3>Council Approved</h3>
-        <p>Approved by Pharmacy Council of India, New Delhi for Bachelor &amp; Diploma in Pharmacy courses.</p>
-      </div>
-
-      <div class="accreditation-card">
-        <span class="accreditation-badge-tag">INC &amp; PNRC</span>
-        <h3>Council Recognized</h3>
-        <p>Recognized by Indian Nursing Council &amp; Punjab Nursing Registration Council for Nursing &amp; Healthcare degrees.</p>
+        <h3>AICTE</h3>
+        <p>All India Council for Technical Education</p>
       </div>
 
       <div class="accreditation-card">
         <span class="accreditation-badge-tag">BCI</span>
         <h3>Bar Council</h3>
-        <p>Recognized by Bar Council of India, New Delhi for LLB &amp; BA LLB Law degree programs.</p>
+        <p>Bar Council of India</p>
+      </div>
+
+      <div class="accreditation-card">
+        <span class="accreditation-badge-tag">PCI</span>
+        <h3>Pharmacy Council</h3>
+        <p>Pharmacy Council of India</p>
+      </div>
+
+      <div class="accreditation-card">
+        <span class="accreditation-badge-tag">INC</span>
+        <h3>Nursing Council</h3>
+        <p>Indian Nursing Council</p>
       </div>
 
       <div class="accreditation-card">
         <span class="accreditation-badge-tag">NCTE</span>
         <h3>Teacher Education</h3>
-        <p>Recognized by National Council for Teacher Education for B.Ed, BA B.Ed &amp; D.El.Ed/ETT courses.</p>
+        <p>National Council for Teacher Education</p>
       </div>
 
       <div class="accreditation-card">
-        <span class="accreditation-badge-tag">NIRF &amp; ISO</span>
-        <h3>Top Ranked</h3>
-        <p>Ranked among top North India institutes with ISO 9001:2015 certification for educational standards.</p>
+        <span class="accreditation-badge-tag">IKGPTU</span>
+        <h3>PTU Jalandhar</h3>
+        <p>Punjab Technical University, Jalandhar</p>
+      </div>
+
+      <div class="accreditation-card">
+        <span class="accreditation-badge-tag">PU PATIALA</span>
+        <h3>Punjabi University</h3>
+        <p>Punjabi University, Patiala</p>
+      </div>
+
+      <div class="accreditation-card">
+        <span class="accreditation-badge-tag">BFUHS</span>
+        <h3>Health Sciences</h3>
+        <p>Baba Farid University of Health Sciences, Faridkot</p>
+      </div>
+
+      <div class="accreditation-card">
+        <span class="accreditation-badge-tag">PSBTE &amp; IT</span>
+        <h3>Technical Board</h3>
+        <p>Punjab State Board of Technical Education &amp; Industrial Training</p>
+      </div>
+
+      <div class="accreditation-card">
+        <span class="accreditation-badge-tag">PNRC</span>
+        <h3>Nurses Registration</h3>
+        <p>Punjab Nurses Registration Council</p>
       </div>
 
     </div>

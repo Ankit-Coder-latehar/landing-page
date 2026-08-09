@@ -58,14 +58,14 @@
 
       <!-- RECOGNITION BADGES -->
       <div class="footer-col">
-        <h4>Approvals</h4>
+        <h4>Approvals &amp; Affiliations</h4>
         <p style="font-size: 0.825rem; color: #94a3b8; margin-bottom: 1rem;">
-          Entitled by UGC-DEB, NAAC A+ Accredited, AICTE Entitled, ISO 9001:2015 Quality Certified.
+          Approved by AICTE, Bar Council of India, Pharmacy Council of India &amp; Affiliated Universities.
         </p>
         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">UGC-DEB</span>
-          <span style="background: var(--primary-red); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">NAAC A+</span>
-          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">NIRF #70</span>
+          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">AICTE</span>
+          <span style="background: var(--primary-red); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">BCI</span>
+          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">PCI</span>
         </div>
       </div>
 
