@@ -32,7 +32,6 @@
 
  <!-- HEADER CTA ACTIONS -->
  <div class="header-actions">
- <button class="btn btn-primary-red open-enquiry-modal">Enquire Now</button>
  <a href="/apply-now.html" class="btn btn-outline-navy">Apply Now</a>
 
  <!-- HAMBURGER BUTTON FOR MOBILE -->
@@ -61,8 +60,4 @@
  <li><a href="https://ugichd.edu.in" target="_blank">Student Support</a></li>
  <li><a href="/apply-now.html" style="color: var(--primary-red); font-weight: 700;">Apply Now</a></li>
  </ul>
-
- <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
- <button class="btn btn-primary-red open-enquiry-modal" style="width: 100%;">Enquire Now</button>
- </div>
 </div>

@@ -38,10 +38,10 @@
  </div>
  </div>
 
- <!-- RIGHT SIDE: Section-1 Form Card -->
+ <!-- RIGHT SIDE: Admission Form Card -->
  <div class="apply-hero-right">
  <div class="apply-form-card">
- <h3 class="section-header-title">Section-1</h3>
+ <h3 class="section-header-title">Admission Form</h3>
 
  <form action="process-enquiry.php" method="POST" class="apply-lead-form">
  <div class="apply-form-grid">

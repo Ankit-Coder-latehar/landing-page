@@ -5,7 +5,7 @@
  <!-- CLOSE BUTTON ON TOP RIGHT -->
  <button class="modal-close-black close-modal-trigger" aria-label="Close modal">&times;</button>
 
- <h3 class="section-header-title">Section-1</h3>
+ <h3 class="section-header-title">Admission Form</h3>
 
  <!-- AJAX FEEDBACK ALERT -->
  <div class="form-alert" id="formAlert" style="display:none;"></div>
