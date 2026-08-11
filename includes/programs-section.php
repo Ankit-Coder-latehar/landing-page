@@ -57,18 +57,6 @@ if (file_exists($programsDataFile)) {
               </div>
 
               <div class="program-card-footer">
-                <div class="program-fee-badge">
-                  <span class="fee-label">ANNUAL FEE</span>
-                  <span class="fee-amount"><?php 
-                    $feeVal = htmlspecialchars($prog['fee']);
-                    if (strpos($feeVal, '/') !== false) {
-                      $parts = explode('/', $feeVal);
-                      echo trim($parts[0]) . ' <small class="fee-period">/' . trim($parts[1]) . '</small>';
-                    } else {
-                      echo $feeVal;
-                    }
-                  ?></span>
-                </div>
                 <div class="program-card-actions">
                   <a href="<?php echo htmlspecialchars($prog['slug']); ?>" class="btn btn-outline-navy">View Details</a>
                   <button class="btn btn-primary-red open-enquiry-modal" data-program="<?php echo htmlspecialchars($prog['id']); ?>">

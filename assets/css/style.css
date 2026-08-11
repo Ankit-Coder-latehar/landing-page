@@ -944,6 +944,8 @@ textarea {
 .program-card-actions {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
   gap: 6px;
   flex-wrap: nowrap;
 }
