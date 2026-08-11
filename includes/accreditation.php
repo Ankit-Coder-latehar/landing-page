@@ -10,64 +10,40 @@
 
  <div class="accreditation-grid">
 
- <div class="accreditation-card">
- <span class="accreditation-badge-tag">AICTE</span>
- <h3>AICTE</h3>
- <p>All India Council for Technical Education</p>
+ <div class="accreditation-card logo-card">
+ <img src="/assets/images/1.png" alt="Accreditation Logo 1" class="accreditation-img">
  </div>
 
- <div class="accreditation-card">
- <span class="accreditation-badge-tag">BCI</span>
- <h3>Bar Council</h3>
- <p>Bar Council of India</p>
+ <div class="accreditation-card logo-card">
+ <img src="/assets/images/2 (2).png" alt="Accreditation Logo 2" class="accreditation-img">
  </div>
 
- <div class="accreditation-card">
- <span class="accreditation-badge-tag">PCI</span>
- <h3>Pharmacy Council</h3>
- <p>Pharmacy Council of India</p>
+ <div class="accreditation-card logo-card">
+ <img src="/assets/images/3.png" alt="Accreditation Logo 3" class="accreditation-img">
  </div>
 
- <div class="accreditation-card">
- <span class="accreditation-badge-tag">INC</span>
- <h3>Nursing Council</h3>
- <p>Indian Nursing Council</p>
+ <div class="accreditation-card logo-card">
+ <img src="/assets/images/4.png" alt="Accreditation Logo 4" class="accreditation-img">
  </div>
 
- <div class="accreditation-card">
- <span class="accreditation-badge-tag">NCTE</span>
- <h3>Teacher Education</h3>
- <p>National Council for Teacher Education</p>
+ <div class="accreditation-card logo-card">
+ <img src="/assets/images/5.png" alt="Accreditation Logo 5" class="accreditation-img">
  </div>
 
- <div class="accreditation-card">
- <span class="accreditation-badge-tag">IKGPTU</span>
- <h3>PTU Jalandhar</h3>
- <p>Punjab Technical University, Jalandhar</p>
+ <div class="accreditation-card logo-card">
+ <img src="/assets/images/7.png" alt="Accreditation Logo 7" class="accreditation-img">
  </div>
 
- <div class="accreditation-card">
- <span class="accreditation-badge-tag">PU PATIALA</span>
- <h3>Punjabi University</h3>
- <p>Punjabi University, Patiala</p>
+ <div class="accreditation-card logo-card">
+ <img src="/assets/images/8.png" alt="Accreditation Logo 8" class="accreditation-img">
  </div>
 
- <div class="accreditation-card">
- <span class="accreditation-badge-tag">BFUHS</span>
- <h3>Health Sciences</h3>
- <p>Baba Farid University of Health Sciences, Faridkot</p>
+ <div class="accreditation-card logo-card">
+ <img src="/assets/images/9.png" alt="Accreditation Logo 9" class="accreditation-img">
  </div>
 
- <div class="accreditation-card">
- <span class="accreditation-badge-tag">PSBTE &amp; IT</span>
- <h3>Technical Board</h3>
- <p>Punjab State Board of Technical Education &amp; Industrial Training</p>
- </div>
-
- <div class="accreditation-card">
- <span class="accreditation-badge-tag">PNRC</span>
- <h3>Nurses Registration</h3>
- <p>Punjab Nurses Registration Council</p>
+ <div class="accreditation-card logo-card">
+ <img src="/assets/images/10.png" alt="Accreditation Logo 10" class="accreditation-img">
  </div>
 
  </div>
