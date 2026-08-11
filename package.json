@@ -1,14 +1,14 @@
 {
-  "name": "ugi-landing-page",
-  "version": "1.0.0",
-  "description": "UGI Website",
-  "scripts": {
-    "start": "node dev-server.js"
-  },
-  "keywords": [
-    "ugi",
-    "landing-page"
-  ],
-  "author": "",
-  "license": "ISC"
+ "name": "ugi-landing-page",
+ "version": "1.0.0",
+ "description": "UGI Website",
+ "scripts": {
+ "start": "node dev-server.js"
+ },
+ "keywords": [
+ "ugi",
+ "landing-page"
+ ],
+ "author": "",
+ "license": "ISC"
 }

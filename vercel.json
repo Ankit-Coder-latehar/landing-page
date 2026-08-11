@@ -1,15 +1,15 @@
 {
-  "framework": null,
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/process-enquiry.php", "destination": "/api/process-enquiry" },
-    { "source": "/process-enquiry", "destination": "/api/process-enquiry" },
-    { "source": "/process-seat-booking.php", "destination": "/api/process-seat-booking" },
-    { "source": "/process-seat-booking", "destination": "/api/process-seat-booking" },
-    { "source": "/api/config.json", "destination": "/api/config" },
-    { "source": "/programs.php", "destination": "/programs.html" },
-    { "source": "/programs", "destination": "/programs.html" },
-    { "source": "/:path*.php", "destination": "/:path*.html" }
-  ]
+ "framework": null,
+ "cleanUrls": true,
+ "trailingSlash": false,
+ "rewrites": [
+ { "source": "/process-enquiry.php", "destination": "/api/process-enquiry" },
+ { "source": "/process-enquiry", "destination": "/api/process-enquiry" },
+ { "source": "/process-seat-booking.php", "destination": "/api/process-seat-booking" },
+ { "source": "/process-seat-booking", "destination": "/api/process-seat-booking" },
+ { "source": "/api/config.json", "destination": "/api/config" },
+ { "source": "/programs.php", "destination": "/programs.html" },
+ { "source": "/programs", "destination": "/programs.html" },
+ { "source": "/:path*.php", "destination": "/:path*.html" }
+ ]
 }

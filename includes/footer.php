@@ -1,97 +1,97 @@
 <!-- SITE FOOTER -->
 <footer class="site-footer">
-  <div class="container">
-    
-    <div class="footer-grid">
-      
-      <!-- BRAND & ADDRESS COLUMN -->
-      <div class="footer-col">
-        <a href="/index.html" class="brand-logo" title="Universal Group of Institutions" style="margin-bottom: 1.25rem; display: inline-block;">
-          <img src="/assets/images/universal_logo.png" alt="Universal Group of Institutions Logo" class="header-logo-img">
-        </a>
+ <div class="container">
+ 
+ <div class="footer-grid">
+ 
+ <!-- BRAND & ADDRESS COLUMN -->
+ <div class="footer-col">
+ <a href="/index.html" class="brand-logo" title="Universal Group of Institutions" style="margin-bottom: 1.25rem; display: inline-block;">
+ <img src="/assets/images/universal_logo.png" alt="Universal Group of Institutions Logo" class="header-logo-img">
+ </a>
 
-        <p style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1.5rem; line-height: 1.6;">
-          Center for Education<br>
-          Universal Group of Institutions (UGI)<br>
-          Village Ballopur, Chandigarh-Ambala Highway, Teh. Dera Bassi, Distt. Mohali, PUNJAB, Lalru, India 140501
-        </p>
+ <p style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1.5rem; line-height: 1.6;">
+ Center for Education<br>
+ Universal Group of Institutions (UGI)<br>
+ Village Ballopur, Chandigarh-Ambala Highway, Teh. Dera Bassi, Distt. Mohali, PUNJAB, Lalru, India 140501
+ </p>
 
-        <ul class="contact-info-list">
-          <li class="contact-info-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Campus Address: Universal Group of Institutions (UGI), Village Ballopur, Chandigarh-Ambala Highway, Teh. Dera Bassi, Distt. Mohali, PUNJAB, Lalru, India 140501</span>
-          </li>
-          <li class="contact-info-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span>Admissions Toll-Free: +91 84370 79999</span>
-          </li>
-          <li class="contact-info-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>Email: <a href="mailto:head.careerguidance@ugichd.edu.in" style="color: inherit; text-decoration: none;">head.careerguidance@ugichd.edu.in</a></span>
-          </li>
-        </ul>
-      </div>
+ <ul class="contact-info-list">
+ <li class="contact-info-item">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+ <span>Campus Address: Universal Group of Institutions (UGI), Village Ballopur, Chandigarh-Ambala Highway, Teh. Dera Bassi, Distt. Mohali, PUNJAB, Lalru, India 140501</span>
+ </li>
+ <li class="contact-info-item">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+ <span>Admissions Toll-Free: +91 84370 79999</span>
+ </li>
+ <li class="contact-info-item">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+ <span>Email: <a href="mailto:head.careerguidance@ugichd.edu.in" style="color: inherit; text-decoration: none;">head.careerguidance@ugichd.edu.in</a></span>
+ </li>
+ </ul>
+ </div>
 
-      <!-- ONLINE PROGRAMS SITEMAP -->
-      <div class="footer-col">
-        <h4>Programs</h4>
-        <ul class="footer-links">
-          <li><a href="/masters-business-administration-online-degree.html">MBA Degree</a></li>
-          <li><a href="/programs.html#mca">MCA Degree</a></li>
-          <li><a href="/bachelors-business-administration-online-degree.html">BBA Degree</a></li>
-          <li><a href="/bachelor-computer-application-online-degree.html">BCA Degree</a></li>
-          <li><a href="/programs.html">All Electives</a></li>
-        </ul>
-      </div>
+ <!-- ONLINE PROGRAMS SITEMAP -->
+ <div class="footer-col">
+ <h4>Programs</h4>
+ <ul class="footer-links">
+ <li><a href="/masters-business-administration-online-degree.html">MBA Degree</a></li>
+ <li><a href="/programs.html#mca">MCA Degree</a></li>
+ <li><a href="/bachelors-business-administration-online-degree.html">BBA Degree</a></li>
+ <li><a href="/bachelor-computer-application-online-degree.html">BCA Degree</a></li>
+ <li><a href="/programs.html">All Electives</a></li>
+ </ul>
+ </div>
 
-      <!-- QUICK LINKS -->
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="/about-us.html">About UGI</a></li>
-          <li><a href="/index.html#accreditation">Accreditations &amp; Approvals</a></li>
-          <li><a href="/index.html#faqs">FAQ &amp; Entitlements</a></li>
-          <li><a href="/contact-us.html">Contact Us</a></li>
-          <li><a href="https://ugichd.edu.in" target="_blank">Student Support Portal</a></li>
-        </ul>
-      </div>
+ <!-- QUICK LINKS -->
+ <div class="footer-col">
+ <h4>Quick Links</h4>
+ <ul class="footer-links">
+ <li><a href="/about-us.html">About UGI</a></li>
+ <li><a href="/index.html#accreditation">Accreditations &amp; Approvals</a></li>
+ <li><a href="/index.html#faqs">FAQ &amp; Entitlements</a></li>
+ <li><a href="/contact-us.html">Contact Us</a></li>
+ <li><a href="https://ugichd.edu.in" target="_blank">Student Support Portal</a></li>
+ </ul>
+ </div>
 
-      <!-- RECOGNITION BADGES -->
-      <div class="footer-col">
-        <h4>Approvals &amp; Affiliations</h4>
-        <p style="font-size: 0.825rem; color: #94a3b8; margin-bottom: 1rem;">
-          Approved by AICTE, Bar Council of India, Pharmacy Council of India &amp; Affiliated Universities.
-        </p>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">AICTE</span>
-          <span style="background: var(--primary-red); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">BCI</span>
-          <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">PCI</span>
-        </div>
-      </div>
+ <!-- RECOGNITION BADGES -->
+ <div class="footer-col">
+ <h4>Approvals &amp; Affiliations</h4>
+ <p style="font-size: 0.825rem; color: #94a3b8; margin-bottom: 1rem;">
+ Approved by AICTE, Bar Council of India, Pharmacy Council of India &amp; Affiliated Universities.
+ </p>
+ <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+ <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">AICTE</span>
+ <span style="background: var(--primary-red); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">BCI</span>
+ <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: #fff;">PCI</span>
+ </div>
+ </div>
 
-    </div>
+ </div>
 
-    <!-- FOOTER BOTTOM -->
-    <div class="footer-bottom">
-      <div>@2026 UGI - Center for Education. All rights reserved.</div>
-      <div style="display: flex; gap: 1.5rem;">
-        <a href="https://ugichd.edu.in" target="_blank" style="color: #64748b;">Privacy Policy</a>
-        <a href="https://ugichd.edu.in" target="_blank" style="color: #64748b;">Terms of Use</a>
-      </div>
-    </div>
+ <!-- FOOTER BOTTOM -->
+ <div class="footer-bottom">
+ <div>@2026 UGI - Center for Education. All rights reserved.</div>
+ <div style="display: flex; gap: 1.5rem;">
+ <a href="https://ugichd.edu.in" target="_blank" style="color: #64748b;">Privacy Policy</a>
+ <a href="https://ugichd.edu.in" target="_blank" style="color: #64748b;">Terms of Use</a>
+ </div>
+ </div>
 
-  </div>
+ </div>
 </footer>
 
 <!-- FLOATING CONTACT WIDGETS -->
 <div class="floating-widgets">
-  <a href="https://api.whatsapp.com/send?phone=918437079999&text=Hi%20UGI%20Counselor" target="_blank" class="floating-btn btn-whatsapp" title="Chat on WhatsApp">
-    <img src="/assets/images/whatsapp_logo.svg" alt="WhatsApp Logo" width="30" height="30" style="display: block;">
-  </a>
+ <a href="https://api.whatsapp.com/send?phone=918437079999&text=Hi%20UGI%20Counselor" target="_blank" class="floating-btn btn-whatsapp" title="Chat on WhatsApp">
+ <img src="/assets/images/whatsapp_logo.svg" alt="WhatsApp Logo" width="30" height="30" style="display: block;">
+ </a>
 
-  <a href="tel:+918437079999" class="floating-btn btn-call" title="Call Counselor">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-  </a>
+ <a href="tel:+918437079999" class="floating-btn btn-call" title="Call Counselor">
+ <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+ </a>
 </div>
 
 <!-- MAIN JAVASCRIPT INCLUSION -->
