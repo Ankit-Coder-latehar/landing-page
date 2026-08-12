@@ -7,11 +7,11 @@
 // Note: GOOGLE_SHEET_WEBHOOK_URL must be a deployed Google Apps Script Web App URL (starts with https://script.google.com/macros/s/.../exec)
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meeywnla'; // Configurable Formspree endpoint URL
 const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycby2yqfTqD_O_3HhS6d_fV6J1d4556l_4u71H_p6H7x_cK0qY6K8c5V4g/exec'; // Deployed Apps Script Web App URL for Sheet 1Stb8nmov2T_Y8Th7kdnuxV4zhQXDyI42UnZEYd_7gCc
-let RAZORPAY_KEY_ID = window.RAZORPAY_KEY_ID || '';
+let RAZORPAY_KEY_ID = window.RAZORPAY_KEY_ID || 'rzp_live_bWTZeZdjtDN95M';
 const SEAT_BOOKING_AMOUNT_INR = 1000; // Seat Booking Fee in INR (₹1,000)
 
 // Fetch environment configuration dynamically if available
-if (!RAZORPAY_KEY_ID && typeof fetch !== 'undefined') {
+if (typeof fetch !== 'undefined') {
   fetch('/api/config')
     .then(res => res.json())
     .then(data => {
@@ -696,6 +696,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (e) { }
       }
 
+      if (!RAZORPAY_KEY_ID) {
+        RAZORPAY_KEY_ID = 'rzp_live_bWTZeZdjtDN95M';
+      }
+
       // Launch Razorpay Payment Gateway Checkout Modal
       if (typeof Razorpay !== 'undefined' && RAZORPAY_KEY_ID) {
         const options = {
@@ -730,12 +734,23 @@ document.addEventListener('DOMContentLoaded', () => {
           rzp.open();
         } catch (err) {
           console.error('Razorpay popup launch error:', err);
-          const fallbackPaymentId = 'pay_demo_' + Date.now().toString(36);
-          await finalizeSeatBooking(fallbackPaymentId);
+          if (seatAlert) {
+            seatAlert.className = 'form-alert error';
+            seatAlert.textContent = 'Unable to launch Razorpay payment popup. Please try again or check pop-up blocker settings.';
+            seatAlert.style.display = 'block';
+          }
+          btnBookSeat.disabled = false;
+          btnBookSeat.innerHTML = originalText;
         }
       } else {
-        const demoPaymentId = 'pay_live_' + Date.now().toString(36);
-        await finalizeSeatBooking(demoPaymentId);
+        console.error('Razorpay SDK or Key not available');
+        if (seatAlert) {
+          seatAlert.className = 'form-alert error';
+          seatAlert.textContent = 'Payment Gateway is currently unavailable. Please try again later or contact support.';
+          seatAlert.style.display = 'block';
+        }
+        btnBookSeat.disabled = false;
+        btnBookSeat.innerHTML = originalText;
       }
     });
   }
