@@ -355,6 +355,145 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initStreamCourseSelectors();
 
+  // DYNAMIC INDIA STATES & CITIES DATASET (36 States & UTs with major Cities)
+  const INDIA_STATES_CITIES = {
+    "Andhra Pradesh": ["Visakhapatnam", "Vijayawada", "Guntur", "Nellore", "Kurnool", "Kakinada", "Rajahmundry", "Tirupati", "Anantapur", "Kadapa", "Eluru", "Vizianagaram", "Ongole"],
+    "Arunachal Pradesh": ["Itanagar", "Naharlagun", "Pasighat", "Tawang", "Ziro", "Tezu", "Bomdila"],
+    "Assam": ["Guwahati", "Silchar", "Dibrugarh", "Jorhat", "Nagaon", "Tinsukia", "Tezpur", "Bongaigaon"],
+    "Bihar": ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur", "Purnia", "Darbhanga", "Bihar Sharif", "Arrah", "Begusarai", "Katihar", "Chhapra"],
+    "Chhattisgarh": ["Raipur", "Bhilai", "Bilaspur", "Korba", "Rajnandgaon", "Raigarh", "Jagdalpur", "Ambikapur"],
+    "Goa": ["Panaji", "Margao", "Vasco da Gama", "Mapusa", "Ponda"],
+    "Gujarat": ["Ahmedabad", "Surat", "Vadodara", "Rajkot", "Bhavnagar", "Jamnagar", "Junagadh", "Gandhinagar", "Anand", "Navsari", "Morbi"],
+    "Haryana": ["Gurugram", "Faridabad", "Panipat", "Ambala", "Yamunanagar", "Rohtak", "Hisar", "Karnal", "Sonipat", "Panchkula", "Bhiwani", "Sirsa"],
+    "Himachal Pradesh": ["Shimla", "Dharamshala", "Mandi", "Solan", "Baddi", "Kullu", "Hamirpur", "Bilaspur", "Una", "Chamba"],
+    "Jharkhand": ["Ranchi", "Jamshedpur", "Dhanbad", "Bokaro", "Hazaribagh", "Deoghar", "Giridih", "Ramgarh", "Phusro"],
+    "Karnataka": ["Bengaluru", "Mysuru", "Hubballi-Dharwad", "Mangaluru", "Belagavi", "Davangere", "Ballari", "Vijayapura", "Shivamogga", "Tumakuru", "Kalaburagi"],
+    "Kerala": ["Thiruvananthapuram", "Kochi", "Kozhikode", "Thrissur", "Kollam", "Palakkad", "Alappuzha", "Kannur", "Kottayam", "Malappuram"],
+    "Madhya Pradesh": ["Indore", "Bhopal", "Jabalpur", "Gwalior", "Ujjain", "Sagar", "Dewas", "Satna", "Ratlam", "Rewa", "Murwara"],
+    "Maharashtra": ["Mumbai", "Pune", "Nagpur", "Thane", "Nashik", "Kalyan-Dombivli", "Vasai-Virar", "Aurangabad", "Navi Mumbai", "Solapur", "Mira-Bhayandar", "Bhiwandi", "Amravati", "Nanded", "Kolhapur", "Akola"],
+    "Manipur": ["Imphal", "Thoubal", "Bishnupur", "Churachandpur", "Ukhrul"],
+    "Meghalaya": ["Shillong", "Tura", "Jowai", "Nongstoin", "Nongpoh"],
+    "Mizoram": ["Aizawl", "Lunglei", "Saiha", "Champhai"],
+    "Nagaland": ["Kohima", "Dimapur", "Mokokchung", "Tuensang", "Wokha"],
+    "Odisha": ["Bhubaneswar", "Cuttack", "Rourkela", "Berhampur", "Sambalpur", "Puri", "Balasore", "Bhadrak", "Baripada"],
+    "Punjab": ["Ludhiana", "Amritsar", "Jalandhar", "Patiala", "Bathinda", "Mohali", "Hoshiarpur", "Pathankot", "Moga", "Batala", "Phagwara", "Dera Bassi", "Lalru", "Sangrur", "Barnala", "Firozpur"],
+    "Rajasthan": ["Jaipur", "Jodhpur", "Kota", "Bikaner", "Ajmer", "Udaipur", "Bhilwara", "Alwar", "Bharatpur", "Sikar", "Pali", "Sri Ganganagar"],
+    "Sikkim": ["Gangtok", "Namchi", "Gyalshing", "Mangan"],
+    "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli", "Salem", "Tiruppur", "Erode", "Vellore", "Tirunelveli", "Thanjavur", "Tuticorin", "Nagercoil"],
+    "Telangana": ["Hyderabad", "Warangal", "Nizamabad", "Khammam", "Karimnagar", "Ramagundam", "Mahbubnagar", "Nalgonda"],
+    "Tripura": ["Agartala", "Udaipur", "Dharmanagar", "Kailasahar"],
+    "Uttar Pradesh": ["Lucknow", "Kanpur", "Ghaziabad", "Agra", "Meerut", "Varanasi", "Prayagraj", "Bareilly", "Aligarh", "Moradabad", "Saharanpur", "Gorakhpur", "Noida", "Firozabad", "Jhansi", "Muzaffarnagar", "Mathura"],
+    "Uttarakhand": ["Dehradun", "Haridwar", "Roorkee", "Haldwani", "Rudraprayag", "Kashipur", "Rishikesh", "Nainital", "Almora"],
+    "West Bengal": ["Kolkata", "Howrah", "Asansol", "Siliguri", "Durgapur", "Bardhaman", "Malda", "Baharampur", "Habra", "Kharagpur", "Shantipur"],
+    "Andaman and Nicobar Islands": ["Port Blair", "Garacharma", "Bambooflat"],
+    "Chandigarh": ["Chandigarh"],
+    "Dadra and Nagar Haveli and Daman and Diu": ["Daman", "Diu", "Silvassa"],
+    "Delhi (NCT)": ["New Delhi", "North Delhi", "South Delhi", "East Delhi", "West Delhi", "Central Delhi", "Dwarka", "Rohini"],
+    "Jammu and Kashmir": ["Srinagar", "Jammu", "Anantnag", "Baramulla", "Udhampur", "Kathua", "Sopore"],
+    "Ladakh": ["Leh", "Kargil"],
+    "Lakshadweep": ["Kavaratti", "Agatti", "Amini"],
+    "Puducherry": ["Puducherry", "Karaikal", "Yanam", "Mahe"]
+  };
+
+  // DYNAMIC INDIA STATE & CITY SELECTOR LOGIC WITH API FETCH & FALLBACK DATASET
+  async function initIndiaStateCitySelectors() {
+    const stateSelects = document.querySelectorAll('select[name="state"], .state-select');
+
+    stateSelects.forEach(async stateSelect => {
+      const form = stateSelect.closest('form');
+      if (!form) return;
+      const citySelect = form.querySelector('select[name="city"], .city-select');
+
+      function populateStateOptions(statesList) {
+        const currentVal = stateSelect.value;
+        stateSelect.innerHTML = '<option value="">Select State</option>';
+        statesList.forEach(st => {
+          const stateName = typeof st === 'string' ? st : st.name;
+          if (stateName) {
+            const opt = document.createElement('option');
+            opt.value = stateName;
+            opt.textContent = stateName;
+            if (stateName === currentVal) opt.selected = true;
+            stateSelect.appendChild(opt);
+          }
+        });
+      }
+
+      // Populate local dataset first for instant UI response
+      populateStateOptions(Object.keys(INDIA_STATES_CITIES).sort());
+
+      // Attempt API fetch for dynamic live state updates
+      try {
+        const apiRes = await fetch('https://countriesnow.space/api/v0.1/countries/states', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ country: 'India' })
+        });
+        const apiData = await apiRes.json();
+        if (apiData && apiData.data && apiData.data.states && apiData.data.states.length > 0) {
+          const fetchedStates = apiData.data.states.map(s => s.name).sort();
+          const mergedStates = Array.from(new Set([...Object.keys(INDIA_STATES_CITIES), ...fetchedStates])).sort();
+          populateStateOptions(mergedStates);
+        }
+      } catch (err) {
+        console.log('States API note (using offline dictionary):', err);
+      }
+
+      // Handle State Change -> Populate Cities
+      if (citySelect) {
+        stateSelect.addEventListener('change', async () => {
+          const selectedState = stateSelect.value;
+          citySelect.innerHTML = '';
+
+          if (!selectedState) {
+            citySelect.innerHTML = '<option value="">Select State First</option>';
+            return;
+          }
+
+          citySelect.innerHTML = '<option value="">Loading Cities...</option>';
+
+          let citiesList = INDIA_STATES_CITIES[selectedState] || [];
+
+          // Try fetching cities dynamically from API for selected state
+          try {
+            const cityRes = await fetch('https://countriesnow.space/api/v0.1/countries/state/cities', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ country: 'India', state: selectedState })
+            });
+            const cityData = await cityRes.json();
+            if (cityData && cityData.data && cityData.data.length > 0) {
+              citiesList = Array.from(new Set([...citiesList, ...cityData.data])).sort();
+            }
+          } catch (e) {
+            console.log('Cities API note (using offline dictionary):', e);
+          }
+
+          citySelect.innerHTML = '<option value="">Select City</option>';
+          if (citiesList.length === 0) {
+            const opt = document.createElement('option');
+            opt.value = selectedState;
+            opt.textContent = selectedState;
+            citySelect.appendChild(opt);
+          } else {
+            citiesList.forEach(cty => {
+              const opt = document.createElement('option');
+              opt.value = cty;
+              opt.textContent = cty;
+              citySelect.appendChild(opt);
+            });
+          }
+        });
+
+        if (stateSelect.value) {
+          stateSelect.dispatchEvent(new Event('change'));
+        }
+      }
+    });
+  }
+
+  initIndiaStateCitySelectors();
+
   // 1. DYNAMIC ELECTIVES DROPDOWN IN ENQUIRE FORM
   const programSelect = document.getElementById('formProgramSelect');
   const electiveSelect = document.getElementById('formElectiveSelect');
@@ -643,7 +782,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const formData = new FormData(seatBookingForm);
       const nameVal = document.getElementById('bookName').value || 'Student';
-      const courseVal = (document.getElementById('bookCourseSelect') && document.getElementById('bookCourseSelect').value) || document.getElementById('bookCourse').value || 'Selected Course';
+      const stateVal = (document.getElementById('bookStateSelect') && document.getElementById('bookStateSelect').value) || '';
+      const cityVal = (document.getElementById('bookCitySelect') && document.getElementById('bookCitySelect').value) || '';
+      const locationVal = (cityVal && stateVal) ? `${cityVal}, ${stateVal}` : (stateVal || cityVal || 'Location');
       const batchVal = document.getElementById('bookBatch').value || 'Selected Batch';
       const emailVal = document.getElementById('paramEmail').value || '';
       const mobileVal = document.getElementById('paramMobile').value || '';
@@ -651,6 +792,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const finalizeSeatBooking = async (paymentId) => {
         formData.append('razorpay_payment_id', paymentId);
         formData.append('payment_status', 'PAID');
+        if (stateVal) formData.append('state', stateVal);
+        if (cityVal) formData.append('city', cityVal);
 
         // 1. Dispatch to external webhooks in background (non-blocking for fast UI response)
         sendToExternalIntegrations(formData).catch(err => console.log('Background dispatch note:', err));
@@ -673,7 +816,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const elemPaymentId = document.getElementById('successPaymentId');
 
         if (elemApplicantName) elemApplicantName.textContent = nameVal;
-        if (elemCourseName) elemCourseName.textContent = courseVal;
+        if (elemCourseName) elemCourseName.textContent = locationVal;
         if (elemBatchName) elemBatchName.textContent = batchVal;
         if (elemRefId) elemRefId.textContent = randomRef;
         if (elemPaymentId) elemPaymentId.textContent = paymentId;
@@ -707,7 +850,7 @@ document.addEventListener('DOMContentLoaded', () => {
           amount: (typeof SEAT_BOOKING_AMOUNT_INR !== 'undefined' ? SEAT_BOOKING_AMOUNT_INR : 1000) * 100,
           currency: 'INR',
           name: 'Universal Group of Institutions',
-          description: `Seat Reservation Fee - ${courseVal}`,
+          description: `Seat Reservation Fee - ${locationVal}`,
           image: 'assets/images/universal_logo.png',
           prefill: {
             name: nameVal,

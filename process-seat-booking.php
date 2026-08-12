@@ -9,6 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $name = trim($_POST['name'] ?? '');
 $batch = trim($_POST['batch'] ?? '');
+$state = trim($_POST['state'] ?? '');
+$city = trim($_POST['city'] ?? '');
 $course = trim($_POST['course_enrolled'] ?? '');
 $email = trim($_POST['applicant_email'] ?? '');
 $mobile = trim($_POST['applicant_mobile'] ?? '');
@@ -20,6 +22,8 @@ $record = [
  'id' => uniqid('seat_'),
  'name' => $name,
  'batch' => $batch,
+ 'state' => $state,
+ 'city' => $city,
  'course_enrolled' => $course,
  'email' => $email,
  'mobile' => $mobile,
