@@ -693,6 +693,58 @@ textarea {
   }
 }
 
+/* ACCREDITATION INFINITE MARQUEE SINGLE ROW */
+.accreditation-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 0.75rem 0 2rem 0;
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.accreditation-marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: accreditationMarquee 28s linear infinite;
+  will-change: transform;
+}
+
+.accreditation-marquee-wrapper:hover .accreditation-marquee-track {
+  animation-play-state: paused;
+}
+
+.accreditation-marquee-track .accreditation-card.logo-card {
+  flex: 0 0 190px;
+  width: 190px;
+  min-height: 110px;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.accreditation-marquee-track .accreditation-card.logo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  border-color: var(--primary-red);
+}
+
+@keyframes accreditationMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.75rem));
+  }
+}
+
 .accreditation-card {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -4489,18 +4541,18 @@ textarea {
   transform: translateY(-2px);
 }
 
-/* Red Quick Contact Bar */
+/* Quick Contact Bar */
 .bba-quick-contact-bar {
-  background: var(--primary-red);
+  background: #475569;
   color: #ffffff;
-  padding: 2.5rem 0;
+  padding: 1.25rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .bba-quick-contact-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: auto auto auto 1fr;
+  gap: 2rem;
   align-items: center;
 }
 

@@ -62,7 +62,7 @@
  }
 
  .contact-card-icon-badge.red-badge {
- background: #ca2526;
+ background: #475569;
  color: #ffffff;
  }
 
@@ -82,22 +82,22 @@
  }
 
  .contact-card-link:hover {
- color: #ca2526;
+ color: #475569;
  }
 
  /* CAMPUS ADDRESS & MAP SECTION */
  .contact-campus-grid {
  display: grid;
- grid-template-columns: 1fr 1fr;
- gap: 2.5rem;
+ grid-template-columns: 1.2fr 0.8fr;
+ gap: 2rem;
  align-items: center;
  margin-bottom: 2rem;
  }
 
  .campus-info-block {
  background: #ffffff;
- padding: 2.5rem;
- border-radius: 20px;
+ padding: 1.5rem 2rem;
+ border-radius: 16px;
  border: 1px solid #e2e8f0;
  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
  }
@@ -116,7 +116,7 @@
  font-size: 1.35rem;
  font-weight: 900;
  color: #0f172a;
- margin-bottom: 1.5rem;
+ margin-bottom: 1rem;
  line-height: 1.3;
  }
 
@@ -130,8 +130,8 @@
  width: 44px;
  height: 44px;
  border-radius: 12px;
- background: rgba(202, 37, 38, 0.1);
- color: #ca2526;
+ background: rgba(71, 85, 105, 0.1);
+ color: #475569;
  display: flex;
  align-items: center;
  justify-content: center;
@@ -141,16 +141,16 @@
  .campus-address-text {
  font-size: 0.95rem;
  color: #475569;
- line-height: 1.7;
+ line-height: 1.6;
  font-weight: 600;
  }
 
  .campus-map-wrapper {
- border-radius: 20px;
+ border-radius: 16px;
  overflow: hidden;
  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
  border: 1px solid #cbd5e1;
- height: 320px;
+ height: 240px;
  }
 
  .campus-map-iframe {
