@@ -292,14 +292,16 @@ textarea {
 }
 
 .btn-outline-navy {
-  border-color: var(--navy-blue);
+  border: 2px solid var(--navy-blue) !important;
   color: var(--navy-blue);
   background: transparent;
 }
 
-.btn-outline-navy:hover {
+.btn-outline-navy:hover,
+.btn-outline-navy.active {
   background-color: var(--navy-blue);
   color: #ffffff;
+  border: 2px solid var(--navy-blue) !important;
 }
 
 .btn-blue {
@@ -4964,4 +4966,235 @@ textarea {
   .site-footer.exact-red-footer {
     padding: 3rem 0 2.5rem 0;
   }
+}
+
+/* ==========================================================================
+   GLOBAL MOBILE RESPONSIVE ENHANCEMENTS (HOME, ABOUT US, CONTACT US, HEADER)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  /* Header Navbar & Hamburger */
+  .site-header {
+    height: auto;
+  }
+
+  .header-container {
+    height: 72px;
+    padding: 0 1rem;
+  }
+
+  .brand-logo img {
+    height: 40px;
+  }
+
+  .nav-menu {
+    display: none !important;
+  }
+
+  .hamburger-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-actions {
+    gap: 0.6rem;
+  }
+
+  .header-actions .btn {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.78rem;
+  }
+
+  /* Grid Layouts across Home & Inner Pages */
+  .contact-cards-grid,
+  .contact-campus-grid,
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .institutional-overview-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Top Announcement Ticker Bar */
+  .top-ticker {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 1.35;
+  }
+
+  .top-ticker span {
+    display: block;
+  }
+
+  /* Home Page Hero Slideshow */
+  .hero-slideshow-wrapper {
+    aspect-ratio: auto;
+    height: 220px;
+  }
+
+  .hero-full-img {
+    object-fit: fill;
+  }
+
+  /* Contact Us Page Cards & Map */
+  .contact-page-wrapper {
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .contact-card-item {
+    padding: 3rem 1.25rem 1.5rem;
+  }
+
+  .contact-card-link {
+    font-size: 1.05rem;
+  }
+
+  .campus-info-block {
+    padding: 1.5rem;
+  }
+
+  .campus-map-wrapper {
+    height: 240px;
+  }
+
+  .contact-tech-section {
+    padding: 3rem 0;
+  }
+
+  .contact-tech-title {
+    font-size: 1.65rem;
+  }
+
+  .contact-tech-item {
+    gap: 1rem;
+  }
+
+  .contact-tech-text {
+    font-size: 0.9rem;
+  }
+
+  /* Form Grid Stacking */
+  .lead-form-grid,
+  .enquiry-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-drawer {
+    width: 280px;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .brand-logo img {
+    height: 34px;
+  }
+
+  .header-actions {
+    gap: 0.4rem;
+  }
+
+  .header-actions .btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.7rem;
+    border: 2px solid var(--navy-blue) !important;
+  }
+
+  .contact-tech-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Academic Heritage Section Responsive Styles */
+.academic-heritage-section {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.academic-heritage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.why-choose-ugi-card {
+  background: linear-gradient(135deg, var(--bg-light) 0%, #eef2f7 100%);
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-xl);
+}
+
+@media (max-width: 992px) {
+  .academic-heritage-section {
+    padding: 3rem 0;
+  }
+
+  .academic-heritage-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .why-choose-ugi-card {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .academic-heritage-section {
+    padding: 2rem 0;
+  }
+
+  .why-choose-ugi-card {
+    padding: 1.5rem 1.15rem;
+    border-radius: 14px;
+  }
+}
+
+/* GLOBAL RESPONSIVE FORM CONTROLS & DYNAMIC SELECT DROPDOWNS */
+.form-group {
+  width: 100%;
+  min-width: 0;
+}
+
+.form-control,
+input.form-control,
+select.form-control,
+textarea.form-control {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  text-overflow: ellipsis;
+}
+
+select.form-control,
+select.stream-select,
+select.course-select {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 1.15em;
+  padding-right: 2.5rem !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
