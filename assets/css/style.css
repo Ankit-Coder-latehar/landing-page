@@ -2018,7 +2018,8 @@ textarea {
     -webkit-overflow-scrolling: touch;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 1rem;
   }
 
   .mobile-drawer.active {
@@ -5197,4 +5198,143 @@ select.course-select {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+/* ==========================================================================
+   VERTICAL FLOATING ACTION WIDGETS (APPLY NOW, WHATSAPP, CONTACT)
+   ========================================================================== */
+.floating-widgets {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column !important;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.floating-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.floating-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.btn-whatsapp {
+  background: #25D366 !important;
+  color: #ffffff !important;
+}
+
+.btn-call {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-apply-float {
+  background: linear-gradient(135deg, var(--primary-red) 0%, #a01a1b 100%) !important;
+  color: #ffffff !important;
+  padding: 0 1.2rem;
+  height: 48px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(202, 37, 38, 0.45);
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  white-space: nowrap;
+}
+
+.btn-apply-float:hover {
+  background: linear-gradient(135deg, #d32f2f 0%, #8e1516 100%) !important;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(202, 37, 38, 0.55);
+  color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  .floating-widgets {
+    bottom: 16px;
+    right: 12px;
+    gap: 8px;
+  }
+
+  .floating-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .btn-apply-float {
+    height: 44px;
+    padding: 0 0.95rem;
+    font-size: 0.78rem;
+  }
+}
+
+/* ==========================================================================
+   VERTICAL STICKY RIGHT-EDGE TAB (APPLY ONLINE)
+   ========================================================================== */
+.sticky-apply-tab {
+  position: fixed;
+  right: 0;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  background: var(--primary-red, #CA2526);
+  color: #ffffff !important;
+  padding: 1rem 0.65rem;
+  border-radius: 12px 0 0 12px;
+  font-weight: 800;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  writing-mode: vertical-rl;
+  text-decoration: none;
+  box-shadow: -4px 0 16px rgba(202, 37, 38, 0.45);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.sticky-apply-tab:hover {
+  background: #a01a1b;
+  padding-left: 0.85rem;
+  box-shadow: -6px 0 20px rgba(202, 37, 38, 0.6);
+  color: #ffffff !important;
+}
+
+.sticky-apply-tab span {
+  transform: rotate(180deg);
+  white-space: nowrap;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .sticky-apply-tab {
+    padding: 0.85rem 0.55rem;
+    font-size: 0.8rem;
+    border-radius: 10px 0 0 10px;
+    top: 42%;
+  }
 }

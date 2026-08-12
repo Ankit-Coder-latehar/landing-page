@@ -638,40 +638,12 @@ document.addEventListener('DOMContentLoaded', () => {
         seatAlert.style.display = 'none';
       }
 
-      // Count uploaded files across the 3 document inputs
-      const inputAadhaar = document.getElementById('inputAadhaar');
-      const input12th = document.getElementById('input12th');
-      const input10th = document.getElementById('input10th');
-
-      let uploadedFilesCount = 0;
-      if (inputAadhaar && inputAadhaar.files && inputAadhaar.files.length > 0) uploadedFilesCount++;
-      if (input12th && input12th.files && input12th.files.length > 0) uploadedFilesCount++;
-      if (input10th && input10th.files && input10th.files.length > 0) uploadedFilesCount++;
-
-      // Validate that at least 2 documents are uploaded
-      if (uploadedFilesCount < 2) {
-        if (seatAlert) {
-          seatAlert.className = 'form-alert error';
-          seatAlert.style.display = 'block';
-          seatAlert.style.padding = '0.85rem';
-          seatAlert.style.background = '#fef2f2';
-          seatAlert.style.color = '#991b1b';
-          seatAlert.style.border = '1px solid #fecaca';
-          seatAlert.style.borderRadius = '8px';
-          seatAlert.style.marginBottom = '1.25rem';
-          seatAlert.style.fontWeight = '600';
-          seatAlert.textContent = 'Please upload at least 2 verification documents (Aadhaar, 12th Certificate, or 10th Certificate) to proceed.';
-        }
-        window.scrollTo({ top: 180, behavior: 'smooth' });
-        return;
-      }
-
       btnBookSeat.disabled = true;
       btnBookSeat.innerHTML = '<span>Processing Payment...</span>';
 
       const formData = new FormData(seatBookingForm);
       const nameVal = document.getElementById('bookName').value || 'Student';
-      const courseVal = document.getElementById('bookCourse').value || 'Selected Course';
+      const courseVal = (document.getElementById('bookCourseSelect') && document.getElementById('bookCourseSelect').value) || document.getElementById('bookCourse').value || 'Selected Course';
       const batchVal = document.getElementById('bookBatch').value || 'Selected Batch';
       const emailVal = document.getElementById('paramEmail').value || '';
       const mobileVal = document.getElementById('paramMobile').value || '';
@@ -680,29 +652,30 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('razorpay_payment_id', paymentId);
         formData.append('payment_status', 'PAID');
 
-        // 1. Transmit to Formspree & Google Sheet Webhooks
-        await sendToExternalIntegrations(formData);
+        // 1. Dispatch to external webhooks in background (non-blocking for fast UI response)
+        sendToExternalIntegrations(formData).catch(err => console.log('Background dispatch note:', err));
 
-        // 2. Submit to local seat booking server endpoint
-        try {
-          await fetch('/process-seat-booking', {
-            method: 'POST',
-            body: formData
-          });
-        } catch (err) {
-          console.log('Local seat booking backend note:', err);
-        }
+        // 2. Submit to local seat booking server endpoint in background
+        fetch('/process-seat-booking', {
+          method: 'POST',
+          body: formData
+        }).catch(err => console.log('Local seat booking backend note:', err));
 
-        // 3. Display Success State
+        // 3. Instantly Display Success State
         const bookingHeader = document.getElementById('bookingHeader');
         const bookingSuccessCard = document.getElementById('bookingSuccessCard');
         const randomRef = 'UGI-SEAT-' + Math.floor(10000 + Math.random() * 90000);
 
-        document.getElementById('successApplicantName').textContent = nameVal;
-        document.getElementById('successCourseName').textContent = courseVal;
-        document.getElementById('successBatchName').textContent = batchVal;
-        document.getElementById('successRefId').textContent = randomRef;
+        const elemApplicantName = document.getElementById('successApplicantName');
+        const elemCourseName = document.getElementById('successCourseName');
+        const elemBatchName = document.getElementById('successBatchName');
+        const elemRefId = document.getElementById('successRefId');
         const elemPaymentId = document.getElementById('successPaymentId');
+
+        if (elemApplicantName) elemApplicantName.textContent = nameVal;
+        if (elemCourseName) elemCourseName.textContent = courseVal;
+        if (elemBatchName) elemBatchName.textContent = batchVal;
+        if (elemRefId) elemRefId.textContent = randomRef;
         if (elemPaymentId) elemPaymentId.textContent = paymentId;
 
         if (bookingHeader) bookingHeader.style.display = 'none';
