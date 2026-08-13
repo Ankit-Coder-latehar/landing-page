@@ -172,7 +172,7 @@
  dedicated mentorship.
  </p>
 
- <button class="btn btn-primary-red open-enquiry-modal">Connect with Counselor &rarr;</button>
+ <a href="apply-now.html" class="btn btn-primary-red" style="text-decoration: none; display: inline-block;">Connect with Counselor &rarr;</a>
  </div>
 
  <div class="why-choose-ugi-card">
