@@ -824,32 +824,26 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div class="thank-you-actions-group">
-        <a href="${redirectUrl}" class="btn-thank-you-primary">
+        <a href="/index.html" class="btn-thank-you-primary" style="width: 100%;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
           </svg>
-          Book Your Seat Now &rarr;
+          Back to Home
         </a>
-        <button type="button" class="btn-thank-you-secondary">
-          Submit Another Application
-        </button>
       </div>
     `;
 
     thankYouCard.style.display = 'block';
 
-    // Add reset button event listener
-    const resetBtn = thankYouCard.querySelector('.btn-thank-you-secondary');
-    if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
-        thankYouCard.style.display = 'none';
-        formElement.reset();
-
-      });
-    }
-
-    // Scroll smoothly to parentContainer
-    parentContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Scroll smoothly to parentContainer cleanly aligned below fixed site header
+    const headerHeight = document.querySelector('.site-header')?.offsetHeight || 80;
+    const rect = parentContainer.getBoundingClientRect();
+    const targetY = window.pageYOffset + rect.top - headerHeight - 20;
+    window.scrollTo({
+      top: Math.max(0, targetY),
+      behavior: 'smooth'
+    });
   }
 
   // 6. AJAX LEAD FORM SUBMISSION TO process-enquiry.php
@@ -874,7 +868,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 7. APPLY NOW HERO FORMS SUBMISSION
   const applyLeadForms = document.querySelectorAll('.apply-lead-form');
   applyLeadForms.forEach(form => {
-    if (form.id !== 'leadEnquiryForm') {
+    if (form.id !== 'leadEnquiryForm' && form.id !== 'bookSeatPageForm') {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -889,6 +883,170 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // 7A. BOOK SEAT PAGE FORM SUBMISSION WITH RAZORPAY PAYMENT GATEWAY REDIRECT
+  const bookSeatPageForm = document.getElementById('bookSeatPageForm');
+  if (bookSeatPageForm) {
+    bookSeatPageForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const submitBtn = bookSeatPageForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Book your seat';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Redirecting to Payment Gateway...</span>';
+      }
+
+      const formData = new FormData(bookSeatPageForm);
+      const firstName = (formData.get('first_name') || '').toString().trim();
+      const lastName = (formData.get('last_name') || '').toString().trim();
+      const fullName = `${firstName} ${lastName}`.trim() || 'Student';
+      const email = (formData.get('email') || '').toString().trim();
+      const mobile = (formData.get('mobile') || '').toString().trim();
+      const countryCode = (formData.get('country_code') || '+91').toString().trim();
+      const fullMobile = `${countryCode}${mobile}`;
+
+      let programDisplay = (formData.get('program') || '').toString().trim();
+      const courseSelect = bookSeatPageForm.querySelector('select[name="program"]');
+      if (courseSelect && courseSelect.options && courseSelect.selectedIndex >= 0) {
+        const selectedOpt = courseSelect.options[courseSelect.selectedIndex];
+        if (selectedOpt && selectedOpt.text && !selectedOpt.text.toLowerCase().includes('select')) {
+          programDisplay = selectedOpt.text;
+        }
+      }
+
+      // Ensure Razorpay key is loaded
+      if (!RAZORPAY_KEY_ID && typeof fetch !== 'undefined') {
+        try {
+          const cfgRes = await fetch('/api/config');
+          const cfg = await cfgRes.json();
+          if (cfg && cfg.razorpay_key_id) {
+            RAZORPAY_KEY_ID = cfg.razorpay_key_id;
+          }
+        } catch (err) { }
+      }
+      if (!RAZORPAY_KEY_ID) {
+        RAZORPAY_KEY_ID = 'rzp_live_bWTZeZdjtDN95M';
+      }
+
+      const triggerPaymentGateway = () => {
+        if (typeof Razorpay !== 'undefined') {
+          const options = {
+            key: RAZORPAY_KEY_ID,
+            amount: 1000 * 100, // ₹1,000 Seat Reservation Fee
+            currency: 'INR',
+            name: 'Universal Group of Institutions',
+            description: `Seat Booking Fee - ${programDisplay}`,
+            image: '/assets/images/universal_logo.png',
+            prefill: {
+              name: fullName,
+              email: email,
+              contact: fullMobile
+            },
+            theme: {
+              color: '#CA2526'
+            },
+            handler: async function (response) {
+              const paymentId = response.razorpay_payment_id || ('pay_' + Math.random().toString(36).substring(2, 10));
+              formData.append('razorpay_payment_id', paymentId);
+              formData.append('payment_status', 'PAID');
+
+              // Dispatch lead & seat booking endpoints in background
+              fetch('process-seat-booking.php', { method: 'POST', body: formData }).catch(e => { });
+              fetch('process-enquiry.php', { method: 'POST', body: formData }).catch(e => { });
+
+              // Render Success Confirmation
+              const parentCard = bookSeatPageForm.closest('.apply-form-card') || bookSeatPageForm.parentElement;
+              const headerTitle = parentCard.querySelector('.section-header-title');
+              if (headerTitle) headerTitle.style.display = 'none';
+
+              bookSeatPageForm.style.display = 'none';
+              const randomRef = 'UGI-SEAT-' + Math.floor(10000 + Math.random() * 90000);
+
+              let thankYouCard = parentCard.querySelector('.thank-you-card');
+              if (!thankYouCard) {
+                thankYouCard = document.createElement('div');
+                thankYouCard.className = 'thank-you-card';
+                parentCard.appendChild(thankYouCard);
+              }
+
+              thankYouCard.innerHTML = `
+                <div class="thank-you-header">
+                  <div class="thank-you-icon-badge">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <h3 class="thank-you-title">Seat Reserved Successfully!</h3>
+                  <p class="thank-you-subtitle">
+                    Congratulations <strong>${escapeHtml(fullName)}</strong>! Your seat for <strong>${escapeHtml(programDisplay)}</strong> has been reserved successfully.
+                  </p>
+                </div>
+                <div class="thank-you-details-card">
+                  <div class="thank-you-detail-row">
+                    <span class="detail-label">Booking Ref ID:</span>
+                    <strong class="detail-value ref-badge">${randomRef}</strong>
+                  </div>
+                  <div class="thank-you-detail-row">
+                    <span class="detail-label">Payment Transaction ID:</span>
+                    <strong class="detail-value" style="color: var(--primary-red);">${paymentId}</strong>
+                  </div>
+                  <div class="thank-you-detail-row">
+                    <span class="detail-label">Selected Course:</span>
+                    <span class="detail-value">${escapeHtml(programDisplay)}</span>
+                  </div>
+                  <div class="thank-you-detail-row">
+                    <span class="detail-label">Payment Amount:</span>
+                    <strong class="detail-value">₹1,000 (Seat Booking Fee Paid)</strong>
+                  </div>
+                  <div class="thank-you-detail-row">
+                    <span class="detail-label">Status:</span>
+                    <span class="status-badge-verified">Confirmed ✓</span>
+                  </div>
+                </div>
+                <div class="thank-you-notice">
+                  <span>Our admissions desk will contact you with your official seat confirmation receipt and enrollment details.</span>
+                </div>
+              `;
+              const headerHeight = document.querySelector('.site-header')?.offsetHeight || 80;
+              const rect = parentCard.getBoundingClientRect();
+              const targetY = window.pageYOffset + rect.top - headerHeight - 20;
+              window.scrollTo({
+                top: Math.max(0, targetY),
+                behavior: 'smooth'
+              });
+            },
+            modal: {
+              ondismiss: function () {
+                if (submitBtn) {
+                  submitBtn.disabled = false;
+                  submitBtn.innerHTML = originalBtnText;
+                }
+              }
+            }
+          };
+
+          const rzp = new Razorpay(options);
+          rzp.open();
+        } else {
+          // Dynamic script loading fallback
+          const script = document.createElement('script');
+          script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+          script.onload = () => triggerPaymentGateway();
+          script.onerror = () => {
+            alert('Payment gateway script failed to load. Please try again.');
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalBtnText;
+            }
+          };
+          document.body.appendChild(script);
+        }
+      };
+
+      triggerPaymentGateway();
+    });
+  }
 
   // 7B. STEP 2 SEAT BOOKING FORM SUBMISSION (book-seat.html) WITH RAZORPAY PAYMENT & 2-FILE VALIDATION
   const seatBookingForm = document.getElementById('seatBookingForm');

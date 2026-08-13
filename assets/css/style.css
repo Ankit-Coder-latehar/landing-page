@@ -5476,7 +5476,7 @@ select.course-select {
    ========================================================================== */
 .thank-you-card {
   text-align: center;
-  padding: 2.25rem 1.75rem;
+  padding: 1.5rem 1.25rem;
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -5496,43 +5496,48 @@ select.course-select {
 }
 
 .thank-you-header {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.85rem;
 }
 
 .thank-you-icon-badge {
-  width: 68px;
-  height: 68px;
+  width: 56px;
+  height: 56px;
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.1rem;
-  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+  margin: 0 auto 0.75rem;
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
   animation: badgePulse 2.5s infinite ease-in-out;
+}
+
+.thank-you-icon-badge svg {
+  width: 30px;
+  height: 30px;
 }
 
 @keyframes badgePulse {
   0%, 100% {
-    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
   }
   50% {
-    box-shadow: 0 12px 28px rgba(16, 185, 129, 0.55);
+    box-shadow: 0 10px 24px rgba(16, 185, 129, 0.55);
   }
 }
 
 .thank-you-title {
-  font-size: 1.65rem;
+  font-size: 1.45rem;
   font-weight: 800;
   color: #0f172a;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
   letter-spacing: -0.3px;
 }
 
 .thank-you-subtitle {
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   color: #475569;
-  line-height: 1.55;
+  line-height: 1.45;
   max-width: 480px;
   margin: 0 auto;
 }
@@ -5551,8 +5556,8 @@ select.course-select {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 1.15rem 1.35rem;
-  margin: 1.25rem 0;
+  padding: 0.85rem 1.1rem;
+  margin: 0.85rem 0;
   text-align: left;
 }
 
@@ -5560,9 +5565,9 @@ select.course-select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.45rem 0;
+  padding: 0.35rem 0;
   border-bottom: 1px dashed #e2e8f0;
-  font-size: 0.875rem;
+  font-size: 0.825rem;
 }
 
 .thank-you-detail-row:last-child {
@@ -5584,7 +5589,7 @@ select.course-select {
   color: var(--primary-red, #CA2526);
   font-weight: 800;
   font-family: monospace;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   letter-spacing: 0.5px;
 }
 
@@ -5592,8 +5597,8 @@ select.course-select {
   background: #dcfce7;
   color: #15803d;
   font-weight: 700;
-  font-size: 0.78rem;
-  padding: 3px 10px;
+  font-size: 0.75rem;
+  padding: 2px 8px;
   border-radius: 20px;
   display: inline-flex;
   align-items: center;
@@ -5603,16 +5608,16 @@ select.course-select {
 .thank-you-notice {
   display: flex;
   align-items: flex-start;
-  gap: 0.65rem;
+  gap: 0.5rem;
   background: rgba(202, 37, 38, 0.05);
   border: 1px solid rgba(202, 37, 38, 0.15);
-  padding: 0.85rem 1rem;
+  padding: 0.65rem 0.85rem;
   border-radius: 10px;
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   color: #334155;
   text-align: left;
-  line-height: 1.45;
-  margin-bottom: 1.35rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
 }
 
 .thank-you-notice svg {
