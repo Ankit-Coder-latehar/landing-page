@@ -690,41 +690,169 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // HELPER FUNCTION FOR STEP 1 LEAD SUBMISSION & STEP 2 REDIRECTION
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  // HELPER FUNCTION FOR STEP 1 LEAD SUBMISSION & PROFESSIONAL THANK YOU MESSAGE DISPLAY
   async function handleLeadSubmitAndRedirect(formElement, submitBtn, originalBtnText) {
     const formData = new FormData(formElement);
     const payload = {};
     formData.forEach((value, key) => { payload[key] = value; });
 
-    // 1. Dispatch data to Formspree & Google Sheets Webhooks (Awaited to ensure transmission before redirect)
+    // 1. Dispatch data to Formspree & Google Sheets Webhooks
     await sendToExternalIntegrations(formData);
 
     // 2. Submit to local process-enquiry endpoint
     try {
-      await fetch('/process-enquiry', {
+      const res = await fetch('/process-enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
       });
+      const data = await res.json();
+      if (res.status >= 400 || (data && data.status === 'error')) {
+        const formAlert = formElement.parentElement.querySelector('.form-alert') || document.getElementById('formAlert');
+        if (formAlert) {
+          formAlert.className = 'form-alert error';
+          formAlert.textContent = (data && data.message) || 'There was an error submitting your application. Please check your inputs.';
+          formAlert.style.display = 'block';
+        }
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        }
+        return;
+      }
     } catch (e) {
       console.log('Local enquiry endpoint note:', e);
     }
 
-    // 3. Construct Step 2 Redirection URL with query params
-    const name = payload.first_name || payload.name || '';
-    const lastName = payload.last_name || '';
-    const fullName = encodeURIComponent((name + ' ' + lastName).trim());
-    const email = encodeURIComponent(payload.email || '');
-    const mobile = encodeURIComponent(payload.mobile || '');
-    const program = encodeURIComponent(payload.program || payload.course || '');
+    // 3. Construct details for Thank You View
+    const firstName = (payload.first_name || payload.name || 'Applicant').trim();
+    const lastName = (payload.last_name || '').trim();
+    const fullDisplayName = `${firstName} ${lastName}`.trim();
+    const email = payload.email || '';
+    const mobile = payload.mobile || '';
+    const countryCode = payload.country_code || '+91';
+    const fullMobile = `${countryCode} ${mobile}`.trim();
 
-    const redirectUrl = `book-seat.html?name=${fullName}&email=${email}&mobile=${mobile}&program=${program}`;
+    // Get display name for course / program
+    let programDisplay = payload.program || payload.course || 'Selected Program';
+    const courseSelect = formElement.querySelector('select[name="program"]');
+    if (courseSelect && courseSelect.options && courseSelect.selectedIndex >= 0) {
+      const selectedOpt = courseSelect.options[courseSelect.selectedIndex];
+      if (selectedOpt && selectedOpt.text && !selectedOpt.text.toLowerCase().includes('select')) {
+        programDisplay = selectedOpt.text;
+      }
+    }
 
-    // 4. Redirect to Step 2 (Book Seat & Upload Certificates)
-    window.location.href = redirectUrl;
+    const refId = 'UGI-2026-' + Math.floor(10000 + Math.random() * 90000);
+    const redirectUrl = `book-seat.html?name=${encodeURIComponent(fullDisplayName)}&email=${encodeURIComponent(email)}&mobile=${encodeURIComponent(mobile)}&program=${encodeURIComponent(programDisplay)}`;
+
+    // 4. Render Professional Thank You Card inside the form container
+    const parentContainer = formElement.closest('.apply-form-card') || formElement.parentElement;
+
+    // Hide header title inside form container if present
+    const headerTitle = parentContainer.querySelector('.section-header-title');
+    if (headerTitle) headerTitle.style.display = 'none';
+
+    // Hide any previous alert
+    const formAlert = parentContainer.querySelector('.form-alert');
+    if (formAlert) formAlert.style.display = 'none';
+
+    // Hide the form itself
+    formElement.style.display = 'none';
+
+    // Check if thank you card already exists in container
+    let thankYouCard = parentContainer.querySelector('.thank-you-card');
+    if (!thankYouCard) {
+      thankYouCard = document.createElement('div');
+      thankYouCard.className = 'thank-you-card';
+      parentContainer.appendChild(thankYouCard);
+    }
+
+    thankYouCard.innerHTML = `
+      <div class="thank-you-header">
+        <div class="thank-you-icon-badge">
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h3 class="thank-you-title">Application Submitted!</h3>
+        <p class="thank-you-subtitle">
+          Thank you, <strong class="user-name">${escapeHtml(fullDisplayName)}</strong>! Your application for <strong class="program-name">${escapeHtml(programDisplay)}</strong> has been successfully received by <strong>Universal Group of Institutions (UGI)</strong>.
+        </p>
+      </div>
+
+      <div class="thank-you-details-card">
+        <div class="thank-you-detail-row">
+          <span class="detail-label">Application Ref ID:</span>
+          <strong class="detail-value ref-badge">${refId}</strong>
+        </div>
+        <div class="thank-you-detail-row">
+          <span class="detail-label">Selected Program:</span>
+          <span class="detail-value">${escapeHtml(programDisplay)}</span>
+        </div>
+        <div class="thank-you-detail-row">
+          <span class="detail-label">Mobile Number:</span>
+          <span class="detail-value">${escapeHtml(fullMobile)}</span>
+        </div>
+        <div class="thank-you-detail-row">
+          <span class="detail-label">Email Address:</span>
+          <span class="detail-value">${escapeHtml(email)}</span>
+        </div>
+        <div class="thank-you-detail-row">
+          <span class="detail-label">Status:</span>
+          <span class="status-badge-verified">Submitted &amp; Under Review ✓</span>
+        </div>
+      </div>
+
+      <div class="thank-you-notice">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#CA2526" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span>Our admissions counselor will review your application and contact you within 24 hours. You can also reserve your seat now to confirm your admission.</span>
+      </div>
+
+      <div class="thank-you-actions-group">
+        <a href="${redirectUrl}" class="btn-thank-you-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Book Your Seat Now &rarr;
+        </a>
+        <button type="button" class="btn-thank-you-secondary">
+          Submit Another Application
+        </button>
+      </div>
+    `;
+
+    thankYouCard.style.display = 'block';
+
+    // Add reset button event listener
+    const resetBtn = thankYouCard.querySelector('.btn-thank-you-secondary');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        thankYouCard.style.display = 'none';
+        formElement.reset();
+
+      });
+    }
+
+    // Scroll smoothly to parentContainer
+    parentContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
-  // 6. AJAX LEAD FORM SUBMISSION TO process-enquiry.php (WITH REDIRECT TO STEP 2)
+  // 6. AJAX LEAD FORM SUBMISSION TO process-enquiry.php
   const enquiryForm = document.getElementById('leadEnquiryForm');
   const formAlert = document.getElementById('formAlert');
 
@@ -733,17 +861,17 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
 
       const submitBtn = enquiryForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn ? submitBtn.textContent : 'Apply Now';
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Submit Enquiry &rarr;';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Processing & Redirecting...';
+        submitBtn.textContent = 'Submitting Application...';
       }
 
       await handleLeadSubmitAndRedirect(enquiryForm, submitBtn, originalBtnText);
     });
   }
 
-  // 7. APPLY NOW HERO FORMS SUBMISSION (WITH REDIRECT TO STEP 2)
+  // 7. APPLY NOW HERO FORMS SUBMISSION
   const applyLeadForms = document.querySelectorAll('.apply-lead-form');
   applyLeadForms.forEach(form => {
     if (form.id !== 'leadEnquiryForm') {
@@ -754,7 +882,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Apply Now';
         if (submitBtn) {
           submitBtn.disabled = true;
-          submitBtn.textContent = 'Processing & Redirecting...';
+          submitBtn.textContent = 'Submitting Application...';
         }
 
         await handleLeadSubmitAndRedirect(form, submitBtn, originalBtnText);

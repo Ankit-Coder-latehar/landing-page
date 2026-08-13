@@ -5470,3 +5470,212 @@ select.course-select {
     top: 42%;
   }
 }
+
+/* ==========================================================================
+   PROFESSIONAL THANK YOU CARD STYLES (FOR APPLY NOW & ENQUIRY FORMS)
+   ========================================================================== */
+.thank-you-card {
+  text-align: center;
+  padding: 2.25rem 1.75rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+  animation: thankYouFadeIn 0.45s ease-out forwards;
+}
+
+@keyframes thankYouFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.thank-you-header {
+  margin-bottom: 1.25rem;
+}
+
+.thank-you-icon-badge {
+  width: 68px;
+  height: 68px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.1rem;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+  animation: badgePulse 2.5s infinite ease-in-out;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+  }
+  50% {
+    box-shadow: 0 12px 28px rgba(16, 185, 129, 0.55);
+  }
+}
+
+.thank-you-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.3px;
+}
+
+.thank-you-subtitle {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.55;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.thank-you-subtitle .user-name {
+  color: var(--primary-red, #CA2526);
+  font-weight: 700;
+}
+
+.thank-you-subtitle .program-name {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.thank-you-details-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.15rem 1.35rem;
+  margin: 1.25rem 0;
+  text-align: left;
+}
+
+.thank-you-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed #e2e8f0;
+  font-size: 0.875rem;
+}
+
+.thank-you-detail-row:last-child {
+  border-bottom: none;
+}
+
+.thank-you-detail-row .detail-label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.thank-you-detail-row .detail-value {
+  color: #1e293b;
+  font-weight: 600;
+  text-align: right;
+}
+
+.thank-you-detail-row .ref-badge {
+  color: var(--primary-red, #CA2526);
+  font-weight: 800;
+  font-family: monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.status-badge-verified {
+  background: #dcfce7;
+  color: #15803d;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.thank-you-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: rgba(202, 37, 38, 0.05);
+  border: 1px solid rgba(202, 37, 38, 0.15);
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: #334155;
+  text-align: left;
+  line-height: 1.45;
+  margin-bottom: 1.35rem;
+}
+
+.thank-you-notice svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.thank-you-actions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn-thank-you-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem 1.35rem;
+  background: linear-gradient(135deg, var(--primary-red, #CA2526) 0%, #b01f20 100%);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.925rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(202, 37, 38, 0.35);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-thank-you-primary:hover {
+  background: linear-gradient(135deg, #b01f20 0%, #8e1516 100%);
+  box-shadow: 0 6px 18px rgba(202, 37, 38, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-thank-you-secondary {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  background: transparent;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-thank-you-secondary:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+@media (min-width: 576px) {
+  .thank-you-actions-group {
+    flex-direction: row;
+  }
+  .btn-thank-you-primary {
+    flex: 1.25;
+  }
+  .btn-thank-you-secondary {
+    flex: 1;
+  }
+}
