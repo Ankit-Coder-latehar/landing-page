@@ -90,21 +90,34 @@ async function sendToExternalIntegrations(formData) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // MOBILE NAVIGATION DRAWER TOGGLE
+  // MOBILE NAVIGATION DRAWER TOGGLE & HEADER SCROLL ANIMATION
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
   const drawerOverlay = document.getElementById('drawerOverlay');
   const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+  const siteHeader = document.querySelector('.site-header');
+
+  // Add scroll elevation animation to header
+  window.addEventListener('scroll', () => {
+    if (!siteHeader) return;
+    if (window.scrollY > 20) {
+      siteHeader.classList.add('header-scrolled');
+    } else {
+      siteHeader.classList.remove('header-scrolled');
+    }
+  }, { passive: true });
 
   function openDrawer() {
     if (mobileDrawer) mobileDrawer.classList.add('active');
     if (drawerOverlay) drawerOverlay.classList.add('active');
+    if (hamburgerBtn) hamburgerBtn.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeDrawer() {
     if (mobileDrawer) mobileDrawer.classList.remove('active');
     if (drawerOverlay) drawerOverlay.classList.remove('active');
+    if (hamburgerBtn) hamburgerBtn.classList.remove('active');
     document.body.style.overflow = '';
   }
 
@@ -112,7 +125,11 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburgerBtn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      openDrawer();
+      if (mobileDrawer && mobileDrawer.classList.contains('active')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
     });
   }
 
@@ -602,9 +619,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function openMobileDrawer() {
     const mobileDrawer = document.getElementById('mobileDrawer');
     const drawerOverlay = document.getElementById('drawerOverlay');
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
     if (mobileDrawer && drawerOverlay) {
       mobileDrawer.classList.add('active');
       drawerOverlay.classList.add('active');
+      if (hamburgerBtn) hamburgerBtn.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
   }
@@ -612,9 +631,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeMobileDrawer() {
     const mobileDrawer = document.getElementById('mobileDrawer');
     const drawerOverlay = document.getElementById('drawerOverlay');
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
     if (mobileDrawer && drawerOverlay) {
       mobileDrawer.classList.remove('active');
       drawerOverlay.classList.remove('active');
+      if (hamburgerBtn) hamburgerBtn.classList.remove('active');
       document.body.style.overflow = '';
     }
   }
@@ -623,7 +644,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburgerTrigger = e.target.closest('#hamburgerBtn, .hamburger-btn');
     if (hamburgerTrigger) {
       e.preventDefault();
-      openMobileDrawer();
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      if (mobileDrawer && mobileDrawer.classList.contains('active')) {
+        closeMobileDrawer();
+      } else {
+        openMobileDrawer();
+      }
       return;
     }
 
@@ -669,25 +695,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 5. ACCORDION TOGGLES (Skills & FAQs)
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  document.addEventListener('click', (e) => {
+    const header = e.target.closest('.accordion-header');
+    if (!header) return;
 
-  accordionHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-      const parentItem = header.closest('.accordion-item');
-      const isAlreadyActive = parentItem.classList.contains('active');
+    e.preventDefault();
+    const parentItem = header.closest('.accordion-item');
+    if (!parentItem) return;
 
-      // Close siblings if in standard accordion mode
-      const parentGroup = parentItem.closest('.accordion-group');
-      if (parentGroup) {
-        parentGroup.querySelectorAll('.accordion-item').forEach(item => {
-          item.classList.remove('active');
-        });
-      }
+    const isAlreadyActive = parentItem.classList.contains('active');
 
-      if (!isAlreadyActive) {
-        parentItem.classList.add('active');
-      }
-    });
+    // Find parent group / wrapper / container to close siblings
+    const parentGroup = parentItem.closest('.accordion-group') ||
+                        parentItem.closest('.faqs-wrapper') ||
+                        parentItem.closest('.faqs-section') ||
+                        parentItem.closest('.skills-accordion-grid') ||
+                        parentItem.parentElement;
+
+    if (parentGroup) {
+      parentGroup.querySelectorAll('.accordion-item').forEach(item => {
+        item.classList.remove('active');
+      });
+    }
+
+    // Toggle: if it wasn't active before, open it. If it was active, it remains closed.
+    if (!isAlreadyActive) {
+      parentItem.classList.add('active');
+    }
   });
 
   function escapeHtml(str) {
