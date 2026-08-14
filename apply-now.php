@@ -203,14 +203,11 @@
  <div class="step-circle">
  <svg width="46" height="46" viewBox="0 0 24 24" fill="none">
  <path d="M4 3h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" fill="#d32f2f"/>
- <path d="M6.5 8l1.5 1.5L10.5 7" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
- <line x1="13" y1="8" x2="17" y2="8" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
- <rect x="6.5" y="13" width="4" height="4" rx="0.5" fill="#ffffff"/>
- <line x1="13" y1="14" x2="17" y2="14" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+ <path d="M7 13l3 3 7-7" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
  </svg>
  </div>
  </div>
- <h3 class="step-card-title">Upload Document</h3>
+ <h3 class="step-card-title">Submit Your Application</h3>
  </div>
 
  <!-- STEP 4 -->
@@ -219,14 +216,12 @@
  <span class="step-number">4.</span>
  <div class="step-circle">
  <svg width="46" height="46" viewBox="0 0 24 24" fill="none">
- <rect x="2" y="6" width="20" height="13" rx="3" fill="#d32f2f"/>
- <path d="M5 14h2M5 12.5h3" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
- <circle cx="18" cy="8" r="4" fill="#ffffff"/>
- <path d="M16.2 8l1.2 1.2 2.4-2.4" stroke="#d32f2f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+ <rect x="2" y="2" width="20" height="20" rx="10" fill="#d32f2f"/>
+ <path d="M16.5 14.38v2.25a1.5 1.5 0 0 1-1.64 1.5 14.84 14.84 0 0 1-6.47-2.3 14.62 14.62 0 0 1-4.5-4.5 14.84 14.84 0 0 1-2.3-6.5A1.5 1.5 0 0 1 3.08 3.2h2.25a1.5 1.5 0 0 1 1.5 1.29c.1.7.27 1.39.52 2.05a1.5 1.5 0 0 1-.34 1.58L6.06 9.07a12 12 0 0 0 4.87 4.87l.95-.95a1.5 1.5 0 0 1 1.58-.34c.66.25 1.35.42 2.05.52a1.5 1.5 0 0 1 1.29 1.51z" fill="#ffffff"/>
  </svg>
  </div>
  </div>
- <h3 class="step-card-title">Pay Application Fee</h3>
+ <h3 class="step-card-title">Get a Call Within 24 Hours</h3>
  </div>
 
  </div>
